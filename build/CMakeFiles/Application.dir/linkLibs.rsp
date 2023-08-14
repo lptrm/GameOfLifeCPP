@@ -1,0 +1,1 @@
+  -LC:/dev/nvim/GameOfLifeCPP/vendor/glad/build/bin  -LC:/dev/nvim/GameOfLifeCPP/vendor/glfw/build/src  -Wl,-Bstatic -lGlad -lglfw3 -Wl,-Bdynamic -lopengl32 -lUser32 -lGdi32 -lShell32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/dev/nvim/GameOfLifeCPP/build",
+  "command": "/C/GNAT/2021/bin/c++.exe -DGLFW_INCLUDE_NONE @CMakeFiles/Application.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/Application.dir/src/Application.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/src/Application.cpp",
+  "file": "C:/dev/nvim/GameOfLifeCPP/src/Application.cpp"
+},
+{
+  "directory": "C:/dev/nvim/GameOfLifeCPP/build",
+  "command": "/C/GNAT/2021/bin/c++.exe -DGLFW_INCLUDE_NONE @CMakeFiles/Application.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/Application.dir/src/Universe.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/src/Universe.cpp",
+  "file": "C:/dev/nvim/GameOfLifeCPP/src/Universe.cpp"
+}
+]
