@@ -15,10 +15,13 @@ add_definitions(
 set(VENDOR_INCLUDES
   vendor/glad/include
   vendor/glfw/include
+  vendor/imgui
+  vendor/imgui/backends
   )
 set(VENDOR_LINKS
 vendor/glad/build/bin
 vendor/glfw/build/src
+vendor/imgui/build/bin
   )
 set(SOURCES
   src/Application.cpp
@@ -37,6 +40,7 @@ target_link_libraries(
   Application
   Glad.a
   glfw3.a
+  libImGui.a
   opengl32
   User32
   Gdi32

@@ -1,1 +1,1 @@
--IC:/dev/nvim/GameOfLifeCPP/vendor/glad/include -IC:/dev/nvim/GameOfLifeCPP/vendor/glfw/include -IC:/dev/nvim/GameOfLifeCPP/src
+-IC:/dev/nvim/GameOfLifeCPP/vendor/glad/include -IC:/dev/nvim/GameOfLifeCPP/vendor/glfw/include -IC:/dev/nvim/GameOfLifeCPP/vendor/imgui -IC:/dev/nvim/GameOfLifeCPP/vendor/imgui/backends -IC:/dev/nvim/GameOfLifeCPP/src

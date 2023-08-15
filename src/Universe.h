@@ -11,6 +11,7 @@ public:
   void update();
   void setAlive(int, int);
   void setDead(int, int);
+  void printGrid();
   inline int getWidth() const { return m_Width; }
   inline int getHeight() const { return m_Height; }
   inline int getSize() const { return m_Size; }

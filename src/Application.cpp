@@ -3,17 +3,6 @@
 #include <glad/glad.h>
 #include <iostream>
 
-void printGrid(const Universe &universe) {
-  for (int i = 0; i < universe.getSize(); i++) {
-    int intIndex = i >> 5;
-    int bitIndex = i & 31;
-    int bitValue = (universe.getGameGrid()[intIndex] >> bitIndex) & 1;
-    std::cout << bitValue << "";
-    if ((i + 1) % universe.getWidth() == 0) {
-      std::cout << std::endl;
-    }
-  }
-}
 int main(void) {
   GLFWwindow *window;
 
@@ -51,8 +40,7 @@ int main(void) {
 
   Universe universe(width, height);
   std::cout << "Empty Grid:" << std::endl;
-  printGrid(universe);
-
+  universe.printGrid();
   // Set some cells as alive (you can modify this for testing)
   int aliveCells[] = {0, 1, 3, 4, 5, 6, 7, 8, 9, 55};
   for (int cell : aliveCells) {
@@ -63,17 +51,17 @@ int main(void) {
   }
 
   std::cout << "Initial Grid:" << std::endl;
-  printGrid(universe);
 
+  universe.printGrid();
   universe.update();
 
   std::cout << "Updated Grid:" << std::endl;
-  printGrid(universe);
 
+  universe.printGrid();
   universe.update();
 
   std::cout << "Updated Grid:" << std::endl;
-  printGrid(universe);
+  universe.printGrid();
   /* Loop until the user closes the window */
   while (!glfwWindowShouldClose(window)) {
     /* Render here */

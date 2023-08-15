@@ -1,5 +1,5 @@
 #include "Universe.h"
-
+#include <iostream>
 Universe::Universe(int width, int height) : m_Width(width), m_Height(height) {
   if ((m_Width & (m_Width - 1)) != 0 || (m_Height & (m_Height - 1)) != 0) {
     return; // TODO: Throw exception
@@ -10,6 +10,7 @@ Universe::Universe(int width, int height) : m_Width(width), m_Height(height) {
   m_Size = width << m_PowY;
   m_GameGrid = new int[size]();
 }
+Universe::~Universe() { delete[] m_GameGrid; }
 void Universe::update() {
   int *newGameGrid = new int[m_Size](); // Create a new array for updated state
 
@@ -64,5 +65,14 @@ int Universe::CalculatePower(int value) {
   }
   return pow;
 }
-
-Universe::~Universe() { delete[] m_GameGrid; }
+void Universe::printGrid() {
+  for (int i = 0; i < this->m_Size; i++) {
+    int intIndex = i >> 5;
+    int bitIndex = i & 31;
+    int bitValue = (this->m_GameGrid[intIndex] >> bitIndex) & 1;
+    std::cout << bitValue << "";
+    if ((i + 1) % this->m_Width == 0) {
+      std::cout << std::endl;
+    }
+  }
+}
