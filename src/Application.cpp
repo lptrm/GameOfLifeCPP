@@ -38,12 +38,10 @@ int main(void) {
     std::cout << "Error" << std::endl;
     return -1;
   }
-
   std::cout << glGetString(GL_VERSION) << std::endl;
   /* Make the window's context current */
   glfwMakeContextCurrent(window);
 
-  
   // Setup Dear ImGui context
   IMGUI_CHECKVERSION();
   ImGui::CreateContext();

@@ -1,2 +1,2 @@
-C:/GNAT/2021/bin/ar.exe qc bin/libGlad.a CMakeFiles/Glad.dir/src/glad.c.obj
-C:/GNAT/2021/bin/ranlib.exe bin/libGlad.a
+/usr/bin/ar qc bin/libGlad.a CMakeFiles/Glad.dir/src/glad.c.o
+/usr/bin/ranlib bin/libGlad.a
