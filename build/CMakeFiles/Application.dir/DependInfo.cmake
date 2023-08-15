@@ -10,6 +10,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/dev/nvim/GameOfLifeCPP/src/Application.cpp" "CMakeFiles/Application.dir/src/Application.cpp.obj" "gcc" "CMakeFiles/Application.dir/src/Application.cpp.obj.d"
   "C:/dev/nvim/GameOfLifeCPP/src/Universe.cpp" "CMakeFiles/Application.dir/src/Universe.cpp.obj" "gcc" "CMakeFiles/Application.dir/src/Universe.cpp.obj.d"
+  "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.cpp" "CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj" "gcc" "CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj.d"
+  "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.cpp" "CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj" "gcc" "CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj.d"
+  "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.cpp" "CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj" "gcc" "CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj.d"
+  "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_demo.cpp" "CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj" "gcc" "CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj.d"
+  "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_draw.cpp" "CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj" "gcc" "CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj.d"
+  "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_tables.cpp" "CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj" "gcc" "CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj.d"
+  "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_widgets.cpp" "CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj" "gcc" "CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj.d"
   )
 
 # Targets to which this target links.

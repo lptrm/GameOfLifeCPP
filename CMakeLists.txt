@@ -27,6 +27,15 @@ set(SOURCES
   src/Application.cpp
   src/Universe.cpp
   )
+set(VENDOR_SOURCES
+  vendor/imgui/imgui.cpp
+  vendor/imgui/imgui_demo.cpp
+  vendor/imgui/imgui_draw.cpp
+  vendor/imgui/imgui_tables.cpp
+  vendor/imgui/imgui_widgets.cpp
+  vendor/imgui/backends/imgui_impl_glfw.cpp
+  vendor/imgui/backends/imgui_impl_opengl3.cpp
+  )
 include_directories(
   ${VENDOR_INCLUDES}
   src
@@ -35,7 +44,7 @@ link_directories(
   ${VENDOR_LINKS}
   )
 
-add_executable(Application ${SOURCES})
+add_executable(Application ${SOURCES} ${VENDOR_SOURCES})
 target_link_libraries(
   Application
   Glad.a

@@ -8,5 +8,40 @@
   "directory": "C:/dev/nvim/GameOfLifeCPP/build",
   "command": "/C/GNAT/2021/bin/c++.exe -DGLFW_INCLUDE_NONE @CMakeFiles/Application.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/Application.dir/src/Universe.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/src/Universe.cpp",
   "file": "C:/dev/nvim/GameOfLifeCPP/src/Universe.cpp"
+},
+{
+  "directory": "C:/dev/nvim/GameOfLifeCPP/build",
+  "command": "/C/GNAT/2021/bin/c++.exe -DGLFW_INCLUDE_NONE @CMakeFiles/Application.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.cpp",
+  "file": "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.cpp"
+},
+{
+  "directory": "C:/dev/nvim/GameOfLifeCPP/build",
+  "command": "/C/GNAT/2021/bin/c++.exe -DGLFW_INCLUDE_NONE @CMakeFiles/Application.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_demo.cpp",
+  "file": "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_demo.cpp"
+},
+{
+  "directory": "C:/dev/nvim/GameOfLifeCPP/build",
+  "command": "/C/GNAT/2021/bin/c++.exe -DGLFW_INCLUDE_NONE @CMakeFiles/Application.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_draw.cpp",
+  "file": "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_draw.cpp"
+},
+{
+  "directory": "C:/dev/nvim/GameOfLifeCPP/build",
+  "command": "/C/GNAT/2021/bin/c++.exe -DGLFW_INCLUDE_NONE @CMakeFiles/Application.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_tables.cpp",
+  "file": "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_tables.cpp"
+},
+{
+  "directory": "C:/dev/nvim/GameOfLifeCPP/build",
+  "command": "/C/GNAT/2021/bin/c++.exe -DGLFW_INCLUDE_NONE @CMakeFiles/Application.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_widgets.cpp",
+  "file": "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_widgets.cpp"
+},
+{
+  "directory": "C:/dev/nvim/GameOfLifeCPP/build",
+  "command": "/C/GNAT/2021/bin/c++.exe -DGLFW_INCLUDE_NONE @CMakeFiles/Application.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.cpp",
+  "file": "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.cpp"
+},
+{
+  "directory": "C:/dev/nvim/GameOfLifeCPP/build",
+  "command": "/C/GNAT/2021/bin/c++.exe -DGLFW_INCLUDE_NONE @CMakeFiles/Application.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.cpp",
+  "file": "C:/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.cpp"
 }
 ]

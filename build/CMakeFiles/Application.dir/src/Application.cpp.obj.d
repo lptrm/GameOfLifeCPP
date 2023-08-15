@@ -1,9 +1,10 @@
 CMakeFiles/Application.dir/src/Application.cpp.obj: \
  C:/dev/nvim/GameOfLifeCPP/src/Application.cpp \
  C:/dev/nvim/GameOfLifeCPP/src/Universe.h \
- C:/dev/nvim/GameOfLifeCPP/vendor/glfw/include/GLFW/glfw3.h \
- c:\gnat\2021\lib\gcc\x86_64-w64-mingw32\10.3.1\include\stddef.h \
- c:\gnat\2021\x86_64-w64-mingw32\include\stddef.h \
+ C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.h \
+ C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h \
+ c:\gnat\2021\lib\gcc\x86_64-w64-mingw32\10.3.1\include\float.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\float.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\crtdefs.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\corecrt.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\_mingw.h \
@@ -11,15 +12,36 @@ CMakeFiles/Application.dir/src/Application.cpp.obj: \
  c:\gnat\2021\x86_64-w64-mingw32\include\_mingw_secapi.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\vadefs.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\sdks/_mingw_ddk.h \
+ c:\gnat\2021\lib\gcc\x86_64-w64-mingw32\10.3.1\include\stdarg.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\stdarg.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\_mingw_stdarg.h \
+ c:\gnat\2021\lib\gcc\x86_64-w64-mingw32\10.3.1\include\stddef.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\stddef.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\string.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\sec_api\string_s.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\assert.h \
+ c:\gnat\2021\include\c++\10.3.1\stdlib.h \
+ c:\gnat\2021\include\c++\10.3.1\cstdlib \
+ c:\gnat\2021\include\c++\10.3.1\x86_64-w64-mingw32\bits\c++config.h \
+ c:\gnat\2021\include\c++\10.3.1\x86_64-w64-mingw32\bits\os_defines.h \
+ c:\gnat\2021\include\c++\10.3.1\x86_64-w64-mingw32\bits\cpu_defines.h \
+ c:\gnat\2021\include\c++\10.3.1\pstl\pstl_config.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\stdlib.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\corecrt_wstdlib.h \
+ c:\gnat\2021\lib\gcc\x86_64-w64-mingw32\10.3.1\include-fixed\limits.h \
+ c:\gnat\2021\lib\gcc\x86_64-w64-mingw32\10.3.1\include-fixed\syslimits.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\limits.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\sec_api\stdlib_s.h \
+ c:\gnat\2021\x86_64-w64-mingw32\include\malloc.h \
+ c:\gnat\2021\include\c++\10.3.1\bits\std_abs.h \
+ C:/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h \
+ C:/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h \
+ C:/dev/nvim/GameOfLifeCPP/vendor/glfw/include/GLFW/glfw3.h \
  c:\gnat\2021\lib\gcc\x86_64-w64-mingw32\10.3.1\include\stdint.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\stdint.h \
  C:/dev/nvim/GameOfLifeCPP/vendor/glad/include/glad/glad.h \
  C:/dev/nvim/GameOfLifeCPP/vendor/glad/include/KHR/khrplatform.h \
  c:\gnat\2021\include\c++\10.3.1\iostream \
- c:\gnat\2021\include\c++\10.3.1\x86_64-w64-mingw32\bits\c++config.h \
- c:\gnat\2021\include\c++\10.3.1\x86_64-w64-mingw32\bits\os_defines.h \
- c:\gnat\2021\include\c++\10.3.1\x86_64-w64-mingw32\bits\cpu_defines.h \
- c:\gnat\2021\include\c++\10.3.1\pstl\pstl_config.h \
  c:\gnat\2021\include\c++\10.3.1\ostream \
  c:\gnat\2021\include\c++\10.3.1\ios \
  c:\gnat\2021\include\c++\10.3.1\iosfwd \
@@ -29,7 +51,6 @@ CMakeFiles/Application.dir/src/Application.cpp.obj: \
  c:\gnat\2021\include\c++\10.3.1\cwchar \
  c:\gnat\2021\x86_64-w64-mingw32\include\wchar.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\corecrt_stdio_config.h \
- c:\gnat\2021\x86_64-w64-mingw32\include\corecrt_wstdlib.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\_mingw_off_t.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\_mingw_stat64.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\swprintf.inl \
@@ -73,15 +94,6 @@ CMakeFiles/Application.dir/src/Application.cpp.obj: \
  c:\gnat\2021\include\c++\10.3.1\ext\atomicity.h \
  c:\gnat\2021\include\c++\10.3.1\x86_64-w64-mingw32\bits\gthr.h \
  c:\gnat\2021\include\c++\10.3.1\x86_64-w64-mingw32\bits\gthr-default.h \
- c:\gnat\2021\include\c++\10.3.1\stdlib.h \
- c:\gnat\2021\include\c++\10.3.1\cstdlib \
- c:\gnat\2021\x86_64-w64-mingw32\include\stdlib.h \
- c:\gnat\2021\lib\gcc\x86_64-w64-mingw32\10.3.1\include-fixed\limits.h \
- c:\gnat\2021\lib\gcc\x86_64-w64-mingw32\10.3.1\include-fixed\syslimits.h \
- c:\gnat\2021\x86_64-w64-mingw32\include\limits.h \
- c:\gnat\2021\x86_64-w64-mingw32\include\sec_api\stdlib_s.h \
- c:\gnat\2021\x86_64-w64-mingw32\include\malloc.h \
- c:\gnat\2021\include\c++\10.3.1\bits\std_abs.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\sys\timeb.h \
  c:\gnat\2021\x86_64-w64-mingw32\include\sec_api\sys\timeb_s.h \
  c:\gnat\2021\include\c++\10.3.1\x86_64-w64-mingw32\bits\atomic_word.h \

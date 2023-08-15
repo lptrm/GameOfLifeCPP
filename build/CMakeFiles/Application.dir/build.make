@@ -99,20 +99,139 @@ CMakeFiles/Application.dir/src/Universe.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/Universe.cpp.s"
 	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /C/dev/nvim/GameOfLifeCPP/src/Universe.cpp -o CMakeFiles/Application.dir/src/Universe.cpp.s
 
+CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj: CMakeFiles/Application.dir/includes_CXX.rsp
+CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj: C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.cpp
+CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/C/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj -MF CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj.d -o CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.cpp
+
+CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.i"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.cpp > CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.i
+
+CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.s"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.cpp -o CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.s
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj: CMakeFiles/Application.dir/includes_CXX.rsp
+CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj: C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_demo.cpp
+CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/C/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj -MF CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj.d -o CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_demo.cpp
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.i"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_demo.cpp > CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.i
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.s"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_demo.cpp -o CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.s
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj: CMakeFiles/Application.dir/includes_CXX.rsp
+CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj: C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_draw.cpp
+CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/C/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj -MF CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj.d -o CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_draw.cpp
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.i"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_draw.cpp > CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.i
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.s"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_draw.cpp -o CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.s
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj: CMakeFiles/Application.dir/includes_CXX.rsp
+CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj: C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_tables.cpp
+CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/C/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj -MF CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj.d -o CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_tables.cpp
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.i"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_tables.cpp > CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.i
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.s"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_tables.cpp -o CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.s
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj: CMakeFiles/Application.dir/includes_CXX.rsp
+CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj: C:/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_widgets.cpp
+CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/C/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj -MF CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj.d -o CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_widgets.cpp
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.i"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_widgets.cpp > CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.i
+
+CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.s"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /C/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_widgets.cpp -o CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.s
+
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj: CMakeFiles/Application.dir/includes_CXX.rsp
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj: C:/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.cpp
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/C/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj -MF CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj.d -o CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.cpp
+
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.i"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /C/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.cpp > CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.i
+
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.s"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /C/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.cpp -o CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.s
+
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj: CMakeFiles/Application.dir/includes_CXX.rsp
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj: C:/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.cpp
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/C/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj -MF CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj.d -o CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj -c /C/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.cpp
+
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.i"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /C/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.cpp > CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.i
+
+CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.s"
+	/C/GNAT/2021/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /C/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.cpp -o CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.s
+
 # Object files for target Application
 Application_OBJECTS = \
 "CMakeFiles/Application.dir/src/Application.cpp.obj" \
-"CMakeFiles/Application.dir/src/Universe.cpp.obj"
+"CMakeFiles/Application.dir/src/Universe.cpp.obj" \
+"CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj" \
+"CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj" \
+"CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj" \
+"CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj" \
+"CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj" \
+"CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj" \
+"CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj"
 
 # External object files for target Application
 Application_EXTERNAL_OBJECTS =
 
 Application.exe: CMakeFiles/Application.dir/src/Application.cpp.obj
 Application.exe: CMakeFiles/Application.dir/src/Universe.cpp.obj
+Application.exe: CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj
+Application.exe: CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj
+Application.exe: CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj
+Application.exe: CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj
+Application.exe: CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj
+Application.exe: CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj
+Application.exe: CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj
 Application.exe: CMakeFiles/Application.dir/build.make
 Application.exe: CMakeFiles/Application.dir/linkLibs.rsp
 Application.exe: CMakeFiles/Application.dir/objects1
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/C/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Application.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/C/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Application.exe"
 	/C/Users/janob/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/bin/cmake.exe -E rm -f CMakeFiles/Application.dir/objects.a
 	/C/GNAT/2021/bin/ar.exe qc CMakeFiles/Application.dir/objects.a @CMakeFiles/Application.dir/objects1
 	/C/GNAT/2021/bin/c++.exe -g -static -Wl,--whole-archive CMakeFiles/Application.dir/objects.a -Wl,--no-whole-archive -o Application.exe -Wl,--out-implib,libApplication.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/Application.dir/linkLibs.rsp

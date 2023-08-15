@@ -177,6 +177,174 @@ src/Universe.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Universe.cpp.s
 .PHONY : src/Universe.cpp.s
 
+vendor/imgui/backends/imgui_impl_glfw.obj: vendor/imgui/backends/imgui_impl_glfw.cpp.obj
+.PHONY : vendor/imgui/backends/imgui_impl_glfw.obj
+
+# target to build an object file
+vendor/imgui/backends/imgui_impl_glfw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.obj
+.PHONY : vendor/imgui/backends/imgui_impl_glfw.cpp.obj
+
+vendor/imgui/backends/imgui_impl_glfw.i: vendor/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : vendor/imgui/backends/imgui_impl_glfw.i
+
+# target to preprocess a source file
+vendor/imgui/backends/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : vendor/imgui/backends/imgui_impl_glfw.cpp.i
+
+vendor/imgui/backends/imgui_impl_glfw.s: vendor/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : vendor/imgui/backends/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+vendor/imgui/backends/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : vendor/imgui/backends/imgui_impl_glfw.cpp.s
+
+vendor/imgui/backends/imgui_impl_opengl3.obj: vendor/imgui/backends/imgui_impl_opengl3.cpp.obj
+.PHONY : vendor/imgui/backends/imgui_impl_opengl3.obj
+
+# target to build an object file
+vendor/imgui/backends/imgui_impl_opengl3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.obj
+.PHONY : vendor/imgui/backends/imgui_impl_opengl3.cpp.obj
+
+vendor/imgui/backends/imgui_impl_opengl3.i: vendor/imgui/backends/imgui_impl_opengl3.cpp.i
+.PHONY : vendor/imgui/backends/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+vendor/imgui/backends/imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.i
+.PHONY : vendor/imgui/backends/imgui_impl_opengl3.cpp.i
+
+vendor/imgui/backends/imgui_impl_opengl3.s: vendor/imgui/backends/imgui_impl_opengl3.cpp.s
+.PHONY : vendor/imgui/backends/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+vendor/imgui/backends/imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.s
+.PHONY : vendor/imgui/backends/imgui_impl_opengl3.cpp.s
+
+vendor/imgui/imgui.obj: vendor/imgui/imgui.cpp.obj
+.PHONY : vendor/imgui/imgui.obj
+
+# target to build an object file
+vendor/imgui/imgui.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.obj
+.PHONY : vendor/imgui/imgui.cpp.obj
+
+vendor/imgui/imgui.i: vendor/imgui/imgui.cpp.i
+.PHONY : vendor/imgui/imgui.i
+
+# target to preprocess a source file
+vendor/imgui/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.i
+.PHONY : vendor/imgui/imgui.cpp.i
+
+vendor/imgui/imgui.s: vendor/imgui/imgui.cpp.s
+.PHONY : vendor/imgui/imgui.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.s
+.PHONY : vendor/imgui/imgui.cpp.s
+
+vendor/imgui/imgui_demo.obj: vendor/imgui/imgui_demo.cpp.obj
+.PHONY : vendor/imgui/imgui_demo.obj
+
+# target to build an object file
+vendor/imgui/imgui_demo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.obj
+.PHONY : vendor/imgui/imgui_demo.cpp.obj
+
+vendor/imgui/imgui_demo.i: vendor/imgui/imgui_demo.cpp.i
+.PHONY : vendor/imgui/imgui_demo.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.i
+.PHONY : vendor/imgui/imgui_demo.cpp.i
+
+vendor/imgui/imgui_demo.s: vendor/imgui/imgui_demo.cpp.s
+.PHONY : vendor/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.s
+.PHONY : vendor/imgui/imgui_demo.cpp.s
+
+vendor/imgui/imgui_draw.obj: vendor/imgui/imgui_draw.cpp.obj
+.PHONY : vendor/imgui/imgui_draw.obj
+
+# target to build an object file
+vendor/imgui/imgui_draw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.obj
+.PHONY : vendor/imgui/imgui_draw.cpp.obj
+
+vendor/imgui/imgui_draw.i: vendor/imgui/imgui_draw.cpp.i
+.PHONY : vendor/imgui/imgui_draw.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.i
+.PHONY : vendor/imgui/imgui_draw.cpp.i
+
+vendor/imgui/imgui_draw.s: vendor/imgui/imgui_draw.cpp.s
+.PHONY : vendor/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.s
+.PHONY : vendor/imgui/imgui_draw.cpp.s
+
+vendor/imgui/imgui_tables.obj: vendor/imgui/imgui_tables.cpp.obj
+.PHONY : vendor/imgui/imgui_tables.obj
+
+# target to build an object file
+vendor/imgui/imgui_tables.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.obj
+.PHONY : vendor/imgui/imgui_tables.cpp.obj
+
+vendor/imgui/imgui_tables.i: vendor/imgui/imgui_tables.cpp.i
+.PHONY : vendor/imgui/imgui_tables.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.i
+.PHONY : vendor/imgui/imgui_tables.cpp.i
+
+vendor/imgui/imgui_tables.s: vendor/imgui/imgui_tables.cpp.s
+.PHONY : vendor/imgui/imgui_tables.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.s
+.PHONY : vendor/imgui/imgui_tables.cpp.s
+
+vendor/imgui/imgui_widgets.obj: vendor/imgui/imgui_widgets.cpp.obj
+.PHONY : vendor/imgui/imgui_widgets.obj
+
+# target to build an object file
+vendor/imgui/imgui_widgets.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.obj
+.PHONY : vendor/imgui/imgui_widgets.cpp.obj
+
+vendor/imgui/imgui_widgets.i: vendor/imgui/imgui_widgets.cpp.i
+.PHONY : vendor/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.i
+.PHONY : vendor/imgui/imgui_widgets.cpp.i
+
+vendor/imgui/imgui_widgets.s: vendor/imgui/imgui_widgets.cpp.s
+.PHONY : vendor/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.s
+.PHONY : vendor/imgui/imgui_widgets.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +360,27 @@ help:
 	@echo "... src/Universe.obj"
 	@echo "... src/Universe.i"
 	@echo "... src/Universe.s"
+	@echo "... vendor/imgui/backends/imgui_impl_glfw.obj"
+	@echo "... vendor/imgui/backends/imgui_impl_glfw.i"
+	@echo "... vendor/imgui/backends/imgui_impl_glfw.s"
+	@echo "... vendor/imgui/backends/imgui_impl_opengl3.obj"
+	@echo "... vendor/imgui/backends/imgui_impl_opengl3.i"
+	@echo "... vendor/imgui/backends/imgui_impl_opengl3.s"
+	@echo "... vendor/imgui/imgui.obj"
+	@echo "... vendor/imgui/imgui.i"
+	@echo "... vendor/imgui/imgui.s"
+	@echo "... vendor/imgui/imgui_demo.obj"
+	@echo "... vendor/imgui/imgui_demo.i"
+	@echo "... vendor/imgui/imgui_demo.s"
+	@echo "... vendor/imgui/imgui_draw.obj"
+	@echo "... vendor/imgui/imgui_draw.i"
+	@echo "... vendor/imgui/imgui_draw.s"
+	@echo "... vendor/imgui/imgui_tables.obj"
+	@echo "... vendor/imgui/imgui_tables.i"
+	@echo "... vendor/imgui/imgui_tables.s"
+	@echo "... vendor/imgui/imgui_widgets.obj"
+	@echo "... vendor/imgui/imgui_widgets.i"
+	@echo "... vendor/imgui/imgui_widgets.s"
 .PHONY : help
 
 
