@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/jano/dev/nvim/GameOfLifeCPP/src/Application.cpp" "CMakeFiles/Application.dir/src/Application.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Application.cpp.o.d"
+  "/home/jano/dev/nvim/GameOfLifeCPP/src/Shader.cpp" "CMakeFiles/Application.dir/src/Shader.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Shader.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/Universe.cpp" "CMakeFiles/Application.dir/src/Universe.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Universe.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.cpp" "CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o" "gcc" "CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.cpp" "CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o" "gcc" "CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o.d"

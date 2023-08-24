@@ -10,10 +10,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_definitions(-DGLFW_INCLUDE_NONE)
 
 set(VENDOR_INCLUDES vendor/glad/include vendor/glfw/include vendor/imgui
-                    vendor/imgui/backends)
+                    vendor/imgui/backends vendor/glm src)
 set(VENDOR_LINKS vendor/glad/build/bin vendor/glfw/build/src
                  vendor/imgui/bin/ImGui)
-set(SOURCES src/Application.cpp src/Universe.cpp)
+set(SOURCES src/Application.cpp src/Universe.cpp src/Shader.cpp)
 set(VENDOR_SOURCES
     vendor/imgui/imgui.cpp
     vendor/imgui/imgui_demo.cpp

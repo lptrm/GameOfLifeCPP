@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "Application.pdb"
   "CMakeFiles/Application.dir/src/Application.cpp.o"
   "CMakeFiles/Application.dir/src/Application.cpp.o.d"
+  "CMakeFiles/Application.dir/src/Shader.cpp.o"
+  "CMakeFiles/Application.dir/src/Shader.cpp.o.d"
   "CMakeFiles/Application.dir/src/Universe.cpp.o"
   "CMakeFiles/Application.dir/src/Universe.cpp.o.d"
   "CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o"
