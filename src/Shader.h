@@ -28,6 +28,8 @@ public:
                     float v3);
   void SetUniformMat3f(const std::string &name, const glm::mat3 &matrix);
   void SetUniformMat4f(const std::string &name, const glm::mat4 &matrix);
+  void SetUniformSampler2d(const std::string &name, GLuint slot);
+  inline unsigned int GetRendererID() const { return m_RendererID; };
 
 private:
   ShaderProgramSource ParseShader(const std::string &filepath);

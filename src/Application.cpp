@@ -7,7 +7,6 @@
 #include <glad/glad.h>
 #include <iostream>
 #include <stdio.h>
-
 static void glfw_error_callback(int error, const char *description) {
   fprintf(stderr, "GLFW Error %d: %s\n", error, description);
 }
@@ -42,6 +41,12 @@ int main(void) {
   std::cout << glGetString(GL_VERSION) << std::endl;
   /* Make the window's context current */
   glfwMakeContextCurrent(window);
+  // Initialize Glad
+  if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+    std::cerr << "Failed to initialize Glad" << std::endl;
+    glfwTerminate();
+    return -1;
+  }
 
   // Setup Dear ImGui context
   IMGUI_CHECKVERSION();
@@ -93,13 +98,16 @@ int main(void) {
       Shader("/home/jano/dev/nvim/GameOfLifeCPP/assets/basic.shader");
   shader.Bind();
 
+  Universe universe = Universe(512, 512, shader.GetRendererID());
+  universe.bindTexture();
+  shader.SetUniformSampler2d("gameGrid", universe.getGameGridTexture());
   /* Loop until the user closes the window */
   while (!glfwWindowShouldClose(window)) {
     glfwPollEvents();
 
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-
+    universe.update();
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
     glfwSwapBuffers(window);

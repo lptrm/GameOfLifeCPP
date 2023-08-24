@@ -1,15 +1,23 @@
 #shader vertex
 #version 330 core
-layout(location = 0) in vec4 position;
-void main()
-{
-   gl_Position = position;
+layout(location = 0) in vec2 inPosition;
+out vec2 fragTexCoord;
+
+void main() {
+    gl_Position = vec4(inPosition, 0.0, 1.0);
+    fragTexCoord = inPosition * 0.5 + 0.5;
 }
 
 #shader fragment
 #version 330 core
-layout(location = 0) out vec4 color;
-void main()
-{
-   color = vec4(0.2, 0.3, 0.8, 1.0);
+uniform sampler2D gameGrid;
+in vec2 fragTexCoord;
+out vec4 outColor;
+
+void main() {
+    vec2 texCoord = fragTexCoord;
+    
+    float cellValue = texture(gameGrid, texCoord).r;
+
+    outColor = vec4(cellValue, cellValue, cellValue, 1.0);
 }

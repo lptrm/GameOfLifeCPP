@@ -31,7 +31,10 @@ GLint Shader::GetUniformLocation(const std::string &name) const {
   m_UniformLocationCache[name] = location;
   return location;
 }
-
+void Shader::SetUniformSampler2d(const std::string &name, GLuint slot) {
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 512, 512, 0, GL_RGBA,
+               GL_UNSIGNED_BYTE, &slot);
+}
 void Shader::SetUniform1i(const std::string &name, int value) {
   glUniform1i(GetUniformLocation(name), value);
 }
