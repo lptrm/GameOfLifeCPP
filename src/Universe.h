@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vector>
 class Universe {
 public:
   Universe(int, int);
@@ -19,6 +20,9 @@ public:
   inline int getPowerY() const { return m_PowY; }
   inline int *getGameGrid() const { return m_GameGrid; }
   inline int getGameGrid(int index) const { return m_GameGrid[index]; }
+  inline std::vector<unsigned char> getGameGridData() const {
+    return m_GameGridData;
+  }
 
 private:
   int m_Width;
@@ -27,7 +31,7 @@ private:
   int m_PowY;
   int m_Size;
   int *m_GameGrid;
-
+  std::vector<unsigned char> m_GameGridData;
   int CalculatePower(int);
   bool GetBitValue(int &index, int &intIndex, int &bitIndex);
   bool GetBit(int);

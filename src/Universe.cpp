@@ -9,6 +9,8 @@ Universe::Universe(int width, int height) : m_Width(width), m_Height(height) {
   int size = 1 << (m_PowX + m_PowY - 5);
   m_Size = width << m_PowY;
   m_GameGrid = new int[size]();
+
+  m_GameGridData = std::vector<unsigned char>(m_Size);
 }
 Universe::~Universe() { delete[] m_GameGrid; }
 void Universe::update() {
@@ -22,12 +24,22 @@ void Universe::update() {
     if (newState) {
       newGameGrid[intIndex] |=
           (1 << bitOffset); // Set the corresponding bit to 1
+      m_GameGridData[i] = 255;
+    } else {
+      m_GameGridData[i] = 0;
     }
   }
 
   // Copy the new array back to the original grid
   delete[] m_GameGrid; // Free the memory of the old grid
   m_GameGrid = newGameGrid;
+}
+void Universe::setAlive(int column, int row) {
+  int index = row * column + column;
+  int intIndex = index >> 5;
+  int bitOffset = index & 31;
+  m_GameGrid[intIndex] |= (1 << bitOffset);
+  m_GameGridData[index] = 255;
 }
 bool Universe::GetBitValue(int &index, int &intIndex, int &bitOffset) {
   intIndex = index >> 5;

@@ -4,10 +4,12 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
+#include <Logger.h>
 #include <glad/glad.h>
 #include <iostream>
 #include <stdio.h>
 
+// test
 static void glfw_error_callback(int error, const char *description) {
   fprintf(stderr, "GLFW Error %d: %s\n", error, description);
 }
@@ -68,40 +70,69 @@ int main(void) {
 
   // cutom Setup
   GLuint vaID;
-  glCreateVertexArrays(1, &vaID);
-  glBindVertexArray(vaID);
+  GLCALL(glCreateVertexArrays(1, &vaID));
+  GLCALL(glBindVertexArray(vaID));
 
   float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f,  -0.5f, 0.0f,
                       0.5f,  0.5f,  0.0f, -0.5f, 0.5f,  0.0f};
 
   GLuint vboid;
-  glCreateBuffers(1, &vboid);
-  glBindBuffer(GL_ARRAY_BUFFER, vboid);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+  GLCALL(glCreateBuffers(1, &vboid));
+  GLCALL(glBindBuffer(GL_ARRAY_BUFFER, vboid));
+  GLCALL(glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices,
+                      GL_STATIC_DRAW));
 
-  glEnableVertexAttribArray(0);
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+  GLCALL(glEnableVertexAttribArray(0));
+  GLCALL(glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0));
 
   GLuint indices[] = {0, 1, 2, 2, 3, 0};
   GLuint iboid;
-  glCreateBuffers(1, &iboid);
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iboid);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices,
-               GL_STATIC_DRAW);
+  GLCALL(glCreateBuffers(1, &iboid));
+  GLCALL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iboid));
+  GLCALL(glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices,
+                      GL_STATIC_DRAW));
 
   Shader shader =
       Shader("/home/jano/dev/nvim/GameOfLifeCPP/assets/basic.shader");
   shader.Bind();
 
+  Universe universe = Universe(8, 8);
+  for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
+      universe.setAlive(i, j);
+    }
+  }
+
+  GLuint textureID;
+  GLCALL(glGenTextures(1, &textureID));
+  GLCALL(glBindTexture(GL_TEXTURE_2D, textureID));
+  GLCALL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST));
+  GLCALL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST));
+
+  GLCALL(glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, 8, 8, 0, GL_RED,
+                      GL_UNSIGNED_BYTE, universe.getGameGridData().data()));
+
+  GLCALL(glBindTexture(GL_TEXTURE_2D, 0));
+  shader.SetUniform1i("u_Texture", 0);
   /* Loop until the user closes the window */
   while (!glfwWindowShouldClose(window)) {
     glfwPollEvents();
 
-    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    universe.update();
+    universe.printGrid();
 
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+    // Start the Dear ImGui frame
+    GLCALL(glClearColor(1.0f, 0.0f, 1.0f, 1.0f));
+    GLCALL(glClear(GL_COLOR_BUFFER_BIT));
 
+    GLCALL(glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, 8, 8, 0, GL_RED,
+                        GL_UNSIGNED_BYTE, universe.getGameGridData().data()));
+
+    GLCALL(glActiveTexture(GL_TEXTURE0));
+    GLCALL(glBindTexture(GL_TEXTURE_2D, textureID));
+    shader.Bind();
+
+    GLCALL(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
     glfwSwapBuffers(window);
   }
   // Cleanup
