@@ -1,8 +1,16 @@
 #pragma once
 
+#include "fwd.hpp"
+#include <glm.hpp>
 #include <vector>
+
 class Universe {
 public:
+  struct CellInstance {
+    glm::vec3 position;
+    glm::vec3 color;
+  };
+
   Universe(int, int);
   Universe(Universe &&) = default;
   Universe(const Universe &) = default;
@@ -23,6 +31,9 @@ public:
   inline std::vector<unsigned char> getGameGridData() const {
     return m_GameGridData;
   }
+  inline std::vector<CellInstance> getCellInstance() const {
+    return m_InstanceData;
+  }
 
 private:
   int m_Width;
@@ -32,6 +43,7 @@ private:
   int m_Size;
   int *m_GameGrid;
   std::vector<unsigned char> m_GameGridData;
+  std::vector<CellInstance> m_InstanceData;
   int CalculatePower(int);
   bool GetBitValue(int &index, int &intIndex, int &bitIndex);
   bool GetBit(int);

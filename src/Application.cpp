@@ -1,5 +1,8 @@
 #include "Shader.h"
 #include "Universe.h"
+#include "ext/matrix_transform.hpp"
+#include "glm.hpp"
+#include "gtc/matrix_transform.hpp"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
@@ -8,6 +11,7 @@
 #include <glad/glad.h>
 #include <iostream>
 #include <stdio.h>
+#include <vector>
 
 // test
 static void glfw_error_callback(int error, const char *description) {
@@ -69,12 +73,19 @@ int main(void) {
   ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
   // cutom Setup
+
+  glm::mat4 projectionMatrix = glm::ortho(0.0, 1024.0, 0.0, 768.0, -1.0, 1.0);
+  glm::mat4 viewMatrix =
+      glm::translate(glm::mat4(1.0f), glm::vec3(100, 100, 0));
+  glm::mat4 modelMatrix = glm::mat4(1.0f);
+  glm::mat4 mvp = projectionMatrix * viewMatrix * modelMatrix;
+
   GLuint vaID;
   GLCALL(glCreateVertexArrays(1, &vaID));
   GLCALL(glBindVertexArray(vaID));
 
-  float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f,  -0.5f, 0.0f,
-                      0.5f,  0.5f,  0.0f, -0.5f, 0.5f,  0.0f};
+  float vertices[] = {0.0f,  0.0f,  0.0f, 0.f,   50.0f, 0.0f,
+                      50.0f, 50.0f, 0.0f, 50.0f, 0.0f,  0.0f};
 
   GLuint vboid;
   GLCALL(glCreateBuffers(1, &vboid));
@@ -92,48 +103,66 @@ int main(void) {
   GLCALL(glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices,
                       GL_STATIC_DRAW));
 
-  Shader shader =
-      Shader("/home/jano/dev/nvim/GameOfLifeCPP/assets/basic.shader");
+  Shader shader = Shader("/home/jano/dev/nvim/GameOfLifeCPP/assets/gol.shader");
   shader.Bind();
+  std::vector<glm::vec2> offsets = std::vector<glm::vec2>(64);
 
   Universe universe = Universe(8, 8);
   for (int i = 0; i < 8; i++) {
     for (int j = 0; j < 8; j++) {
       universe.setAlive(i, j);
+      universe.getCellInstance()[i * j + j].position =
+          glm::vec3(50, (7 - j) * 50, 0.0f);
+      offsets[i * 8 + j] = glm::vec2(100 * i, (7 - j) * 100);
     }
   }
 
-  GLuint textureID;
-  GLCALL(glGenTextures(1, &textureID));
-  GLCALL(glBindTexture(GL_TEXTURE_2D, textureID));
-  GLCALL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST));
-  GLCALL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST));
+  GLuint instanceBuffer;
+  GLCALL(glGenBuffers(1, &instanceBuffer));
+  GLCALL(glBindBuffer(GL_ARRAY_BUFFER, instanceBuffer));
 
-  GLCALL(glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, 8, 8, 0, GL_RED,
-                      GL_UNSIGNED_BYTE, universe.getGameGridData().data()));
+  GLCALL(glBufferData(GL_ARRAY_BUFFER,
+                      sizeof(Universe::CellInstance) *
+                          universe.getCellInstance().size(),
+                      universe.getCellInstance().data(), GL_STATIC_DRAW));
+  // Set attribute pointers for instance data
+  glEnableVertexAttribArray(1);
+  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 2 * sizeof(glm::vec3),
+                        (void *)0);
+  glVertexAttribDivisor(
+      1, 1); // This tells OpenGL to update this attribute for each instance
 
-  GLCALL(glBindTexture(GL_TEXTURE_2D, 0));
-  shader.SetUniform1i("u_Texture", 0);
+  shader.SetUniformMat4f("u_MVP", mvp);
+  for (unsigned int i = 0; i < 64; i++) {
+    shader.SetUniform2f("u_Offsets[" + std::to_string(i) + "]", offsets[i].x,
+                        offsets[i].y);
+  }
+  GLCALL(glEnable(GL_BLEND));
+  GLCALL(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
+
+  double lastTime = glfwGetTime();
+  double frameTime = 1.0;
+
   /* Loop until the user closes the window */
   while (!glfwWindowShouldClose(window)) {
-    glfwPollEvents();
 
-    universe.update();
-    universe.printGrid();
+    double currentTime = glfwGetTime();
+    double deltaTime = currentTime - lastTime;
 
-    // Start the Dear ImGui frame
-    GLCALL(glClearColor(1.0f, 0.0f, 1.0f, 1.0f));
-    GLCALL(glClear(GL_COLOR_BUFFER_BIT));
+    if (deltaTime >= frameTime) {
+      universe.update();
+      universe.printGrid();
+      // Start the Dear ImGui frame
+      GLCALL(glClearColor(1.0f, 1.0f, 1.0f, 1.0f));
+      GLCALL(glClear(GL_COLOR_BUFFER_BIT));
 
-    GLCALL(glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, 8, 8, 0, GL_RED,
-                        GL_UNSIGNED_BYTE, universe.getGameGridData().data()));
+      shader.Bind();
 
-    GLCALL(glActiveTexture(GL_TEXTURE0));
-    GLCALL(glBindTexture(GL_TEXTURE_2D, textureID));
-    shader.Bind();
-
-    GLCALL(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
-    glfwSwapBuffers(window);
+      GLCALL(glDrawElementsInstanced(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0, 64));
+      glfwPollEvents();
+      glfwSwapBuffers(window);
+      lastTime = currentTime;
+    }
   }
   // Cleanup
   ImGui_ImplOpenGL3_Shutdown();

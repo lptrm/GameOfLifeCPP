@@ -1,4 +1,5 @@
 #include "Shader.h"
+#include "fwd.hpp"
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -49,6 +50,7 @@ void Shader::SetUniform2f(const std::string &name, float v0, float v1) {
 void Shader::SetUniform1f(const std::string &name, float value) {
   glUniform1f(GetUniformLocation(name), value);
 }
+
 void Shader::SetUniformMat3f(const std::string &name, const glm::mat3 &matrix) {
   glUniformMatrix3fv(GetUniformLocation(name), 1, GL_FALSE, &matrix[0][0]);
 }

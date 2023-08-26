@@ -11,6 +11,10 @@ Universe::Universe(int width, int height) : m_Width(width), m_Height(height) {
   m_GameGrid = new int[size]();
 
   m_GameGridData = std::vector<unsigned char>(m_Size);
+  m_InstanceData = std::vector<CellInstance>(m_Size);
+  for (int i = 0; i < m_Size; i++) {
+    m_InstanceData[i].color = glm::vec3(1.0f, 0.0f, 0.0f);
+  }
 }
 Universe::~Universe() { delete[] m_GameGrid; }
 void Universe::update() {
@@ -25,8 +29,10 @@ void Universe::update() {
       newGameGrid[intIndex] |=
           (1 << bitOffset); // Set the corresponding bit to 1
       m_GameGridData[i] = 255;
+      m_InstanceData[i].color = glm::vec3(1.0f, 0.0f, 1.0f);
     } else {
       m_GameGridData[i] = 0;
+      m_InstanceData[i].color = glm::vec3(0.0f, 1.0f, 1.0f);
     }
   }
 
