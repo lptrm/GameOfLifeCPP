@@ -110,10 +110,11 @@ int main(void) {
   Universe universe = Universe(8, 8);
   for (int i = 0; i < 8; i++) {
     for (int j = 0; j < 8; j++) {
-      universe.setAlive(i, j);
+      universe.setAlive(j, i);
       universe.getCellInstance()[i * j + j].position =
           glm::vec3(50, (7 - j) * 50, 0.0f);
-      offsets[i * 8 + j] = glm::vec2(100 * i, (7 - j) * 100);
+      offsets[i * 8 + j] =
+          glm::vec2(j * 100, 768 - (i * 100)); // Adjusted offsets
     }
   }
 
@@ -124,13 +125,15 @@ int main(void) {
   GLCALL(glBufferData(GL_ARRAY_BUFFER,
                       sizeof(Universe::CellInstance) *
                           universe.getCellInstance().size(),
-                      universe.getCellInstance().data(), GL_STATIC_DRAW));
+                      universe.getCellInstance().data(), GL_DYNAMIC_DRAW));
   // Set attribute pointers for instance data
-  glEnableVertexAttribArray(1);
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 2 * sizeof(glm::vec3),
-                        (void *)0);
-  glVertexAttribDivisor(
-      1, 1); // This tells OpenGL to update this attribute for each instance
+  GLCALL(glEnableVertexAttribArray(1));
+  GLsizei stride = sizeof(glm::vec3) * 2;
+
+  GLCALL(glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride, (void *)0));
+
+  GLCALL(glVertexAttribDivisor(
+      1, 1)); // This tells OpenGL to update this attribute for each instance
 
   shader.SetUniformMat4f("u_MVP", mvp);
   for (unsigned int i = 0; i < 64; i++) {
@@ -141,7 +144,7 @@ int main(void) {
   GLCALL(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 
   double lastTime = glfwGetTime();
-  double frameTime = 1.0;
+  double frameTime = 10.0;
 
   /* Loop until the user closes the window */
   while (!glfwWindowShouldClose(window)) {
@@ -152,6 +155,13 @@ int main(void) {
     if (deltaTime >= frameTime) {
       universe.update();
       universe.printGrid();
+      GLCALL(glBindBuffer(GL_ARRAY_BUFFER, instanceBuffer));
+
+      GLCALL(glBufferData(GL_ARRAY_BUFFER,
+                          sizeof(Universe::CellInstance) *
+                              universe.getCellInstance().size(),
+                          universe.getCellInstance().data(), GL_DYNAMIC_DRAW));
+
       // Start the Dear ImGui frame
       GLCALL(glClearColor(1.0f, 1.0f, 1.0f, 1.0f));
       GLCALL(glClear(GL_COLOR_BUFFER_BIT));
