@@ -40,6 +40,16 @@ void Universe::update() {
   delete[] m_GameGrid; // Free the memory of the old grid
   m_GameGrid = newGameGrid;
 }
+// Function to print the position data of CellInstance objects
+void Universe::printPositionData() const {
+  std::cout << "Position Data of the Universe:" << std::endl;
+
+  for (const Universe::CellInstance &instance : m_InstanceData) {
+    std::cout << "Position=(" << instance.position.x << ", "
+              << instance.position.y << ", " << instance.position.z << ")"
+              << std::endl;
+  }
+}
 void Universe::setAlive(int column, int row) {
   int index = row * column + column;
   int intIndex = index >> 5;

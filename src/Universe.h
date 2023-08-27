@@ -21,6 +21,7 @@ public:
   void setAlive(int, int);
   void setDead(int, int);
   void printGrid();
+  void printPositionData() const;
   inline int getWidth() const { return m_Width; }
   inline int getHeight() const { return m_Height; }
   inline int getSize() const { return m_Size; }
@@ -31,9 +32,8 @@ public:
   inline std::vector<unsigned char> getGameGridData() const {
     return m_GameGridData;
   }
-  inline std::vector<CellInstance> getCellInstance() const {
-    return m_InstanceData;
-  }
+  // now passing by reference to update the positions from tha app
+  inline std::vector<CellInstance> &getCellInstance() { return m_InstanceData; }
 
 private:
   int m_Width;

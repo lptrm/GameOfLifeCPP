@@ -111,10 +111,8 @@ int main(void) {
   for (int i = 0; i < 8; i++) {
     for (int j = 0; j < 8; j++) {
       universe.setAlive(j, i);
-      universe.getCellInstance()[i * j + j].position =
-          glm::vec3(50, (7 - j) * 50, 0.0f);
-      offsets[i * 8 + j] =
-          glm::vec2(j * 100, 768 - (i * 100)); // Adjusted offsets
+      universe.getCellInstance()[i * 8 + j].position =
+          glm::vec3(j * 100, 768 - (i * 100), 0.0f);
     }
   }
 
@@ -135,17 +133,17 @@ int main(void) {
   GLCALL(glVertexAttribDivisor(
       1, 1)); // This tells OpenGL to update this attribute for each instance
 
+  GLCALL(glEnableVertexAttribArray(2));
+  GLCALL(glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, stride,
+                               (void *)sizeof(glm::vec3)));
+  GLCALL(glVertexAttribDivisor(2, 1));
   shader.SetUniformMat4f("u_MVP", mvp);
-  for (unsigned int i = 0; i < 64; i++) {
-    shader.SetUniform2f("u_Offsets[" + std::to_string(i) + "]", offsets[i].x,
-                        offsets[i].y);
-  }
   GLCALL(glEnable(GL_BLEND));
   GLCALL(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 
   double lastTime = glfwGetTime();
-  double frameTime = 10.0;
-
+  double frameTime = 1.5;
+  universe.printPositionData();
   /* Loop until the user closes the window */
   while (!glfwWindowShouldClose(window)) {
 
@@ -154,13 +152,12 @@ int main(void) {
 
     if (deltaTime >= frameTime) {
       universe.update();
-      universe.printGrid();
       GLCALL(glBindBuffer(GL_ARRAY_BUFFER, instanceBuffer));
 
-      GLCALL(glBufferData(GL_ARRAY_BUFFER,
-                          sizeof(Universe::CellInstance) *
-                              universe.getCellInstance().size(),
-                          universe.getCellInstance().data(), GL_DYNAMIC_DRAW));
+      GLCALL(glBufferSubData(GL_ARRAY_BUFFER, 0,
+                             sizeof(Universe::CellInstance) *
+                                 universe.getCellInstance().size(),
+                             universe.getCellInstance().data()));
 
       // Start the Dear ImGui frame
       GLCALL(glClearColor(1.0f, 1.0f, 1.0f, 1.0f));
