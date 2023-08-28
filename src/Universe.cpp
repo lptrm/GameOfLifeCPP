@@ -8,37 +8,34 @@ Universe::Universe(int width, int height) : m_Width(width), m_Height(height) {
   m_PowY = CalculatePower(m_Height);
   int size = 1 << (m_PowX + m_PowY - 5);
   m_Size = width << m_PowY;
-  m_GameGrid = new int[size]();
-
-  m_GameGridData = std::vector<unsigned char>(m_Size);
+  m_CurrentState = new int[size]();
+  m_OldState = new int[size]();
   m_InstanceData = std::vector<CellInstance>(m_Size);
   for (int i = 0; i < m_Size; i++) {
-    m_InstanceData[i].color = glm::vec3(1.0f, 0.0f, 0.0f);
+    m_InstanceData[i].color =
+        i % 2 == 0 ? glm::vec3(1.0f, 0.0f, 0.0f) : glm::vec3(0.0f, 0.0f, 1.0f);
   }
 }
-Universe::~Universe() { delete[] m_GameGrid; }
+Universe::~Universe() {
+  delete[] m_CurrentState;
+  delete[] m_OldState;
+}
 void Universe::update() {
-  int *newGameGrid = new int[m_Size](); // Create a new array for updated state
-
+  std::swap(m_CurrentState, m_OldState); // Swap the current and old state
+  m_CurrentState = new int[m_Size]();
   for (int i = 0; i < m_Size; i++) {
     int intIndex, bitOffset;
-    bool oldState = GetBitValue(i, intIndex, bitOffset);
+    bool oldState = getOldBitValue(i, intIndex, bitOffset);
     bool newState =
         IterateThroughNeighbors(i, intIndex, oldState); // Determine new state
     if (newState) {
-      newGameGrid[intIndex] |=
+      m_CurrentState[intIndex] |=
           (1 << bitOffset); // Set the corresponding bit to 1
-      m_GameGridData[i] = 255;
       m_InstanceData[i].color = glm::vec3(1.0f, 0.0f, 1.0f);
     } else {
-      m_GameGridData[i] = 0;
       m_InstanceData[i].color = glm::vec3(0.0f, 1.0f, 1.0f);
     }
   }
-
-  // Copy the new array back to the original grid
-  delete[] m_GameGrid; // Free the memory of the old grid
-  m_GameGrid = newGameGrid;
 }
 // Function to print the position data of CellInstance objects
 void Universe::printPositionData() const {
@@ -54,13 +51,17 @@ void Universe::setAlive(int column, int row) {
   int index = row * column + column;
   int intIndex = index >> 5;
   int bitOffset = index & 31;
-  m_GameGrid[intIndex] |= (1 << bitOffset);
-  m_GameGridData[index] = 255;
+  m_CurrentState[intIndex] |= (1 << bitOffset);
 }
-bool Universe::GetBitValue(int &index, int &intIndex, int &bitOffset) {
+bool Universe::getOldBitValue(int &index, int &intIndex, int &bitOffset) {
   intIndex = index >> 5;
   bitOffset = index & 31;
-  return (m_GameGrid[intIndex] >> bitOffset) & 1;
+  return (m_OldState[intIndex] >> bitOffset) & 1;
+}
+bool Universe::getNewBitValue(int &index, int &intIndex, int &bitOffset) {
+  intIndex = index >> 5;
+  bitOffset = index & 31;
+  return (m_CurrentState[intIndex] >> bitOffset) & 1;
 }
 bool Universe::IterateThroughNeighbors(int &index, int &intIndex,
                                        bool &oldState) {
@@ -75,7 +76,7 @@ bool Universe::IterateThroughNeighbors(int &index, int &intIndex,
       int neighborIntIndex = neighborIndex >> 5;
       int neighborBitOffset = neighborIndex & 31;
 
-      int neighborBit = (m_GameGrid[neighborIntIndex] >> neighborBitOffset) & 1;
+      int neighborBit = (m_OldState[neighborIntIndex] >> neighborBitOffset) & 1;
       if (neighborBit != 0) {
         neighborCount++;
       }
@@ -97,10 +98,11 @@ void Universe::printGrid() {
   for (int i = 0; i < this->m_Size; i++) {
     int intIndex = i >> 5;
     int bitIndex = i & 31;
-    int bitValue = (this->m_GameGrid[intIndex] >> bitIndex) & 1;
+    int bitValue = (this->m_CurrentState[intIndex] >> bitIndex) & 1;
     std::cout << bitValue << "";
     if ((i + 1) % this->m_Width == 0) {
       std::cout << std::endl;
     }
   }
+  std::cout << std::endl;
 }

@@ -1,5 +1,4 @@
 #pragma once
-#include <glad/glad.h>
 #include <glm.hpp>
 #include <string>
 #include <unordered_map>
@@ -12,7 +11,7 @@ class Shader {
 private:
   unsigned int m_RendererID;
   std::string m_FilePath;
-  mutable std::unordered_map<std::string, GLint> m_UniformLocationCache;
+  mutable std::unordered_map<std::string, int> m_UniformLocationCache;
 
 public:
   Shader(const std::string &filepath);
@@ -34,5 +33,5 @@ private:
   unsigned int CompileShader(unsigned int type, const std::string &source);
   unsigned int CreateShader(const std::string &vertexShader,
                             const std::string &fragmentShader);
-  GLint GetUniformLocation(const std::string &name) const;
+  int GetUniformLocation(const std::string &name) const;
 };

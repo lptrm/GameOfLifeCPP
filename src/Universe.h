@@ -27,11 +27,8 @@ public:
   inline int getSize() const { return m_Size; }
   inline int getPowerX() const { return m_PowX; }
   inline int getPowerY() const { return m_PowY; }
-  inline int *getGameGrid() const { return m_GameGrid; }
-  inline int getGameGrid(int index) const { return m_GameGrid[index]; }
-  inline std::vector<unsigned char> getGameGridData() const {
-    return m_GameGridData;
-  }
+  inline int *getGameGrid() const { return m_CurrentState; }
+  inline int getGameGrid(int index) const { return m_CurrentState[index]; }
   // now passing by reference to update the positions from tha app
   inline std::vector<CellInstance> &getCellInstance() { return m_InstanceData; }
 
@@ -41,11 +38,12 @@ private:
   int m_PowX;
   int m_PowY;
   int m_Size;
-  int *m_GameGrid;
-  std::vector<unsigned char> m_GameGridData;
+  int *m_CurrentState;
+  int *m_OldState;
   std::vector<CellInstance> m_InstanceData;
   int CalculatePower(int);
-  bool GetBitValue(int &index, int &intIndex, int &bitIndex);
+  bool getOldBitValue(int &index, int &intIndex, int &bitIndex);
+  bool getNewBitValue(int &index, int &intIndex, int &bitIndex);
   bool GetBit(int);
   int GetCircularRow(int, int);
   int GetCircularColumn(int, int);

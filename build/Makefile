@@ -153,30 +153,6 @@ src/Application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Application.cpp.s
 .PHONY : src/Application.cpp.s
 
-src/Shader.o: src/Shader.cpp.o
-.PHONY : src/Shader.o
-
-# target to build an object file
-src/Shader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Shader.cpp.o
-.PHONY : src/Shader.cpp.o
-
-src/Shader.i: src/Shader.cpp.i
-.PHONY : src/Shader.i
-
-# target to preprocess a source file
-src/Shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Shader.cpp.i
-.PHONY : src/Shader.cpp.i
-
-src/Shader.s: src/Shader.cpp.s
-.PHONY : src/Shader.s
-
-# target to generate assembly for a file
-src/Shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Shader.cpp.s
-.PHONY : src/Shader.cpp.s
-
 src/Universe.o: src/Universe.cpp.o
 .PHONY : src/Universe.o
 
@@ -200,6 +176,174 @@ src/Universe.s: src/Universe.cpp.s
 src/Universe.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Universe.cpp.s
 .PHONY : src/Universe.cpp.s
+
+src/utils/IndexBuffer.o: src/utils/IndexBuffer.cpp.o
+.PHONY : src/utils/IndexBuffer.o
+
+# target to build an object file
+src/utils/IndexBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o
+.PHONY : src/utils/IndexBuffer.cpp.o
+
+src/utils/IndexBuffer.i: src/utils/IndexBuffer.cpp.i
+.PHONY : src/utils/IndexBuffer.i
+
+# target to preprocess a source file
+src/utils/IndexBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.i
+.PHONY : src/utils/IndexBuffer.cpp.i
+
+src/utils/IndexBuffer.s: src/utils/IndexBuffer.cpp.s
+.PHONY : src/utils/IndexBuffer.s
+
+# target to generate assembly for a file
+src/utils/IndexBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.s
+.PHONY : src/utils/IndexBuffer.cpp.s
+
+src/utils/InstanceBuffer.o: src/utils/InstanceBuffer.cpp.o
+.PHONY : src/utils/InstanceBuffer.o
+
+# target to build an object file
+src/utils/InstanceBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o
+.PHONY : src/utils/InstanceBuffer.cpp.o
+
+src/utils/InstanceBuffer.i: src/utils/InstanceBuffer.cpp.i
+.PHONY : src/utils/InstanceBuffer.i
+
+# target to preprocess a source file
+src/utils/InstanceBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.i
+.PHONY : src/utils/InstanceBuffer.cpp.i
+
+src/utils/InstanceBuffer.s: src/utils/InstanceBuffer.cpp.s
+.PHONY : src/utils/InstanceBuffer.s
+
+# target to generate assembly for a file
+src/utils/InstanceBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.s
+.PHONY : src/utils/InstanceBuffer.cpp.s
+
+src/utils/Renderer.o: src/utils/Renderer.cpp.o
+.PHONY : src/utils/Renderer.o
+
+# target to build an object file
+src/utils/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer.cpp.o
+.PHONY : src/utils/Renderer.cpp.o
+
+src/utils/Renderer.i: src/utils/Renderer.cpp.i
+.PHONY : src/utils/Renderer.i
+
+# target to preprocess a source file
+src/utils/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer.cpp.i
+.PHONY : src/utils/Renderer.cpp.i
+
+src/utils/Renderer.s: src/utils/Renderer.cpp.s
+.PHONY : src/utils/Renderer.s
+
+# target to generate assembly for a file
+src/utils/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer.cpp.s
+.PHONY : src/utils/Renderer.cpp.s
+
+src/utils/Shader.o: src/utils/Shader.cpp.o
+.PHONY : src/utils/Shader.o
+
+# target to build an object file
+src/utils/Shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Shader.cpp.o
+.PHONY : src/utils/Shader.cpp.o
+
+src/utils/Shader.i: src/utils/Shader.cpp.i
+.PHONY : src/utils/Shader.i
+
+# target to preprocess a source file
+src/utils/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Shader.cpp.i
+.PHONY : src/utils/Shader.cpp.i
+
+src/utils/Shader.s: src/utils/Shader.cpp.s
+.PHONY : src/utils/Shader.s
+
+# target to generate assembly for a file
+src/utils/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Shader.cpp.s
+.PHONY : src/utils/Shader.cpp.s
+
+src/utils/Texture.o: src/utils/Texture.cpp.o
+.PHONY : src/utils/Texture.o
+
+# target to build an object file
+src/utils/Texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Texture.cpp.o
+.PHONY : src/utils/Texture.cpp.o
+
+src/utils/Texture.i: src/utils/Texture.cpp.i
+.PHONY : src/utils/Texture.i
+
+# target to preprocess a source file
+src/utils/Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Texture.cpp.i
+.PHONY : src/utils/Texture.cpp.i
+
+src/utils/Texture.s: src/utils/Texture.cpp.s
+.PHONY : src/utils/Texture.s
+
+# target to generate assembly for a file
+src/utils/Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Texture.cpp.s
+.PHONY : src/utils/Texture.cpp.s
+
+src/utils/VertexArray.o: src/utils/VertexArray.cpp.o
+.PHONY : src/utils/VertexArray.o
+
+# target to build an object file
+src/utils/VertexArray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o
+.PHONY : src/utils/VertexArray.cpp.o
+
+src/utils/VertexArray.i: src/utils/VertexArray.cpp.i
+.PHONY : src/utils/VertexArray.i
+
+# target to preprocess a source file
+src/utils/VertexArray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/VertexArray.cpp.i
+.PHONY : src/utils/VertexArray.cpp.i
+
+src/utils/VertexArray.s: src/utils/VertexArray.cpp.s
+.PHONY : src/utils/VertexArray.s
+
+# target to generate assembly for a file
+src/utils/VertexArray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/VertexArray.cpp.s
+.PHONY : src/utils/VertexArray.cpp.s
+
+src/utils/VertexBuffer.o: src/utils/VertexBuffer.cpp.o
+.PHONY : src/utils/VertexBuffer.o
+
+# target to build an object file
+src/utils/VertexBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o
+.PHONY : src/utils/VertexBuffer.cpp.o
+
+src/utils/VertexBuffer.i: src/utils/VertexBuffer.cpp.i
+.PHONY : src/utils/VertexBuffer.i
+
+# target to preprocess a source file
+src/utils/VertexBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.i
+.PHONY : src/utils/VertexBuffer.cpp.i
+
+src/utils/VertexBuffer.s: src/utils/VertexBuffer.cpp.s
+.PHONY : src/utils/VertexBuffer.s
+
+# target to generate assembly for a file
+src/utils/VertexBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.s
+.PHONY : src/utils/VertexBuffer.cpp.s
 
 vendor/imgui/backends/imgui_impl_glfw.o: vendor/imgui/backends/imgui_impl_glfw.cpp.o
 .PHONY : vendor/imgui/backends/imgui_impl_glfw.o
@@ -369,6 +513,30 @@ vendor/imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.s
 .PHONY : vendor/imgui/imgui_widgets.cpp.s
 
+vendor/stb_image/stb_image.o: vendor/stb_image/stb_image.cpp.o
+.PHONY : vendor/stb_image/stb_image.o
+
+# target to build an object file
+vendor/stb_image/stb_image.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o
+.PHONY : vendor/stb_image/stb_image.cpp.o
+
+vendor/stb_image/stb_image.i: vendor/stb_image/stb_image.cpp.i
+.PHONY : vendor/stb_image/stb_image.i
+
+# target to preprocess a source file
+vendor/stb_image/stb_image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.i
+.PHONY : vendor/stb_image/stb_image.cpp.i
+
+vendor/stb_image/stb_image.s: vendor/stb_image/stb_image.cpp.s
+.PHONY : vendor/stb_image/stb_image.s
+
+# target to generate assembly for a file
+vendor/stb_image/stb_image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.s
+.PHONY : vendor/stb_image/stb_image.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -381,12 +549,30 @@ help:
 	@echo "... src/Application.o"
 	@echo "... src/Application.i"
 	@echo "... src/Application.s"
-	@echo "... src/Shader.o"
-	@echo "... src/Shader.i"
-	@echo "... src/Shader.s"
 	@echo "... src/Universe.o"
 	@echo "... src/Universe.i"
 	@echo "... src/Universe.s"
+	@echo "... src/utils/IndexBuffer.o"
+	@echo "... src/utils/IndexBuffer.i"
+	@echo "... src/utils/IndexBuffer.s"
+	@echo "... src/utils/InstanceBuffer.o"
+	@echo "... src/utils/InstanceBuffer.i"
+	@echo "... src/utils/InstanceBuffer.s"
+	@echo "... src/utils/Renderer.o"
+	@echo "... src/utils/Renderer.i"
+	@echo "... src/utils/Renderer.s"
+	@echo "... src/utils/Shader.o"
+	@echo "... src/utils/Shader.i"
+	@echo "... src/utils/Shader.s"
+	@echo "... src/utils/Texture.o"
+	@echo "... src/utils/Texture.i"
+	@echo "... src/utils/Texture.s"
+	@echo "... src/utils/VertexArray.o"
+	@echo "... src/utils/VertexArray.i"
+	@echo "... src/utils/VertexArray.s"
+	@echo "... src/utils/VertexBuffer.o"
+	@echo "... src/utils/VertexBuffer.i"
+	@echo "... src/utils/VertexBuffer.s"
 	@echo "... vendor/imgui/backends/imgui_impl_glfw.o"
 	@echo "... vendor/imgui/backends/imgui_impl_glfw.i"
 	@echo "... vendor/imgui/backends/imgui_impl_glfw.s"
@@ -408,6 +594,9 @@ help:
 	@echo "... vendor/imgui/imgui_widgets.o"
 	@echo "... vendor/imgui/imgui_widgets.i"
 	@echo "... vendor/imgui/imgui_widgets.s"
+	@echo "... vendor/stb_image/stb_image.o"
+	@echo "... vendor/stb_image/stb_image.i"
+	@echo "... vendor/stb_image/stb_image.s"
 .PHONY : help
 
 
