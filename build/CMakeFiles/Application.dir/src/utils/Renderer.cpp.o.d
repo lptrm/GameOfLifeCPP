@@ -14,6 +14,7 @@ CMakeFiles/Application.dir/src/utils/Renderer.cpp.o: \
  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
  /usr/include/bits/time64.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/InstanceBuffer.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/glm.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/_fixes.hpp \

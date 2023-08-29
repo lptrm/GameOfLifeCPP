@@ -1,4 +1,5 @@
 #include "Renderer.h"
+#include "InstanceBuffer.h"
 #include "Shader.h"
 #include "VertexArray.h"
 #include <iostream>
@@ -18,7 +19,7 @@ bool GLLogCall(const char *function, const char *file, int line) {
 }
 void Renderer::Clear() const { glClear(GL_COLOR_BUFFER_BIT); }
 void Renderer::Draw(const VertexArray &va, const IndexBuffer &ib,
-                    const Shader &shader) const {
+                    const InstanceBuffer &instncb, const Shader &shader) const {
   shader.Bind();
   va.Bind();
   ib.Bind();

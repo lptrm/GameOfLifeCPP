@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Application.dir/src/Application.cpp.o.d"
   "CMakeFiles/Application.dir/src/Universe.cpp.o"
   "CMakeFiles/Application.dir/src/Universe.cpp.o.d"
+  "CMakeFiles/Application.dir/src/Window.cpp.o"
+  "CMakeFiles/Application.dir/src/Window.cpp.o.d"
   "CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o"
   "CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o.d"
   "CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o"

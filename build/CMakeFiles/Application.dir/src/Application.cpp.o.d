@@ -296,6 +296,8 @@ CMakeFiles/Application.dir/src/Application.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexArray.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexBuffer.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexBufferLayout.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/Window.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include/GLFW/glfw3.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_transform.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/../gtc/constants.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/../gtc/../ext/scalar_constants.hpp \
@@ -314,7 +316,6 @@ CMakeFiles/Application.dir/src/Application.cpp.o: \
  /usr/include/string.h /usr/include/strings.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h \
- /home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include/GLFW/glfw3.h \
  /usr/include/c++/13.2.1/iostream /usr/include/c++/13.2.1/ostream \
  /usr/include/c++/13.2.1/ios /usr/include/c++/13.2.1/exception \
  /usr/include/c++/13.2.1/bits/exception_ptr.h \

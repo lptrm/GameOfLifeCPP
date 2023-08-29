@@ -23,6 +23,7 @@ set(VENDOR_LINKS vendor/glad/build/bin vendor/glfw/build/src
 set(SOURCES
     src/Application.cpp
     src/Universe.cpp
+    src/Window.cpp
     src/utils/Shader.cpp
     src/utils/Renderer.cpp
     src/utils/Texture.cpp

@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/jano/dev/nvim/GameOfLifeCPP/src/Application.cpp" "CMakeFiles/Application.dir/src/Application.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Application.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/Universe.cpp" "CMakeFiles/Application.dir/src/Universe.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Universe.cpp.o.d"
+  "/home/jano/dev/nvim/GameOfLifeCPP/src/Window.cpp" "CMakeFiles/Application.dir/src/Window.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Window.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.cpp" "CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o" "gcc" "CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/utils/InstanceBuffer.cpp" "CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o" "gcc" "CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.cpp" "CMakeFiles/Application.dir/src/utils/Renderer.cpp.o" "gcc" "CMakeFiles/Application.dir/src/utils/Renderer.cpp.o.d"

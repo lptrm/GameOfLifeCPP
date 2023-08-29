@@ -177,6 +177,30 @@ src/Universe.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Universe.cpp.s
 .PHONY : src/Universe.cpp.s
 
+src/Window.o: src/Window.cpp.o
+.PHONY : src/Window.o
+
+# target to build an object file
+src/Window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Window.cpp.o
+.PHONY : src/Window.cpp.o
+
+src/Window.i: src/Window.cpp.i
+.PHONY : src/Window.i
+
+# target to preprocess a source file
+src/Window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Window.cpp.i
+.PHONY : src/Window.cpp.i
+
+src/Window.s: src/Window.cpp.s
+.PHONY : src/Window.s
+
+# target to generate assembly for a file
+src/Window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Window.cpp.s
+.PHONY : src/Window.cpp.s
+
 src/utils/IndexBuffer.o: src/utils/IndexBuffer.cpp.o
 .PHONY : src/utils/IndexBuffer.o
 
@@ -552,6 +576,9 @@ help:
 	@echo "... src/Universe.o"
 	@echo "... src/Universe.i"
 	@echo "... src/Universe.s"
+	@echo "... src/Window.o"
+	@echo "... src/Window.i"
+	@echo "... src/Window.s"
 	@echo "... src/utils/IndexBuffer.o"
 	@echo "... src/utils/IndexBuffer.i"
 	@echo "... src/utils/IndexBuffer.s"

@@ -13,6 +13,12 @@
 },
 {
   "directory": "/home/jano/dev/nvim/GameOfLifeCPP/build",
+  "command": "/usr/bin/c++ -DGLFW_INCLUDE_NONE -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm -I/home/jano/dev/nvim/GameOfLifeCPP/vendor -I/home/jano/dev/nvim/GameOfLifeCPP/src -I/home/jano/dev/nvim/GameOfLifeCPP/src/utils -g -std=gnu++17 -o CMakeFiles/Application.dir/src/Window.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/Window.cpp",
+  "file": "/home/jano/dev/nvim/GameOfLifeCPP/src/Window.cpp",
+  "output": "CMakeFiles/Application.dir/src/Window.cpp.o"
+},
+{
+  "directory": "/home/jano/dev/nvim/GameOfLifeCPP/build",
   "command": "/usr/bin/c++ -DGLFW_INCLUDE_NONE -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm -I/home/jano/dev/nvim/GameOfLifeCPP/vendor -I/home/jano/dev/nvim/GameOfLifeCPP/src -I/home/jano/dev/nvim/GameOfLifeCPP/src/utils -g -std=gnu++17 -o CMakeFiles/Application.dir/src/utils/Shader.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.cpp",
   "file": "/home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.cpp",
   "output": "CMakeFiles/Application.dir/src/utils/Shader.cpp.o"

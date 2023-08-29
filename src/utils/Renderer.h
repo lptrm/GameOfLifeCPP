@@ -8,6 +8,7 @@
 
 class Shader;
 class VertexArray;
+class InstanceBuffer;
 
 // Function to clear OpenGL errors
 inline void GLClrearError() {
@@ -38,5 +39,5 @@ class Renderer {
 public:
   void Clear() const;
   void Draw(const VertexArray &va, const IndexBuffer &ib,
-            const Shader &shader) const;
+            const InstanceBuffer &instncb, const Shader &shader) const;
 };
