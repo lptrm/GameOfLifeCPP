@@ -3,6 +3,7 @@
 
 CMakeFiles/Application.dir/src/Application.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/Application.cpp \
   /home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.h \
+  /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.h \
   /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.h \
   /home/jano/dev/nvim/GameOfLifeCPP/src/Universe.h \
   /home/jano/dev/nvim/GameOfLifeCPP/src/Window.h \
@@ -170,8 +171,6 @@ CMakeFiles/Application.dir/src/Application.cpp.o: /home/jano/dev/nvim/GameOfLife
   /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/vec2.hpp \
   /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/vec3.hpp \
   /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/vec4.hpp \
-  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h \
-  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h \
   /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h \
   /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.h \
   /usr/include/alloca.h \
@@ -575,10 +574,21 @@ CMakeFiles/Application.dir/src/LayerStack.cpp.o: /home/jano/dev/nvim/GameOfLifeC
 CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.cpp \
   /home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.h \
   /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.h \
+  /home/jano/dev/nvim/GameOfLifeCPP/src/Window.h \
+  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.h \
+  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.h \
+  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/KHR/khrplatform.h \
+  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/glad/glad.h \
+  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include/GLFW/glfw3.h \
+  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h \
+  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h \
+  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h \
+  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm/errno.h \
+  /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/endian.h \
@@ -593,6 +603,7 @@ CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o: /home/jano/dev/nvim/GameOfLife
   /usr/include/bits/pthreadtypes.h \
   /usr/include/bits/select.h \
   /usr/include/bits/stdint-intn.h \
+  /usr/include/bits/stdint-uintn.h \
   /usr/include/bits/stdio_lim.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
@@ -710,14 +721,19 @@ CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o: /home/jano/dev/nvim/GameOfLife
   /usr/include/linux/errno.h \
   /usr/include/locale.h \
   /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/types.h \
   /usr/include/wchar.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h
+  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h
 
 CMakeFiles/Application.dir/src/Layer_Universe.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp \
   /home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.h \
@@ -4295,6 +4311,8 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/xsavesintrin.h:
 
+/usr/include/c++/13.2.1/bits/cxxabi_init_exception.h:
+
 /usr/include/c++/13.2.1/bits/charconv.h:
 
 /usr/include/c++/13.2.1/bits/basic_string.tcc:
@@ -4413,10 +4431,6 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_float3x2.hpp:
 
-/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h:
-
-/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/integer.hpp:
-
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/vec2.hpp:
 
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/mat2x2.hpp:
@@ -4424,6 +4438,10 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/type_mat4x4.hpp:
 
 /usr/include/c++/13.2.1/tr1/riemann_zeta.tcc:
+
+/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/integer.hpp:
+
+/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h:
 
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/gtc/matrix_transform.hpp:
 
@@ -4481,23 +4499,15 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 
 /usr/include/c++/13.2.1/fstream:
 
-/usr/include/bits/stdint-uintn.h:
+/usr/include/bits/types/struct_timespec.h:
 
-/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_widgets.cpp:
-
-/usr/include/asm/errno.h:
-
-/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_float4x2.hpp:
+/usr/include/c++/13.2.1/bits/algorithmfwd.h:
 
 /usr/include/c++/13.2.1/bits/char_traits.h:
 
 /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.h:
 
 /home/jano/dev/nvim/GameOfLifeCPP/src/Universe.h:
-
-/usr/include/bits/types/struct_timespec.h:
-
-/usr/include/c++/13.2.1/bits/algorithmfwd.h:
 
 /usr/include/bits/types/struct_sched_param.h:
 
@@ -4549,6 +4559,12 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_double2x4_precision.hpp:
 
+/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_widgets.cpp:
+
+/usr/include/asm/errno.h:
+
+/usr/include/bits/stdint-uintn.h:
+
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_float2x2_precision.hpp:
 
 /usr/include/c++/13.2.1/pstl/glue_algorithm_defs.h:
@@ -4566,12 +4582,6 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 /usr/include/bits/xopen_lim.h:
 
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_internal.h:
-
-/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_double4x3.hpp:
-
-/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/vector_float2.hpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h:
 
 /usr/include/c++/13.2.1/bits/hashtable.h:
 
@@ -4591,6 +4601,12 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 
 /home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.h:
 
+/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_double4x3.hpp:
+
+/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/vector_float2.hpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h:
+
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/gtc/constants.hpp:
 
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_double4x3_precision.hpp:
@@ -4604,6 +4620,8 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 /usr/include/bits/mathcalls-narrow.h:
 
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/setup.hpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tsxldtrkintrin.h:
 
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_double2x3_precision.hpp:
 
@@ -4698,6 +4716,8 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 /usr/include/c++/13.2.1/bits/stl_iterator_base_types.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/mwaitxintrin.h:
+
+/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_float4x2.hpp:
 
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_float4x3.hpp:
 
@@ -4868,8 +4888,6 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 /usr/include/bits/waitflags.h:
 
 /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp:
-
-/usr/include/c++/13.2.1/bits/cxxabi_init_exception.h:
 
 /usr/include/c++/13.2.1/bits/enable_special_members.h:
 
@@ -5199,6 +5217,10 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/limits.h:
 
+/home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vnniintrin.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/immintrin.h:
@@ -5220,12 +5242,6 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/func_geometric.inl:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512vlintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h:
-
-/home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/tsxldtrkintrin.h:
 
 /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.cpp:
 
@@ -5269,11 +5285,11 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx2intrin.h:
 
-/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h:
-
 /usr/include/bits/pthreadtypes-arch.h:
 
 /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/type_mat2x4.hpp:
+
+/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/avx512erintrin.h:
 

@@ -30,8 +30,8 @@ class UniverseLayer : public Layer {
   double m_GenerationTime;
 
 public:
-  UniverseLayer();
-  ~UniverseLayer();
+  UniverseLayer() : Layer("UniverseLayer"){};
+  ~UniverseLayer() = default;
   virtual void OnAttach() override;
   virtual void OnDetach() override;
   virtual void OnUpdate(const double timeStamp) override;

@@ -107,4 +107,18 @@ CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o: \
  /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
  /usr/include/c++/13.2.1/bits/stl_vector.h \
  /usr/include/c++/13.2.1/bits/stl_bvector.h \
- /usr/include/c++/13.2.1/bits/vector.tcc
+ /usr/include/c++/13.2.1/bits/vector.tcc \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h \
+ /usr/include/string.h /usr/include/strings.h /usr/include/assert.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/glad/glad.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/KHR/khrplatform.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/Window.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include/GLFW/glfw3.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h

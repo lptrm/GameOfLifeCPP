@@ -1,9 +1,8 @@
 #include "Layer_Universe.h"
 #include "GLFW/glfw3.h"
 
-UniverseLayer::UniverseLayer()
-    : Layer("Universe"), m_LastTime(0.0), m_GenerationTime(0.5) {
-  // Initialize objects using dynamic memory allocation
+void UniverseLayer::OnAttach() {
+  // // Initialize objects using dynamic memory allocation
   glm::mat4 projectionMatrix = glm::ortho(0.0, 1024.0, 0.0, 768.0, -1.0, 1.0);
   glm::mat4 viewMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
   glm::mat4 modelMatrix = glm::mat4(1.0f);
@@ -53,9 +52,11 @@ UniverseLayer::UniverseLayer()
   m_Shader->SetUniformMat4f("u_MVP", *m_Mvp);
   // Set initial timestamp
   m_LastTime = glfwGetTime();
+  m_GenerationTime = 0.5;
 }
 
-UniverseLayer::~UniverseLayer() {
+void UniverseLayer::OnDetach() {
+  // Cleanup that you may want to do when the layer is detached
   // Release allocated memory in the destructor
   delete m_Mvp;
   delete m_Shader;
@@ -66,14 +67,6 @@ UniverseLayer::~UniverseLayer() {
   delete m_InstanceBuffer;
   delete m_InstanceLayout;
   delete m_Universe;
-}
-
-void UniverseLayer::OnAttach() {
-  // Additional setup that you may want to do when the layer is attached
-}
-
-void UniverseLayer::OnDetach() {
-  // Cleanup that you may want to do when the layer is detached
 }
 
 void UniverseLayer::OnUpdate(const double timeStamp) {

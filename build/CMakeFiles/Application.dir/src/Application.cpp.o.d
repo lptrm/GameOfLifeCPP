@@ -107,6 +107,11 @@ CMakeFiles/Application.dir/src/Application.cpp.o: \
  /usr/include/c++/13.2.1/bits/stl_vector.h \
  /usr/include/c++/13.2.1/bits/stl_bvector.h \
  /usr/include/c++/13.2.1/bits/vector.tcc \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h \
+ /usr/include/string.h /usr/include/strings.h /usr/include/assert.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/InstanceBuffer.h \
@@ -139,7 +144,7 @@ CMakeFiles/Application.dir/src/Application.cpp.o: \
  /usr/include/c++/13.2.1/tr1/poly_laguerre.tcc \
  /usr/include/c++/13.2.1/tr1/riemann_zeta.tcc \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/setup.hpp \
- /usr/include/c++/13.2.1/cassert /usr/include/assert.h \
+ /usr/include/c++/13.2.1/cassert \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/../simd/platform.h \
  /usr/include/c++/13.2.1/cstdint /usr/include/c++/13.2.1/climits \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/limits.h \
@@ -149,7 +154,6 @@ CMakeFiles/Application.dir/src/Application.cpp.o: \
  /usr/include/bits/pthread_stack_min-dynamic.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /usr/include/bits/uio_lim.h /usr/include/c++/13.2.1/cfloat \
- /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/fwd.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/qualifier.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/setup.hpp \
@@ -314,11 +318,6 @@ CMakeFiles/Application.dir/src/Application.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/gtc/matrix_transform.inl \
  /home/jano/dev/nvim/GameOfLifeCPP/src/Window.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include/GLFW/glfw3.h \
- /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.h \
- /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h \
- /usr/include/string.h /usr/include/strings.h \
- /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h \
- /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h \
  /usr/include/c++/13.2.1/iostream /usr/include/c++/13.2.1/ostream \
  /usr/include/c++/13.2.1/ios /usr/include/c++/13.2.1/exception \
  /usr/include/c++/13.2.1/bits/exception_ptr.h \

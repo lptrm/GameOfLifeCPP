@@ -4,6 +4,7 @@
 CMakeFiles/Application.dir/src/Application.cpp.o
  /home/jano/dev/nvim/GameOfLifeCPP/src/Application.cpp
  /home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.h
+ /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.h
  /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.h
  /home/jano/dev/nvim/GameOfLifeCPP/src/Universe.h
  /home/jano/dev/nvim/GameOfLifeCPP/src/Window.h
@@ -171,8 +172,6 @@ CMakeFiles/Application.dir/src/Application.cpp.o
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/vec2.hpp
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/vec3.hpp
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/vec4.hpp
- /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h
- /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.h
  /usr/include/alloca.h
@@ -578,10 +577,21 @@ CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o
  /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.cpp
  /home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.h
  /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.h
+ /home/jano/dev/nvim/GameOfLifeCPP/src/Window.h
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.h
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.h
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/KHR/khrplatform.h
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/glad/glad.h
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include/GLFW/glfw3.h
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
  /usr/include/asm/errno.h
+ /usr/include/assert.h
  /usr/include/bits/atomic_wide_counter.h
  /usr/include/bits/byteswap.h
  /usr/include/bits/endian.h
@@ -596,6 +606,7 @@ CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o
  /usr/include/bits/pthreadtypes.h
  /usr/include/bits/select.h
  /usr/include/bits/stdint-intn.h
+ /usr/include/bits/stdint-uintn.h
  /usr/include/bits/stdio_lim.h
  /usr/include/bits/stdlib-float.h
  /usr/include/bits/struct_mutex.h
@@ -713,14 +724,19 @@ CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o
  /usr/include/linux/errno.h
  /usr/include/locale.h
  /usr/include/stdc-predef.h
+ /usr/include/stdint.h
  /usr/include/stdio.h
  /usr/include/stdlib.h
+ /usr/include/string.h
+ /usr/include/strings.h
  /usr/include/sys/cdefs.h
  /usr/include/sys/select.h
  /usr/include/sys/types.h
  /usr/include/wchar.h
+ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stddef.h
+ /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h
 
 CMakeFiles/Application.dir/src/Layer_Universe.cpp.o
  /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp
