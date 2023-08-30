@@ -24,6 +24,9 @@ set(SOURCES
     src/Application.cpp
     src/Universe.cpp
     src/Window.cpp
+    src/LayerStack.cpp
+    src/Layer_ImGui.cpp
+    src/Layer_Universe.cpp
     src/utils/Shader.cpp
     src/utils/Renderer.cpp
     src/utils/Texture.cpp

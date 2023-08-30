@@ -14,8 +14,8 @@ void LayerStack::PopLayer(Layer *layer) {
   }
 }
 
-void LayerStack::UpdateLayers() {
+void LayerStack::UpdateLayers(const double timeStamp) {
   for (auto &layer : layers) {
-    layer->OnUpdate();
+    layer->OnUpdate(timeStamp);
   }
 }

@@ -111,10 +111,52 @@ CMakeFiles/Application.dir/src/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/Window.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/Window.cpp -o CMakeFiles/Application.dir/src/Window.cpp.s
 
+CMakeFiles/Application.dir/src/LayerStack.cpp.o: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/src/LayerStack.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.cpp
+CMakeFiles/Application.dir/src/LayerStack.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Application.dir/src/LayerStack.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/LayerStack.cpp.o -MF CMakeFiles/Application.dir/src/LayerStack.cpp.o.d -o CMakeFiles/Application.dir/src/LayerStack.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.cpp
+
+CMakeFiles/Application.dir/src/LayerStack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/LayerStack.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.cpp > CMakeFiles/Application.dir/src/LayerStack.cpp.i
+
+CMakeFiles/Application.dir/src/LayerStack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/LayerStack.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.cpp -o CMakeFiles/Application.dir/src/LayerStack.cpp.s
+
+CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.cpp
+CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o -MF CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o.d -o CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.cpp
+
+CMakeFiles/Application.dir/src/Layer_ImGui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/Layer_ImGui.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.cpp > CMakeFiles/Application.dir/src/Layer_ImGui.cpp.i
+
+CMakeFiles/Application.dir/src/Layer_ImGui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/Layer_ImGui.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.cpp -o CMakeFiles/Application.dir/src/Layer_ImGui.cpp.s
+
+CMakeFiles/Application.dir/src/Layer_Universe.cpp.o: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/src/Layer_Universe.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp
+CMakeFiles/Application.dir/src/Layer_Universe.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Application.dir/src/Layer_Universe.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/Layer_Universe.cpp.o -MF CMakeFiles/Application.dir/src/Layer_Universe.cpp.o.d -o CMakeFiles/Application.dir/src/Layer_Universe.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp
+
+CMakeFiles/Application.dir/src/Layer_Universe.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/Layer_Universe.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp > CMakeFiles/Application.dir/src/Layer_Universe.cpp.i
+
+CMakeFiles/Application.dir/src/Layer_Universe.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/Layer_Universe.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp -o CMakeFiles/Application.dir/src/Layer_Universe.cpp.s
+
 CMakeFiles/Application.dir/src/utils/Shader.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/src/utils/Shader.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.cpp
 CMakeFiles/Application.dir/src/utils/Shader.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Application.dir/src/utils/Shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Application.dir/src/utils/Shader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/Shader.cpp.o -MF CMakeFiles/Application.dir/src/utils/Shader.cpp.o.d -o CMakeFiles/Application.dir/src/utils/Shader.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.cpp
 
 CMakeFiles/Application.dir/src/utils/Shader.cpp.i: cmake_force
@@ -128,7 +170,7 @@ CMakeFiles/Application.dir/src/utils/Shader.cpp.s: cmake_force
 CMakeFiles/Application.dir/src/utils/Renderer.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/src/utils/Renderer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.cpp
 CMakeFiles/Application.dir/src/utils/Renderer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Application.dir/src/utils/Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Application.dir/src/utils/Renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/Renderer.cpp.o -MF CMakeFiles/Application.dir/src/utils/Renderer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/Renderer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.cpp
 
 CMakeFiles/Application.dir/src/utils/Renderer.cpp.i: cmake_force
@@ -142,7 +184,7 @@ CMakeFiles/Application.dir/src/utils/Renderer.cpp.s: cmake_force
 CMakeFiles/Application.dir/src/utils/Texture.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/src/utils/Texture.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Texture.cpp
 CMakeFiles/Application.dir/src/utils/Texture.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Application.dir/src/utils/Texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Application.dir/src/utils/Texture.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/Texture.cpp.o -MF CMakeFiles/Application.dir/src/utils/Texture.cpp.o.d -o CMakeFiles/Application.dir/src/utils/Texture.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Texture.cpp
 
 CMakeFiles/Application.dir/src/utils/Texture.cpp.i: cmake_force
@@ -156,7 +198,7 @@ CMakeFiles/Application.dir/src/utils/Texture.cpp.s: cmake_force
 CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexArray.cpp
 CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o -MF CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o.d -o CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexArray.cpp
 
 CMakeFiles/Application.dir/src/utils/VertexArray.cpp.i: cmake_force
@@ -170,7 +212,7 @@ CMakeFiles/Application.dir/src/utils/VertexArray.cpp.s: cmake_force
 CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexBuffer.cpp
 CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o -MF CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexBuffer.cpp
 
 CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.i: cmake_force
@@ -184,7 +226,7 @@ CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.s: cmake_force
 CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.cpp
 CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o -MF CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.cpp
 
 CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.i: cmake_force
@@ -198,7 +240,7 @@ CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.s: cmake_force
 CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/InstanceBuffer.cpp
 CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o -MF CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/InstanceBuffer.cpp
 
 CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.i: cmake_force
@@ -212,7 +254,7 @@ CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.s: cmake_force
 CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/vendor/stb_image/stb_image.cpp
 CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o -MF CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o.d -o CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/vendor/stb_image/stb_image.cpp
 
 CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.i: cmake_force
@@ -226,7 +268,7 @@ CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.s: cmake_force
 CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.cpp
 CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.o -MF CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.o.d -o CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.cpp
 
 CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.i: cmake_force
@@ -240,7 +282,7 @@ CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.s: cmake_force
 CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_demo.cpp
 CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.o -MF CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.o.d -o CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_demo.cpp
 
 CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.i: cmake_force
@@ -254,7 +296,7 @@ CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.s: cmake_force
 CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_draw.cpp
 CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.o -MF CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.o.d -o CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_draw.cpp
 
 CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.i: cmake_force
@@ -268,7 +310,7 @@ CMakeFiles/Application.dir/vendor/imgui/imgui_draw.cpp.s: cmake_force
 CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_tables.cpp
 CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.o -MF CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.o.d -o CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_tables.cpp
 
 CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.i: cmake_force
@@ -282,7 +324,7 @@ CMakeFiles/Application.dir/vendor/imgui/imgui_tables.cpp.s: cmake_force
 CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_widgets.cpp
 CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.o -MF CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui_widgets.cpp
 
 CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.i: cmake_force
@@ -296,7 +338,7 @@ CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.s: cmake_force
 CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.cpp
 CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.cpp
 
 CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
@@ -310,7 +352,7 @@ CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.s: cmake_fo
 CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.cpp
 CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.cpp
 
 CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
@@ -326,6 +368,9 @@ Application_OBJECTS = \
 "CMakeFiles/Application.dir/src/Application.cpp.o" \
 "CMakeFiles/Application.dir/src/Universe.cpp.o" \
 "CMakeFiles/Application.dir/src/Window.cpp.o" \
+"CMakeFiles/Application.dir/src/LayerStack.cpp.o" \
+"CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o" \
+"CMakeFiles/Application.dir/src/Layer_Universe.cpp.o" \
 "CMakeFiles/Application.dir/src/utils/Shader.cpp.o" \
 "CMakeFiles/Application.dir/src/utils/Renderer.cpp.o" \
 "CMakeFiles/Application.dir/src/utils/Texture.cpp.o" \
@@ -348,6 +393,9 @@ Application_EXTERNAL_OBJECTS =
 Application: CMakeFiles/Application.dir/src/Application.cpp.o
 Application: CMakeFiles/Application.dir/src/Universe.cpp.o
 Application: CMakeFiles/Application.dir/src/Window.cpp.o
+Application: CMakeFiles/Application.dir/src/LayerStack.cpp.o
+Application: CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o
+Application: CMakeFiles/Application.dir/src/Layer_Universe.cpp.o
 Application: CMakeFiles/Application.dir/src/utils/Shader.cpp.o
 Application: CMakeFiles/Application.dir/src/utils/Renderer.cpp.o
 Application: CMakeFiles/Application.dir/src/utils/Texture.cpp.o
@@ -365,7 +413,7 @@ Application: CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cp
 Application: CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o
 Application: CMakeFiles/Application.dir/build.make
 Application: CMakeFiles/Application.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable Application"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable Application"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Application.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

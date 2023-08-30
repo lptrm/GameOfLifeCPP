@@ -19,6 +19,24 @@
 },
 {
   "directory": "/home/jano/dev/nvim/GameOfLifeCPP/build",
+  "command": "/usr/bin/c++ -DGLFW_INCLUDE_NONE -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm -I/home/jano/dev/nvim/GameOfLifeCPP/vendor -I/home/jano/dev/nvim/GameOfLifeCPP/src -I/home/jano/dev/nvim/GameOfLifeCPP/src/utils -g -std=gnu++17 -o CMakeFiles/Application.dir/src/LayerStack.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.cpp",
+  "file": "/home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.cpp",
+  "output": "CMakeFiles/Application.dir/src/LayerStack.cpp.o"
+},
+{
+  "directory": "/home/jano/dev/nvim/GameOfLifeCPP/build",
+  "command": "/usr/bin/c++ -DGLFW_INCLUDE_NONE -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm -I/home/jano/dev/nvim/GameOfLifeCPP/vendor -I/home/jano/dev/nvim/GameOfLifeCPP/src -I/home/jano/dev/nvim/GameOfLifeCPP/src/utils -g -std=gnu++17 -o CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.cpp",
+  "file": "/home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.cpp",
+  "output": "CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o"
+},
+{
+  "directory": "/home/jano/dev/nvim/GameOfLifeCPP/build",
+  "command": "/usr/bin/c++ -DGLFW_INCLUDE_NONE -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm -I/home/jano/dev/nvim/GameOfLifeCPP/vendor -I/home/jano/dev/nvim/GameOfLifeCPP/src -I/home/jano/dev/nvim/GameOfLifeCPP/src/utils -g -std=gnu++17 -o CMakeFiles/Application.dir/src/Layer_Universe.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp",
+  "file": "/home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp",
+  "output": "CMakeFiles/Application.dir/src/Layer_Universe.cpp.o"
+},
+{
+  "directory": "/home/jano/dev/nvim/GameOfLifeCPP/build",
   "command": "/usr/bin/c++ -DGLFW_INCLUDE_NONE -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm -I/home/jano/dev/nvim/GameOfLifeCPP/vendor -I/home/jano/dev/nvim/GameOfLifeCPP/src -I/home/jano/dev/nvim/GameOfLifeCPP/src/utils -g -std=gnu++17 -o CMakeFiles/Application.dir/src/utils/Shader.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.cpp",
   "file": "/home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.cpp",
   "output": "CMakeFiles/Application.dir/src/utils/Shader.cpp.o"
