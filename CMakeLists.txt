@@ -27,13 +27,13 @@ set(SOURCES
     src/LayerStack.cpp
     src/Layer_ImGui.cpp
     src/Layer_Universe.cpp
-    src/utils/Shader.cpp
-    src/utils/Renderer.cpp
-    src/utils/Texture.cpp
-    src/utils/VertexArray.cpp
-    src/utils/VertexBuffer.cpp
-    src/utils/IndexBuffer.cpp
-    src/utils/InstanceBuffer.cpp)
+    src/utils/Event/Shader.cpp
+    src/utils/Event/Renderer.cpp
+    src/utils/Event/Texture.cpp
+    src/utils/Event/VertexArray.cpp
+    src/utils/Event/VertexBuffer.cpp
+    src/utils/Event/IndexBuffer.cpp
+    src/utils/Event/InstanceBuffer.cpp)
 set(VENDOR_SOURCES
     vendor/stb_image/stb_image.cpp
     vendor/imgui/imgui.cpp

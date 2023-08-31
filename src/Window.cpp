@@ -23,14 +23,6 @@ void Window::OnUpdate() {
   glfwSwapBuffers(m_Window);
 }
 
-unsigned int Window::GetWidth() const { return m_Width; }
-
-unsigned int Window::GetHeight() const { return m_Height; }
-
-bool Window::GetVSync() const { return m_VSync; }
-
-bool Window::GetFullscreen() const { return m_Fullscreen; }
-
 void Window::SetSize(unsigned int width, unsigned int height) {
   m_Width = width;
   m_Height = height;

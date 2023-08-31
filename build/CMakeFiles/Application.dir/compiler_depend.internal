@@ -172,6 +172,8 @@ CMakeFiles/Application.dir/src/Application.cpp.o
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/vec2.hpp
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/vec3.hpp
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/vec4.hpp
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.h
  /usr/include/alloca.h

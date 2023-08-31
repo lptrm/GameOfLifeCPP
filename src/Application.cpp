@@ -7,6 +7,12 @@
 #include <stdio.h>
 #include <vector>
 
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
+#define GL_SILENCE_DEPRECATION
+#include "glad/glad.h"
+#include <GLFW/glfw3.h> // Will drag system OpenGL headers
 // test
 static void glfw_error_callback(int error, const char *description) {
   fprintf(stderr, "GLFW Error %d: %s\n", error, description);
@@ -22,16 +28,17 @@ int main(void) {
     LayerStack ls = LayerStack();
     UniverseLayer *ul = new UniverseLayer();
     ImGuiLayer *il = new ImGuiLayer();
-    il->OnAttach();
     ls.PushLayer(ul);
+    ls.PushLayer(il);
+    // Implementation for OnAttach, if needed
 
-    while (!glfwWindowShouldClose((GLFWwindow *)&Window::GetInstance())) {
+    while (!glfwWindowShouldClose(Window::GetInstance().GetNativeWindow())) {
 
       ls.UpdateLayers(0.0);
-      il->OnUpdate(0.0);
       Window::GetInstance().OnUpdate();
-    }
+    } // Cleanup
     ls.PopLayer(ul);
+    ls.PopLayer(il);
   } // for calling window destructor
 
   return 0;
