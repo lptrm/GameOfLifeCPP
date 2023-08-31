@@ -10,10 +10,11 @@ public:
   static void ReleaseInstance();
 
   void OnUpdate();
-  unsigned int GetWidth() const;
-  unsigned int GetHeight() const;
-  bool GetVSync() const;
-  bool GetFullscreen() const;
+  inline GLFWwindow *GetNativeWindow() const { return m_Window; }
+  inline unsigned int GetWidth() const { return m_Width; }
+  inline unsigned int GetHeight() const { return m_Height; }
+  inline bool GetVSync() const { return m_VSync; }
+  inline bool GetFullscreen() const { return m_Fullscreen; }
   void SetSize(unsigned int width, unsigned int height);
   void SetTitle(const std::string &title);
   void SetVSync(bool vsync);

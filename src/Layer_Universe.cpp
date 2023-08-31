@@ -1,20 +1,33 @@
 #include "Layer_Universe.h"
 #include "GLFW/glfw3.h"
+#include <cstdint>
 
 void UniverseLayer::OnAttach() {
   // // Initialize objects using dynamic memory allocation
-  glm::mat4 projectionMatrix = glm::ortho(0.0, 1024.0, 0.0, 768.0, -1.0, 1.0);
-  glm::mat4 viewMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
+
+  float screenWidth = 1280.0f;
+  float screenHeight = 720.0f;
+
+  glm::mat4 projectionMatrix =
+      glm::ortho(0.0f, screenWidth, 0.0f, screenHeight, -1.0f, 1.0f);
+  glm::mat4 viewMatrix =
+      glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
   glm::mat4 modelMatrix = glm::mat4(1.0f);
   modelMatrix = glm::scale(
-      modelMatrix, glm::vec3(2.0f, 2.0f, 1.0f)); // Scale by 2 in X and Y
+      modelMatrix, glm::vec3(2.0f, 4.0f, 1.0f)); // Scale by 2 in X and Y
   *m_Mvp = projectionMatrix * viewMatrix * modelMatrix;
 
   m_Shader = new Shader("/home/jano/dev/nvim/GameOfLifeCPP/assets/gol.shader");
+  unsigned int width = 128;
+  unsigned int height = 64;
+  // float vertexWidth = 1.0f / width;
+  float vertexWidth = 10;
+  // float vertexHeight = 1.0f / height;
+  float vertexHeight = 10;
+  float vertices[] = {0.0f,        0.0f,         0.0f,         0.0f,
+                      vertexWidth, 0.0f,         vertexHeight, vertexWidth,
+                      0.0f,        vertexHeight, 0.0f,         0.0f};
 
-  // Set up vertex array and buffers
-  float vertices[] = {0.0f,  0.0f,  0.0f, 0.f,   10.0f, 0.0f,
-                      10.0f, 10.0f, 0.0f, 10.0f, 0.0f,  0.0f};
   m_Va = new VertexArray();
   m_Va->Bind();
 
@@ -29,14 +42,14 @@ void UniverseLayer::OnAttach() {
   m_Ib = new IndexBuffer(indices, 6);
 
   // Initialize Universe
-  m_Universe = new Universe(64, 64);
-  for (int i = 0; i < 64; i++) {
-    for (int j = 0; j < 64; j++) {
+  m_Universe = new Universe(width, height);
+  for (int i = 0; i < height; i++) {
+    for (int j = 0; j < width; j++) {
       if ((i * 8 + j) % 2 == 0) {
         m_Universe->setAlive(j, i);
       }
-      m_Universe->getCellInstance()[i * 64 + j].position =
-          glm::vec3(j * 10, 768 - (i * 10), 0.0f);
+      m_Universe->getCellInstance()[i * width + j].position =
+          glm::vec3(j * vertexWidth, i * vertexHeight, 0.0f);
     }
   }
 
@@ -70,6 +83,8 @@ void UniverseLayer::OnDetach() {
 }
 
 void UniverseLayer::OnUpdate(const double timeStamp) {
+  glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+  glClear(GL_COLOR_BUFFER_BIT);
   double currentTime = glfwGetTime();
   double deltaTime = currentTime - m_LastTime;
   if (deltaTime >= m_GenerationTime) {
@@ -79,8 +94,6 @@ void UniverseLayer::OnUpdate(const double timeStamp) {
 
   // Render using the initialized objects
   m_Shader->Bind();
-  GLCALL(glClearColor(1.0f, 1.0f, 1.0f, 1.0f));
-  GLCALL(glClear(GL_COLOR_BUFFER_BIT));
   m_InstanceBuffer->UpdateInstanceData(m_Universe->getCellInstance().data(),
                                        m_Universe->getCellInstance().size() *
                                            sizeof(Universe::CellInstance));
