@@ -87,6 +87,8 @@ Window::Window() {
     glfwSwapInterval(1);
   }
 
+  std::cout << "OpenGL Vendor: " << glGetString(GL_VENDOR) << std::endl;
+  std::cout << "OpenGL Renderer: " << glGetString(GL_RENDERER) << std::endl;
   std::cout << "OpenGL Version: " << glGetString(GL_VERSION) << std::endl;
 
   // Set GLFW callbacks
@@ -104,6 +106,7 @@ Window::Window() {
                                   int action, int mods) {
     WindowData &data = *(WindowData *)glfwGetWindowUserPointer(window);
 
+    glfwSetInputMode(window, GLFW_STICKY_KEYS, GLFW_TRUE);
     switch (action) {
     case GLFW_PRESS: {
       GLCore::KeyPressedEvent event(key, 0);

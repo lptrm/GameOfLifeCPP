@@ -108,6 +108,6 @@ void ImGuiLayer::OnUpdate(const double timeStamp) {
   ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-void ImGuiLayer::OnEvent() {
+void ImGuiLayer::OnEvent(GLCore::Event &e) {
   // Implementation for OnEvent, if needed
 }

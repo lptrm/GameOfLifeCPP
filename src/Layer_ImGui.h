@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Event.h"
 #include "LayerStack.h"
 #include "imgui.h"
 
@@ -15,5 +16,5 @@ public:
   virtual void OnAttach() override;
   virtual void OnDetach() override;
   virtual void OnUpdate(const double timeStamp) override;
-  virtual void OnEvent() override;
+  virtual void OnEvent(GLCore::Event &e) override;
 };

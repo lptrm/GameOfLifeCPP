@@ -153,6 +153,30 @@ src/Application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Application.cpp.s
 .PHONY : src/Application.cpp.s
 
+src/Input.o: src/Input.cpp.o
+.PHONY : src/Input.o
+
+# target to build an object file
+src/Input.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Input.cpp.o
+.PHONY : src/Input.cpp.o
+
+src/Input.i: src/Input.cpp.i
+.PHONY : src/Input.i
+
+# target to preprocess a source file
+src/Input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Input.cpp.i
+.PHONY : src/Input.cpp.i
+
+src/Input.s: src/Input.cpp.s
+.PHONY : src/Input.s
+
+# target to generate assembly for a file
+src/Input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Input.cpp.s
+.PHONY : src/Input.cpp.s
+
 src/LayerStack.o: src/LayerStack.cpp.o
 .PHONY : src/LayerStack.o
 
@@ -272,6 +296,54 @@ src/Window.s: src/Window.cpp.s
 src/Window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Window.cpp.s
 .PHONY : src/Window.cpp.s
+
+src/utils/Camera/OrthographicCamera.o: src/utils/Camera/OrthographicCamera.cpp.o
+.PHONY : src/utils/Camera/OrthographicCamera.o
+
+# target to build an object file
+src/utils/Camera/OrthographicCamera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Camera/OrthographicCamera.cpp.o
+.PHONY : src/utils/Camera/OrthographicCamera.cpp.o
+
+src/utils/Camera/OrthographicCamera.i: src/utils/Camera/OrthographicCamera.cpp.i
+.PHONY : src/utils/Camera/OrthographicCamera.i
+
+# target to preprocess a source file
+src/utils/Camera/OrthographicCamera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Camera/OrthographicCamera.cpp.i
+.PHONY : src/utils/Camera/OrthographicCamera.cpp.i
+
+src/utils/Camera/OrthographicCamera.s: src/utils/Camera/OrthographicCamera.cpp.s
+.PHONY : src/utils/Camera/OrthographicCamera.s
+
+# target to generate assembly for a file
+src/utils/Camera/OrthographicCamera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Camera/OrthographicCamera.cpp.s
+.PHONY : src/utils/Camera/OrthographicCamera.cpp.s
+
+src/utils/Camera/OrthographicCameraController.o: src/utils/Camera/OrthographicCameraController.cpp.o
+.PHONY : src/utils/Camera/OrthographicCameraController.o
+
+# target to build an object file
+src/utils/Camera/OrthographicCameraController.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Camera/OrthographicCameraController.cpp.o
+.PHONY : src/utils/Camera/OrthographicCameraController.cpp.o
+
+src/utils/Camera/OrthographicCameraController.i: src/utils/Camera/OrthographicCameraController.cpp.i
+.PHONY : src/utils/Camera/OrthographicCameraController.i
+
+# target to preprocess a source file
+src/utils/Camera/OrthographicCameraController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Camera/OrthographicCameraController.cpp.i
+.PHONY : src/utils/Camera/OrthographicCameraController.cpp.i
+
+src/utils/Camera/OrthographicCameraController.s: src/utils/Camera/OrthographicCameraController.cpp.s
+.PHONY : src/utils/Camera/OrthographicCameraController.s
+
+# target to generate assembly for a file
+src/utils/Camera/OrthographicCameraController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Camera/OrthographicCameraController.cpp.s
+.PHONY : src/utils/Camera/OrthographicCameraController.cpp.s
 
 src/utils/OpenGL_Abstractions/IndexBuffer.o: src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o
 .PHONY : src/utils/OpenGL_Abstractions/IndexBuffer.o
@@ -645,6 +717,9 @@ help:
 	@echo "... src/Application.o"
 	@echo "... src/Application.i"
 	@echo "... src/Application.s"
+	@echo "... src/Input.o"
+	@echo "... src/Input.i"
+	@echo "... src/Input.s"
 	@echo "... src/LayerStack.o"
 	@echo "... src/LayerStack.i"
 	@echo "... src/LayerStack.s"
@@ -660,6 +735,12 @@ help:
 	@echo "... src/Window.o"
 	@echo "... src/Window.i"
 	@echo "... src/Window.s"
+	@echo "... src/utils/Camera/OrthographicCamera.o"
+	@echo "... src/utils/Camera/OrthographicCamera.i"
+	@echo "... src/utils/Camera/OrthographicCamera.s"
+	@echo "... src/utils/Camera/OrthographicCameraController.o"
+	@echo "... src/utils/Camera/OrthographicCameraController.i"
+	@echo "... src/utils/Camera/OrthographicCameraController.s"
 	@echo "... src/utils/OpenGL_Abstractions/IndexBuffer.o"
 	@echo "... src/utils/OpenGL_Abstractions/IndexBuffer.i"
 	@echo "... src/utils/OpenGL_Abstractions/IndexBuffer.s"

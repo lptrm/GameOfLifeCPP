@@ -1,13 +1,19 @@
 #include "Layer_Universe.h"
+#include "Event.h"
 #include "GLFW/glfw3.h"
 #include <cstdint>
+#include <iostream>
 
 void UniverseLayer::OnAttach() {
   // // Initialize objects using dynamic memory allocation
 
   float screenWidth = 1280.0f;
   float screenHeight = 720.0f;
-
+  // Initialize the camera controller
+  m_CameraController = new GLCore::Utils::OrthographicCameraController(
+      screenWidth / screenHeight, // Set your aspect ratio here
+      false                       // Set to true if you want rotation
+  );
   glm::mat4 projectionMatrix =
       glm::ortho(0.0f, screenWidth, 0.0f, screenHeight, -1.0f, 1.0f);
   glm::mat4 viewMatrix =
@@ -20,10 +26,10 @@ void UniverseLayer::OnAttach() {
   m_Shader = new Shader("/home/jano/dev/nvim/GameOfLifeCPP/assets/gol.shader");
   unsigned int width = 128;
   unsigned int height = 64;
-  // float vertexWidth = 1.0f / width;
-  float vertexWidth = 10;
-  // float vertexHeight = 1.0f / height;
-  float vertexHeight = 10;
+  float vertexWidth = 1.0f / width;
+  // float vertexWidth = 10;
+  float vertexHeight = 1.0f / height;
+  // float vertexHeight = 10;
   float vertices[] = {0.0f,        0.0f,         0.0f,         0.0f,
                       vertexWidth, 0.0f,         vertexHeight, vertexWidth,
                       0.0f,        vertexHeight, 0.0f,         0.0f};
@@ -62,7 +68,8 @@ void UniverseLayer::OnAttach() {
   m_InstanceLayout->Push<float>(3);
   m_InstanceBuffer->addAttributePointer(*m_InstanceLayout);
 
-  m_Shader->SetUniformMat4f("u_MVP", *m_Mvp);
+  m_Shader->SetUniformMat4f(
+      "u_MVP", m_CameraController->GetCamera().GetViewProjectionMatrix());
   // Set initial timestamp
   m_LastTime = glfwGetTime();
   m_GenerationTime = 0.5;
@@ -94,12 +101,24 @@ void UniverseLayer::OnUpdate(const double timeStamp) {
 
   // Render using the initialized objects
   m_Shader->Bind();
+  m_CameraController->OnUpdate(deltaTime);
+  m_Shader->SetUniformMat4f(
+      "u_MVP", m_CameraController->GetCamera().GetViewProjectionMatrix());
+  // Print each row of the matrix
+  for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 4; j++) {
+      std::cout
+          << m_CameraController->GetCamera().GetViewProjectionMatrix()[i][j]
+          << " ";
+    }
+    std::cout << std::endl;
+  }
   m_InstanceBuffer->UpdateInstanceData(m_Universe->getCellInstance().data(),
                                        m_Universe->getCellInstance().size() *
                                            sizeof(Universe::CellInstance));
   GLCALL(glDrawElementsInstanced(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0, 64 * 64));
 }
 
-void UniverseLayer::OnEvent() {
-  // Handle events if needed
+void UniverseLayer::OnEvent(GLCore::Event &e) {
+  m_CameraController->OnEvent(e);
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include "Event.h"
 #include <string>
 #include <vector>
 class Layer {
@@ -9,7 +10,7 @@ public:
   virtual void OnAttach(){};
   virtual void OnDetach(){};
   virtual void OnUpdate(const double timeStamp){};
-  virtual void OnEvent(){};
+  virtual void OnEvent(GLCore::Event &event){};
 
   inline const std::string &GetName() const { return m_DebugName; };
 
@@ -23,6 +24,8 @@ public:
   void UpdateLayers(const double timeStamp);
   void RenderLayers();
   void HandleEvents();
+  std::vector<Layer *>::iterator begin() { return layers.begin(); }
+  std::vector<Layer *>::iterator end() { return layers.end(); }
 
 private:
   std::vector<Layer *> layers;

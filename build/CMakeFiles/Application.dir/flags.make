@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DGLFW_INCLUDE_NONE
 
-CXX_INCLUDES = -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm -I/home/jano/dev/nvim/GameOfLifeCPP/vendor -I/home/jano/dev/nvim/GameOfLifeCPP/src -I/home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions -I/home/jano/dev/nvim/GameOfLifeCPP/src/utils/Events
+CXX_INCLUDES = -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends -I/home/jano/dev/nvim/GameOfLifeCPP/vendor/glm -I/home/jano/dev/nvim/GameOfLifeCPP/vendor -I/home/jano/dev/nvim/GameOfLifeCPP/src -I/home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions -I/home/jano/dev/nvim/GameOfLifeCPP/src/utils/Events -I/home/jano/dev/nvim/GameOfLifeCPP/src/utils/Camera
 
 CXX_FLAGS = -g -std=gnu++17
 

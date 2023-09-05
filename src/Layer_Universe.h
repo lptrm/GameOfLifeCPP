@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Event.h"
 #include "IndexBuffer.h"
 #include "InstanceBuffer.h"
 #include "InstanceBufferLayout.h"
@@ -14,6 +15,7 @@
 #include "fwd.hpp"
 #include "glm.hpp"
 #include "gtc/matrix_transform.hpp"
+#include "utils/Camera/OrthographicCameraController.h"
 
 class UniverseLayer : public Layer {
   // Declare pointers to objects
@@ -28,6 +30,7 @@ class UniverseLayer : public Layer {
   Universe *m_Universe;
   double m_LastTime;
   double m_GenerationTime;
+  GLCore::Utils::OrthographicCameraController *m_CameraController;
 
 public:
   UniverseLayer() : Layer("UniverseLayer"){};
@@ -35,5 +38,5 @@ public:
   virtual void OnAttach() override;
   virtual void OnDetach() override;
   virtual void OnUpdate(const double timeStamp) override;
-  virtual void OnEvent() override;
+  virtual void OnEvent(GLCore::Event &e) override;
 };

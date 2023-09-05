@@ -9,11 +9,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/jano/dev/nvim/GameOfLifeCPP/src/Application.cpp" "CMakeFiles/Application.dir/src/Application.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Application.cpp.o.d"
+  "/home/jano/dev/nvim/GameOfLifeCPP/src/Input.cpp" "CMakeFiles/Application.dir/src/Input.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Input.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/LayerStack.cpp" "CMakeFiles/Application.dir/src/LayerStack.cpp.o" "gcc" "CMakeFiles/Application.dir/src/LayerStack.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.cpp" "CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp" "CMakeFiles/Application.dir/src/Layer_Universe.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Layer_Universe.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/Universe.cpp" "CMakeFiles/Application.dir/src/Universe.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Universe.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/Window.cpp" "CMakeFiles/Application.dir/src/Window.cpp.o" "gcc" "CMakeFiles/Application.dir/src/Window.cpp.o.d"
+  "/home/jano/dev/nvim/GameOfLifeCPP/src/utils/Camera/OrthographicCamera.cpp" "CMakeFiles/Application.dir/src/utils/Camera/OrthographicCamera.cpp.o" "gcc" "CMakeFiles/Application.dir/src/utils/Camera/OrthographicCamera.cpp.o.d"
+  "/home/jano/dev/nvim/GameOfLifeCPP/src/utils/Camera/OrthographicCameraController.cpp" "CMakeFiles/Application.dir/src/utils/Camera/OrthographicCameraController.cpp.o" "gcc" "CMakeFiles/Application.dir/src/utils/Camera/OrthographicCameraController.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/IndexBuffer.cpp" "CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o" "gcc" "CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp" "CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.o" "gcc" "CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.o.d"
   "/home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Renderer.cpp" "CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.o" "gcc" "CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.o.d"
