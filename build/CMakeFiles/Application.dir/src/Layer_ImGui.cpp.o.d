@@ -112,13 +112,66 @@ CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h \
  /usr/include/string.h /usr/include/strings.h /usr/include/assert.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Renderer.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/IndexBuffer.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/glad/glad.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/Window.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Events/Event.h \
+ /usr/include/c++/13.2.1/sstream /usr/include/c++/13.2.1/istream \
+ /usr/include/c++/13.2.1/ios /usr/include/c++/13.2.1/exception \
+ /usr/include/c++/13.2.1/bits/exception_ptr.h \
+ /usr/include/c++/13.2.1/bits/cxxabi_init_exception.h \
+ /usr/include/c++/13.2.1/typeinfo \
+ /usr/include/c++/13.2.1/bits/nested_exception.h \
+ /usr/include/c++/13.2.1/bits/ios_base.h \
+ /usr/include/c++/13.2.1/ext/atomicity.h \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr.h \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
+ /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
+ /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/struct_itimerspec.h /usr/include/bits/setjmp.h \
+ /usr/include/bits/types/struct___jmp_buf_tag.h \
+ /usr/include/bits/pthread_stack_min-dynamic.h \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h \
+ /usr/include/sys/single_threaded.h \
+ /usr/include/c++/13.2.1/bits/locale_classes.h \
+ /usr/include/c++/13.2.1/bits/locale_classes.tcc \
+ /usr/include/c++/13.2.1/system_error \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/error_constants.h \
+ /usr/include/c++/13.2.1/stdexcept /usr/include/c++/13.2.1/streambuf \
+ /usr/include/c++/13.2.1/bits/streambuf.tcc \
+ /usr/include/c++/13.2.1/bits/basic_ios.h \
+ /usr/include/c++/13.2.1/bits/locale_facets.h \
+ /usr/include/c++/13.2.1/cwctype /usr/include/wctype.h \
+ /usr/include/bits/wctype-wchar.h \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h \
+ /usr/include/c++/13.2.1/bits/streambuf_iterator.h \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/ctype_inline.h \
+ /usr/include/c++/13.2.1/bits/locale_facets.tcc \
+ /usr/include/c++/13.2.1/bits/basic_ios.tcc \
+ /usr/include/c++/13.2.1/ostream /usr/include/c++/13.2.1/bits/ostream.tcc \
+ /usr/include/c++/13.2.1/bits/istream.tcc \
+ /usr/include/c++/13.2.1/bits/sstream.tcc \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glfw/include/GLFW/glfw3.h \
+ /usr/include/c++/13.2.1/functional \
+ /usr/include/c++/13.2.1/bits/std_function.h \
+ /usr/include/c++/13.2.1/unordered_map \
+ /usr/include/c++/13.2.1/bits/unordered_map.h \
+ /usr/include/c++/13.2.1/bits/hashtable.h \
+ /usr/include/c++/13.2.1/bits/hashtable_policy.h \
+ /usr/include/c++/13.2.1/ext/aligned_buffer.h \
+ /usr/include/c++/13.2.1/bits/enable_special_members.h \
+ /usr/include/c++/13.2.1/bits/node_handle.h \
+ /usr/include/c++/13.2.1/bits/erase_if.h /usr/include/c++/13.2.1/array \
+ /usr/include/c++/13.2.1/compare /usr/include/c++/13.2.1/bits/stl_algo.h \
+ /usr/include/c++/13.2.1/bits/algorithmfwd.h \
+ /usr/include/c++/13.2.1/bits/stl_heap.h \
+ /usr/include/c++/13.2.1/bits/uniform_int_dist.h \
+ /usr/include/c++/13.2.1/bits/stl_tempbuf.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h

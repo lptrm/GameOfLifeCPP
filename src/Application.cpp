@@ -1,8 +1,11 @@
+#include "ApplicationEvent.h"
+#include "Event.h"
+#include "KeyEvent.h"
 #include "LayerStack.h"
 #include "Layer_ImGui.h"
 #include "Layer_Universe.h"
+#include "MouseEvent.h"
 #include "Window.h"
-
 #include <iostream>
 #include <stdio.h>
 #include <vector>
@@ -17,6 +20,7 @@
 static void glfw_error_callback(int error, const char *description) {
   fprintf(stderr, "GLFW Error %d: %s\n", error, description);
 }
+void OnEvent(GLCore::Event &e) { std::cout << e.ToString() << std::endl; }
 int main(void) {
 
   {
@@ -25,6 +29,7 @@ int main(void) {
     Window::GetInstance().SetTitle("Game of Life");
     Window::GetInstance().SetVSync(true);
     Window::GetInstance().SetFullscreen(false);
+    Window::GetInstance().SetEventCallback(OnEvent);
     LayerStack ls = LayerStack();
     UniverseLayer *ul = new UniverseLayer();
     ImGuiLayer *il = new ImGuiLayer();
@@ -33,7 +38,6 @@ int main(void) {
     // Implementation for OnAttach, if needed
 
     while (!glfwWindowShouldClose(Window::GetInstance().GetNativeWindow())) {
-
       ls.UpdateLayers(0.0);
       Window::GetInstance().OnUpdate();
     } // Cleanup

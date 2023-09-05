@@ -2,10 +2,10 @@ CMakeFiles/Application.dir/src/Layer_Universe.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp \
  /usr/include/stdc-predef.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/InstanceBuffer.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/InstanceBufferLayout.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/IndexBuffer.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/InstanceBuffer.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/InstanceBufferLayout.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Renderer.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/glad/glad.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdint.h \
@@ -115,7 +115,7 @@ CMakeFiles/Application.dir/src/Layer_Universe.cpp.o: \
  /usr/include/bits/types/error_t.h \
  /usr/include/c++/13.2.1/bits/charconv.h \
  /usr/include/c++/13.2.1/bits/basic_string.tcc \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Shader.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/glm.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/_fixes.hpp \
  /usr/include/c++/13.2.1/cmath /usr/include/math.h \
@@ -295,9 +295,9 @@ CMakeFiles/Application.dir/src/Layer_Universe.cpp.o: \
  /usr/include/c++/13.2.1/bits/node_handle.h \
  /usr/include/c++/13.2.1/bits/erase_if.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/Universe.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexArray.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexBuffer.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexBufferLayout.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexArray.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexBuffer.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexBufferLayout.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_transform.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/../gtc/constants.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/../gtc/../ext/scalar_constants.hpp \

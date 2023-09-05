@@ -153,103 +153,103 @@ CMakeFiles/Application.dir/src/Layer_Universe.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/Layer_Universe.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_Universe.cpp -o CMakeFiles/Application.dir/src/Layer_Universe.cpp.s
 
-CMakeFiles/Application.dir/src/utils/Shader.cpp.o: CMakeFiles/Application.dir/flags.make
-CMakeFiles/Application.dir/src/utils/Shader.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.cpp
-CMakeFiles/Application.dir/src/utils/Shader.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Application.dir/src/utils/Shader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/Shader.cpp.o -MF CMakeFiles/Application.dir/src/utils/Shader.cpp.o.d -o CMakeFiles/Application.dir/src/utils/Shader.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.o: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Shader.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.o -MF CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.o.d -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Shader.cpp
 
-CMakeFiles/Application.dir/src/utils/Shader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/Shader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.cpp > CMakeFiles/Application.dir/src/utils/Shader.cpp.i
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Shader.cpp > CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.i
 
-CMakeFiles/Application.dir/src/utils/Shader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/Shader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Shader.cpp -o CMakeFiles/Application.dir/src/utils/Shader.cpp.s
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Shader.cpp -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.s
 
-CMakeFiles/Application.dir/src/utils/Renderer.cpp.o: CMakeFiles/Application.dir/flags.make
-CMakeFiles/Application.dir/src/utils/Renderer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.cpp
-CMakeFiles/Application.dir/src/utils/Renderer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Application.dir/src/utils/Renderer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/Renderer.cpp.o -MF CMakeFiles/Application.dir/src/utils/Renderer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/Renderer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.o: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Renderer.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.o -MF CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Renderer.cpp
 
-CMakeFiles/Application.dir/src/utils/Renderer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/Renderer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.cpp > CMakeFiles/Application.dir/src/utils/Renderer.cpp.i
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Renderer.cpp > CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.i
 
-CMakeFiles/Application.dir/src/utils/Renderer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/Renderer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer.cpp -o CMakeFiles/Application.dir/src/utils/Renderer.cpp.s
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Renderer.cpp -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.s
 
-CMakeFiles/Application.dir/src/utils/Texture.cpp.o: CMakeFiles/Application.dir/flags.make
-CMakeFiles/Application.dir/src/utils/Texture.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Texture.cpp
-CMakeFiles/Application.dir/src/utils/Texture.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Application.dir/src/utils/Texture.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/Texture.cpp.o -MF CMakeFiles/Application.dir/src/utils/Texture.cpp.o.d -o CMakeFiles/Application.dir/src/utils/Texture.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Texture.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.o: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Texture.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.o -MF CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.o.d -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Texture.cpp
 
-CMakeFiles/Application.dir/src/utils/Texture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/Texture.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Texture.cpp > CMakeFiles/Application.dir/src/utils/Texture.cpp.i
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Texture.cpp > CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.i
 
-CMakeFiles/Application.dir/src/utils/Texture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/Texture.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Texture.cpp -o CMakeFiles/Application.dir/src/utils/Texture.cpp.s
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Texture.cpp -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.s
 
-CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o: CMakeFiles/Application.dir/flags.make
-CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexArray.cpp
-CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o -MF CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o.d -o CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexArray.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.o: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexArray.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.o -MF CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.o.d -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexArray.cpp
 
-CMakeFiles/Application.dir/src/utils/VertexArray.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/VertexArray.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexArray.cpp > CMakeFiles/Application.dir/src/utils/VertexArray.cpp.i
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexArray.cpp > CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.i
 
-CMakeFiles/Application.dir/src/utils/VertexArray.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/VertexArray.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexArray.cpp -o CMakeFiles/Application.dir/src/utils/VertexArray.cpp.s
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexArray.cpp -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.s
 
-CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o: CMakeFiles/Application.dir/flags.make
-CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexBuffer.cpp
-CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o -MF CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexBuffer.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.o: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexBuffer.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.o -MF CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexBuffer.cpp
 
-CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexBuffer.cpp > CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.i
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexBuffer.cpp > CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.i
 
-CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/VertexBuffer.cpp -o CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.s
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexBuffer.cpp -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.s
 
-CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o: CMakeFiles/Application.dir/flags.make
-CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.cpp
-CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o -MF CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/IndexBuffer.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o -MF CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/IndexBuffer.cpp
 
-CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.cpp > CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.i
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/IndexBuffer.cpp > CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.i
 
-CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/IndexBuffer.cpp -o CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.s
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/IndexBuffer.cpp -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.s
 
-CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o: CMakeFiles/Application.dir/flags.make
-CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/InstanceBuffer.cpp
-CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o -MF CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/InstanceBuffer.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.o: CMakeFiles/Application.dir/flags.make
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.o: CMakeFiles/Application.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.o -MF CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.o.d -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.o -c /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp
 
-CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/InstanceBuffer.cpp > CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.i
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp > CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.i
 
-CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/InstanceBuffer.cpp -o CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.s
+CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp -o CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.s
 
 CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: CMakeFiles/Application.dir/flags.make
 CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o: /home/jano/dev/nvim/GameOfLifeCPP/vendor/stb_image/stb_image.cpp
@@ -371,13 +371,13 @@ Application_OBJECTS = \
 "CMakeFiles/Application.dir/src/LayerStack.cpp.o" \
 "CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o" \
 "CMakeFiles/Application.dir/src/Layer_Universe.cpp.o" \
-"CMakeFiles/Application.dir/src/utils/Shader.cpp.o" \
-"CMakeFiles/Application.dir/src/utils/Renderer.cpp.o" \
-"CMakeFiles/Application.dir/src/utils/Texture.cpp.o" \
-"CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o" \
-"CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o" \
-"CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o" \
-"CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o" \
+"CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.o" \
+"CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.o" \
+"CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.o" \
+"CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.o" \
+"CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.o" \
+"CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o" \
+"CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.o" \
 "CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o" \
 "CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.o" \
 "CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.o" \
@@ -396,13 +396,13 @@ Application: CMakeFiles/Application.dir/src/Window.cpp.o
 Application: CMakeFiles/Application.dir/src/LayerStack.cpp.o
 Application: CMakeFiles/Application.dir/src/Layer_ImGui.cpp.o
 Application: CMakeFiles/Application.dir/src/Layer_Universe.cpp.o
-Application: CMakeFiles/Application.dir/src/utils/Shader.cpp.o
-Application: CMakeFiles/Application.dir/src/utils/Renderer.cpp.o
-Application: CMakeFiles/Application.dir/src/utils/Texture.cpp.o
-Application: CMakeFiles/Application.dir/src/utils/VertexArray.cpp.o
-Application: CMakeFiles/Application.dir/src/utils/VertexBuffer.cpp.o
-Application: CMakeFiles/Application.dir/src/utils/IndexBuffer.cpp.o
-Application: CMakeFiles/Application.dir/src/utils/InstanceBuffer.cpp.o
+Application: CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Shader.cpp.o
+Application: CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Renderer.cpp.o
+Application: CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/Texture.cpp.o
+Application: CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexArray.cpp.o
+Application: CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.o
+Application: CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/IndexBuffer.cpp.o
+Application: CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/InstanceBuffer.cpp.o
 Application: CMakeFiles/Application.dir/vendor/stb_image/stb_image.cpp.o
 Application: CMakeFiles/Application.dir/vendor/imgui/imgui.cpp.o
 Application: CMakeFiles/Application.dir/vendor/imgui/imgui_demo.cpp.o

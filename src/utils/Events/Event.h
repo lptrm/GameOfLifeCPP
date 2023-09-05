@@ -1,8 +1,7 @@
 #pragma once
 
-#include "../Core/Core.h"
-#include "glpch.h"
-
+#include <sstream>
+#include <string>
 
 namespace GLCore {
 
@@ -32,11 +31,11 @@ enum class EventType {
 
 enum EventCategory {
   None = 0,
-  EventCategoryApplication = BIT(0),
-  EventCategoryInput = BIT(1),
-  EventCategoryKeyboard = BIT(2),
-  EventCategoryMouse = BIT(3),
-  EventCategoryMouseButton = BIT(4)
+  EventCategoryApplication = 1 << 0,
+  EventCategoryInput = 1 << 1,
+  EventCategoryKeyboard = 1 << 2,
+  EventCategoryMouse = 1 << 3,
+  EventCategoryMouseButton = 1 << 4
 };
 
 #define EVENT_CLASS_TYPE(type)                                                 \
@@ -55,7 +54,6 @@ public:
   virtual const char *GetName() const = 0;
   virtual int GetCategoryFlags() const = 0;
   virtual std::string ToString() const { return GetName(); }
-
   inline bool IsInCategory(EventCategory category) {
     return GetCategoryFlags() & category;
   }
