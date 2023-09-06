@@ -68,7 +68,6 @@ void OrthographicCameraController::OnEvent(Event &e) {
   dispatcher.Dispatch<WindowResizeEvent>([this](WindowResizeEvent &event) {
     return this->OnWindowResized(event);
   });
-  std::cout << e.ToString() << std::endl;
 }
 
 bool OrthographicCameraController::OnMouseScrolled(MouseScrolledEvent &e) {

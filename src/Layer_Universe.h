@@ -16,9 +16,22 @@
 #include "glm.hpp"
 #include "gtc/matrix_transform.hpp"
 #include "utils/Camera/OrthographicCameraController.h"
+#include <memory>
 
 class UniverseLayer : public Layer {
-  // Declare pointers to objects
+public:
+  UniverseLayer();
+  ~UniverseLayer();
+
+  virtual void OnAttach() override;
+  virtual void OnDetach() override;
+  virtual void OnUpdate(const double timeStamp) override;
+  virtual void OnEvent(GLCore::Event &e) override;
+
+  void TestFunction();
+
+private:
+  GLCore::Utils::OrthographicCameraController *m_CameraController;
   glm::mat4 *m_Mvp;
   Shader *m_Shader;
   VertexArray *m_Va;
@@ -28,15 +41,9 @@ class UniverseLayer : public Layer {
   InstanceBuffer *m_InstanceBuffer;
   InstanceBufferLayout *m_InstanceLayout;
   Universe *m_Universe;
-  double m_LastTime;
+  double m_LastTimeUniverse;
   double m_GenerationTime;
-  GLCore::Utils::OrthographicCameraController *m_CameraController;
-
-public:
-  UniverseLayer() : Layer("UniverseLayer"){};
-  ~UniverseLayer() = default;
-  virtual void OnAttach() override;
-  virtual void OnDetach() override;
-  virtual void OnUpdate(const double timeStamp) override;
-  virtual void OnEvent(GLCore::Event &e) override;
+  double m_LastTimeFrame;
+  unsigned int m_Width;
+  unsigned int m_Height;
 };
