@@ -1,5 +1,6 @@
 #include "Universe.h"
 #include <iostream>
+#include <random>
 Universe::Universe(int width, int height) : m_Width(width), m_Height(height) {
   if ((m_Width & (m_Width - 1)) != 0 || (m_Height & (m_Height - 1)) != 0) {
     return; // TODO: Throw exception
@@ -19,6 +20,29 @@ Universe::Universe(int width, int height) : m_Width(width), m_Height(height) {
 Universe::~Universe() {
   delete[] m_CurrentState;
   delete[] m_OldState;
+}
+void Universe::ResetUniverse() {
+  for (int i = 0; i < m_Size; i++) {
+    int intIndex = i >> 5;
+    int bitOffset = i & 31;
+    m_CurrentState[intIndex] &= ~(1 << bitOffset);
+    m_InstanceData[i].color = glm::vec3(0.0f, 1.0f, 1.0f);
+  }
+}
+void Universe::FillRandomly(float density) {
+  std::random_device rd;
+  std::mt19937 gen(rd());
+  std::uniform_real_distribution<float> dis(0.0f, 1.0f);
+  for (int i = 0; i < m_Size; i++) {
+    if (dis(gen) < density) {
+      int intIndex = i >> 5;
+      int bitOffset = i & 31;
+      m_CurrentState[intIndex] |= (1 << bitOffset);
+      m_InstanceData[i].color = glm::vec3(1.0f, 0.0f, 1.0f);
+    } else {
+      m_InstanceData[i].color = glm::vec3(0.0f, 1.0f, 1.0f);
+    }
+  }
 }
 void Universe::update() {
   std::swap(m_CurrentState, m_OldState); // Swap the current and old state

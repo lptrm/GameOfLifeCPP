@@ -17,6 +17,9 @@ public:
   Universe &operator=(Universe &&) = default;
   Universe &operator=(const Universe &) = default;
   ~Universe();
+  void FillRandomly(float density);
+  void ResetUniverse();
+
   void update();
   void setAlive(int, int);
   void setDead(int, int);

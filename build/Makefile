@@ -225,6 +225,30 @@ src/Layer_ImGui.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Layer_ImGui.cpp.s
 .PHONY : src/Layer_ImGui.cpp.s
 
+src/Layer_Test.o: src/Layer_Test.cpp.o
+.PHONY : src/Layer_Test.o
+
+# target to build an object file
+src/Layer_Test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Layer_Test.cpp.o
+.PHONY : src/Layer_Test.cpp.o
+
+src/Layer_Test.i: src/Layer_Test.cpp.i
+.PHONY : src/Layer_Test.i
+
+# target to preprocess a source file
+src/Layer_Test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Layer_Test.cpp.i
+.PHONY : src/Layer_Test.cpp.i
+
+src/Layer_Test.s: src/Layer_Test.cpp.s
+.PHONY : src/Layer_Test.s
+
+# target to generate assembly for a file
+src/Layer_Test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Layer_Test.cpp.s
+.PHONY : src/Layer_Test.cpp.s
+
 src/Layer_Universe.o: src/Layer_Universe.cpp.o
 .PHONY : src/Layer_Universe.o
 
@@ -726,6 +750,9 @@ help:
 	@echo "... src/Layer_ImGui.o"
 	@echo "... src/Layer_ImGui.i"
 	@echo "... src/Layer_ImGui.s"
+	@echo "... src/Layer_Test.o"
+	@echo "... src/Layer_Test.i"
+	@echo "... src/Layer_Test.s"
 	@echo "... src/Layer_Universe.o"
 	@echo "... src/Layer_Universe.i"
 	@echo "... src/Layer_Universe.s"

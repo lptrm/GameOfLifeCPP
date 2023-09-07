@@ -1,6 +1,7 @@
 #include "OrthographicCamera.h"
 
 #include <glm/gtc/matrix_transform.hpp>
+#include <iostream>
 
 namespace GLCore::Utils {
 

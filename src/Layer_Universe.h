@@ -12,7 +12,6 @@
 #include "VertexBuffer.h"
 #include "VertexBufferLayout.h"
 #include "ext/matrix_transform.hpp"
-#include "fwd.hpp"
 #include "glm.hpp"
 #include "gtc/matrix_transform.hpp"
 #include "utils/Camera/OrthographicCameraController.h"
@@ -20,9 +19,11 @@
 
 class UniverseLayer : public Layer {
 public:
-  UniverseLayer();
+  UniverseLayer(float screenWidth, float screenHeight, float vertexWidth,
+                float vertexHeight, unsigned int width, unsigned int height);
   ~UniverseLayer();
-
+  void FillRandomly(float density);
+  void ResetUniverse();
   virtual void OnAttach() override;
   virtual void OnDetach() override;
   virtual void OnUpdate(const double timeStamp) override;
@@ -32,7 +33,8 @@ public:
 
 private:
   GLCore::Utils::OrthographicCameraController *m_CameraController;
-  glm::mat4 *m_Mvp;
+  glm::mat4 u_MVP;
+  glm::mat4 m_MatModel;
   Shader *m_Shader;
   VertexArray *m_Va;
   VertexBuffer *m_Vb;
@@ -46,4 +48,11 @@ private:
   double m_LastTimeFrame;
   unsigned int m_Width;
   unsigned int m_Height;
+  float m_ScreenWidth;
+  float m_ScreenHeight;
+  float m_VertexWidth;
+  float m_VertexHeight;
+
+  void Unbind();
+  void Bind();
 };

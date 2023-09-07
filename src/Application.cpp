@@ -4,8 +4,11 @@
 #include "KeyEvent.h"
 #include "LayerStack.h"
 #include "Layer_ImGui.h"
+#include "Layer_Test.h"
 #include "Layer_Universe.h"
 #include "MouseEvent.h"
+#include "Shader.h"
+#include "VertexArray.h"
 #include "Window.h"
 #include <iostream>
 #include <stdio.h>
@@ -47,24 +50,28 @@ int main(void) {
 
   {
     Application *app = new Application();
-    app->GetWindow().SetSize(1280, 720);
+    // app->GetWindow().SetSize(1024, 1024);
     app->GetWindow().SetTitle("Game of Life");
     app->GetWindow().SetVSync(true);
     app->GetWindow().SetFullscreen(false);
     app->GetWindow().SetEventCallback(app->OnEvent);
-    UniverseLayer *ul = new UniverseLayer();
+    UniverseLayer *ul = new UniverseLayer(1024, 1024, 0.5, 0.5f, 128, 64);
     ImGuiLayer *il = new ImGuiLayer();
+    TestLayer *tl = new TestLayer();
+    // app->GetLayerStack().PushLayer(tl);
     app->GetLayerStack().PushLayer(ul);
     app->GetLayerStack().PushLayer(il);
-    // Implementation for OnAttach, if needed
 
     while (!glfwWindowShouldClose(app->GetWindow().GetNativeWindow())) {
+      glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+      glClear(GL_COLOR_BUFFER_BIT);
       app->GetLayerStack().UpdateLayers(0.0);
       app->GetWindow().OnUpdate();
+
     } // Cleanup
     app->GetLayerStack().PopLayer(ul);
     app->GetLayerStack().PopLayer(il);
-
   } // for calling window destructor
 
   return 0;
