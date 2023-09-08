@@ -6,9 +6,10 @@
 #include "Shader.h"
 #include "VertexArray.h"
 #include "imgui.h"
+#include <memory>
 
 class TestLayer : public Layer {
-  VertexArray *m_Va;
+  std::shared_ptr<VertexArray> m_Va;
   VertexBuffer *m_Vb;
   IndexBuffer *m_Ib;
   VertexBufferLayout *m_Layout;

@@ -537,6 +537,102 @@ src/utils/OpenGL_Abstractions/VertexBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/OpenGL_Abstractions/VertexBuffer.cpp.s
 .PHONY : src/utils/OpenGL_Abstractions/VertexBuffer.cpp.s
 
+src/utils/Renderer/OpenGLRendererAPI.o: src/utils/Renderer/OpenGLRendererAPI.cpp.o
+.PHONY : src/utils/Renderer/OpenGLRendererAPI.o
+
+# target to build an object file
+src/utils/Renderer/OpenGLRendererAPI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/OpenGLRendererAPI.cpp.o
+.PHONY : src/utils/Renderer/OpenGLRendererAPI.cpp.o
+
+src/utils/Renderer/OpenGLRendererAPI.i: src/utils/Renderer/OpenGLRendererAPI.cpp.i
+.PHONY : src/utils/Renderer/OpenGLRendererAPI.i
+
+# target to preprocess a source file
+src/utils/Renderer/OpenGLRendererAPI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/OpenGLRendererAPI.cpp.i
+.PHONY : src/utils/Renderer/OpenGLRendererAPI.cpp.i
+
+src/utils/Renderer/OpenGLRendererAPI.s: src/utils/Renderer/OpenGLRendererAPI.cpp.s
+.PHONY : src/utils/Renderer/OpenGLRendererAPI.s
+
+# target to generate assembly for a file
+src/utils/Renderer/OpenGLRendererAPI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/OpenGLRendererAPI.cpp.s
+.PHONY : src/utils/Renderer/OpenGLRendererAPI.cpp.s
+
+src/utils/Renderer/RenderCommand.o: src/utils/Renderer/RenderCommand.cpp.o
+.PHONY : src/utils/Renderer/RenderCommand.o
+
+# target to build an object file
+src/utils/Renderer/RenderCommand.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/RenderCommand.cpp.o
+.PHONY : src/utils/Renderer/RenderCommand.cpp.o
+
+src/utils/Renderer/RenderCommand.i: src/utils/Renderer/RenderCommand.cpp.i
+.PHONY : src/utils/Renderer/RenderCommand.i
+
+# target to preprocess a source file
+src/utils/Renderer/RenderCommand.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/RenderCommand.cpp.i
+.PHONY : src/utils/Renderer/RenderCommand.cpp.i
+
+src/utils/Renderer/RenderCommand.s: src/utils/Renderer/RenderCommand.cpp.s
+.PHONY : src/utils/Renderer/RenderCommand.s
+
+# target to generate assembly for a file
+src/utils/Renderer/RenderCommand.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/RenderCommand.cpp.s
+.PHONY : src/utils/Renderer/RenderCommand.cpp.s
+
+src/utils/Renderer/Renderer2D.o: src/utils/Renderer/Renderer2D.cpp.o
+.PHONY : src/utils/Renderer/Renderer2D.o
+
+# target to build an object file
+src/utils/Renderer/Renderer2D.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/Renderer2D.cpp.o
+.PHONY : src/utils/Renderer/Renderer2D.cpp.o
+
+src/utils/Renderer/Renderer2D.i: src/utils/Renderer/Renderer2D.cpp.i
+.PHONY : src/utils/Renderer/Renderer2D.i
+
+# target to preprocess a source file
+src/utils/Renderer/Renderer2D.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/Renderer2D.cpp.i
+.PHONY : src/utils/Renderer/Renderer2D.cpp.i
+
+src/utils/Renderer/Renderer2D.s: src/utils/Renderer/Renderer2D.cpp.s
+.PHONY : src/utils/Renderer/Renderer2D.s
+
+# target to generate assembly for a file
+src/utils/Renderer/Renderer2D.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/Renderer2D.cpp.s
+.PHONY : src/utils/Renderer/Renderer2D.cpp.s
+
+src/utils/Renderer/RendererAPI.o: src/utils/Renderer/RendererAPI.cpp.o
+.PHONY : src/utils/Renderer/RendererAPI.o
+
+# target to build an object file
+src/utils/Renderer/RendererAPI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/RendererAPI.cpp.o
+.PHONY : src/utils/Renderer/RendererAPI.cpp.o
+
+src/utils/Renderer/RendererAPI.i: src/utils/Renderer/RendererAPI.cpp.i
+.PHONY : src/utils/Renderer/RendererAPI.i
+
+# target to preprocess a source file
+src/utils/Renderer/RendererAPI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/RendererAPI.cpp.i
+.PHONY : src/utils/Renderer/RendererAPI.cpp.i
+
+src/utils/Renderer/RendererAPI.s: src/utils/Renderer/RendererAPI.cpp.s
+.PHONY : src/utils/Renderer/RendererAPI.s
+
+# target to generate assembly for a file
+src/utils/Renderer/RendererAPI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/utils/Renderer/RendererAPI.cpp.s
+.PHONY : src/utils/Renderer/RendererAPI.cpp.s
+
 vendor/imgui/backends/imgui_impl_glfw.o: vendor/imgui/backends/imgui_impl_glfw.cpp.o
 .PHONY : vendor/imgui/backends/imgui_impl_glfw.o
 
@@ -789,6 +885,18 @@ help:
 	@echo "... src/utils/OpenGL_Abstractions/VertexBuffer.o"
 	@echo "... src/utils/OpenGL_Abstractions/VertexBuffer.i"
 	@echo "... src/utils/OpenGL_Abstractions/VertexBuffer.s"
+	@echo "... src/utils/Renderer/OpenGLRendererAPI.o"
+	@echo "... src/utils/Renderer/OpenGLRendererAPI.i"
+	@echo "... src/utils/Renderer/OpenGLRendererAPI.s"
+	@echo "... src/utils/Renderer/RenderCommand.o"
+	@echo "... src/utils/Renderer/RenderCommand.i"
+	@echo "... src/utils/Renderer/RenderCommand.s"
+	@echo "... src/utils/Renderer/Renderer2D.o"
+	@echo "... src/utils/Renderer/Renderer2D.i"
+	@echo "... src/utils/Renderer/Renderer2D.s"
+	@echo "... src/utils/Renderer/RendererAPI.o"
+	@echo "... src/utils/Renderer/RendererAPI.i"
+	@echo "... src/utils/Renderer/RendererAPI.s"
 	@echo "... vendor/imgui/backends/imgui_impl_glfw.o"
 	@echo "... vendor/imgui/backends/imgui_impl_glfw.i"
 	@echo "... vendor/imgui/backends/imgui_impl_glfw.s"

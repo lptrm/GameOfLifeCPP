@@ -58,8 +58,9 @@ int main(void) {
     UniverseLayer *ul = new UniverseLayer(1024, 1024, 0.5, 0.5f, 128, 64);
     ImGuiLayer *il = new ImGuiLayer();
     TestLayer *tl = new TestLayer();
-    // app->GetLayerStack().PushLayer(tl);
+
     app->GetLayerStack().PushLayer(ul);
+    app->GetLayerStack().PushLayer(tl);
     app->GetLayerStack().PushLayer(il);
 
     while (!glfwWindowShouldClose(app->GetWindow().GetNativeWindow())) {
