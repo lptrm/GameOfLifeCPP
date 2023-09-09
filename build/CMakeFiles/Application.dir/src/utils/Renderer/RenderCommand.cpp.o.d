@@ -2,9 +2,9 @@ CMakeFiles/Application.dir/src/utils/Renderer/RenderCommand.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer/RenderCommand.cpp \
  /usr/include/stdc-predef.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer/RenderCommand.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/InstanceBuffer.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer/RendererAPI.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexArray.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexBuffer.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Shader.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/glm.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/_fixes.hpp \
  /usr/include/c++/13.2.1/cmath \
@@ -228,38 +228,75 @@ CMakeFiles/Application.dir/src/utils/Renderer/RenderCommand.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/type_half.inl \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/integer.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/detail/func_integer.inl \
- /usr/include/c++/13.2.1/memory /usr/include/c++/13.2.1/bits/memoryfwd.h \
- /usr/include/c++/13.2.1/bits/allocator.h \
- /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
- /usr/include/c++/13.2.1/bits/new_allocator.h /usr/include/c++/13.2.1/new \
- /usr/include/c++/13.2.1/bits/exception.h \
- /usr/include/c++/13.2.1/bits/stl_tempbuf.h \
- /usr/include/c++/13.2.1/bits/stl_construct.h \
- /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
- /usr/include/c++/13.2.1/ext/alloc_traits.h \
- /usr/include/c++/13.2.1/bits/alloc_traits.h \
- /usr/include/c++/13.2.1/bits/stl_raw_storage_iter.h \
- /usr/include/c++/13.2.1/bits/align.h \
- /usr/include/c++/13.2.1/bits/uses_allocator.h \
- /usr/include/c++/13.2.1/bits/unique_ptr.h /usr/include/c++/13.2.1/tuple \
- /usr/include/c++/13.2.1/bits/invoke.h \
- /usr/include/c++/13.2.1/bits/stl_function.h \
- /usr/include/c++/13.2.1/backward/binders.h \
- /usr/include/c++/13.2.1/bits/functional_hash.h \
- /usr/include/c++/13.2.1/bits/hash_bytes.h \
- /usr/include/c++/13.2.1/bits/shared_ptr.h /usr/include/c++/13.2.1/iosfwd \
- /usr/include/c++/13.2.1/bits/stringfwd.h \
+ /usr/include/c++/13.2.1/string /usr/include/c++/13.2.1/bits/stringfwd.h \
+ /usr/include/c++/13.2.1/bits/memoryfwd.h \
+ /usr/include/c++/13.2.1/bits/char_traits.h \
  /usr/include/c++/13.2.1/bits/postypes.h /usr/include/c++/13.2.1/cwchar \
  /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h \
  /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
- /usr/include/bits/types/FILE.h \
+ /usr/include/bits/types/FILE.h /usr/include/c++/13.2.1/bits/allocator.h \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
+ /usr/include/c++/13.2.1/bits/new_allocator.h /usr/include/c++/13.2.1/new \
+ /usr/include/c++/13.2.1/bits/exception.h \
+ /usr/include/c++/13.2.1/bits/localefwd.h \
+ /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++locale.h \
+ /usr/include/c++/13.2.1/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/c++/13.2.1/iosfwd \
+ /usr/include/c++/13.2.1/cctype /usr/include/ctype.h \
+ /usr/include/c++/13.2.1/bits/ostream_insert.h \
+ /usr/include/c++/13.2.1/bits/cxxabi_forced.h \
+ /usr/include/c++/13.2.1/bits/stl_function.h \
+ /usr/include/c++/13.2.1/backward/binders.h \
+ /usr/include/c++/13.2.1/bits/refwrap.h \
+ /usr/include/c++/13.2.1/bits/invoke.h \
+ /usr/include/c++/13.2.1/bits/range_access.h \
+ /usr/include/c++/13.2.1/initializer_list \
+ /usr/include/c++/13.2.1/bits/basic_string.h \
+ /usr/include/c++/13.2.1/ext/alloc_traits.h \
+ /usr/include/c++/13.2.1/bits/alloc_traits.h \
+ /usr/include/c++/13.2.1/bits/stl_construct.h \
+ /usr/include/c++/13.2.1/string_view \
+ /usr/include/c++/13.2.1/bits/functional_hash.h \
+ /usr/include/c++/13.2.1/bits/hash_bytes.h \
+ /usr/include/c++/13.2.1/bits/string_view.tcc \
+ /usr/include/c++/13.2.1/ext/string_conversions.h \
+ /usr/include/c++/13.2.1/cstdlib /usr/include/c++/13.2.1/cstdio \
+ /usr/include/stdio.h /usr/include/bits/types/__fpos_t.h \
+ /usr/include/bits/types/__fpos64_t.h \
+ /usr/include/bits/types/struct_FILE.h \
+ /usr/include/bits/types/cookie_io_functions_t.h \
+ /usr/include/bits/stdio_lim.h /usr/include/c++/13.2.1/cerrno \
+ /usr/include/errno.h /usr/include/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/bits/types/error_t.h \
+ /usr/include/c++/13.2.1/bits/charconv.h \
+ /usr/include/c++/13.2.1/bits/basic_string.tcc \
+ /usr/include/c++/13.2.1/bits/memory_resource.h \
+ /usr/include/c++/13.2.1/bits/uses_allocator.h \
+ /usr/include/c++/13.2.1/bits/uses_allocator_args.h \
+ /usr/include/c++/13.2.1/tuple /usr/include/c++/13.2.1/unordered_map \
+ /usr/include/c++/13.2.1/bits/unordered_map.h \
+ /usr/include/c++/13.2.1/bits/hashtable.h \
+ /usr/include/c++/13.2.1/bits/hashtable_policy.h \
+ /usr/include/c++/13.2.1/ext/aligned_buffer.h \
+ /usr/include/c++/13.2.1/bits/enable_special_members.h \
+ /usr/include/c++/13.2.1/bits/node_handle.h \
+ /usr/include/c++/13.2.1/bits/erase_if.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexArray.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexBuffer.h \
+ /usr/include/c++/13.2.1/memory \
+ /usr/include/c++/13.2.1/bits/stl_tempbuf.h \
+ /usr/include/c++/13.2.1/bits/stl_uninitialized.h \
+ /usr/include/c++/13.2.1/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13.2.1/bits/align.h \
+ /usr/include/c++/13.2.1/bits/unique_ptr.h \
+ /usr/include/c++/13.2.1/bits/shared_ptr.h \
  /usr/include/c++/13.2.1/bits/shared_ptr_base.h \
  /usr/include/c++/13.2.1/typeinfo \
  /usr/include/c++/13.2.1/bits/allocated_ptr.h \
- /usr/include/c++/13.2.1/bits/refwrap.h \
- /usr/include/c++/13.2.1/ext/aligned_buffer.h \
  /usr/include/c++/13.2.1/ext/atomicity.h \
  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr.h \
  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h \
