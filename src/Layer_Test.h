@@ -10,10 +10,10 @@
 
 class TestLayer : public Layer {
   std::shared_ptr<VertexArray> m_Va;
-  VertexBuffer *m_Vb;
-  IndexBuffer *m_Ib;
-  VertexBufferLayout *m_Layout;
-  Shader *m_Shader;
+  std::shared_ptr<VertexBuffer> m_Vb;
+  std::shared_ptr<IndexBuffer> m_Ib;
+  std::shared_ptr<VertexBufferLayout> m_Layout;
+  std::shared_ptr<Shader> m_Shader;
   void Bind();
   void Unbind();
 

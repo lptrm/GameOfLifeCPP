@@ -11,6 +11,7 @@
 #include "VertexArray.h"
 #include "Window.h"
 #include <iostream>
+#include <memory>
 #include <stdio.h>
 #include <vector>
 
@@ -22,7 +23,7 @@
 #include <GLFW/glfw3.h> // Will drag system OpenGL headers
 // test// Define and initialize the static members
 Window *Application::m_Window = nullptr;
-LayerStack *Application::m_LayerStack = nullptr;
+std::unique_ptr<LayerStack> Application::m_LayerStack = nullptr;
 static void glfw_error_callback(int error, const char *description) {
   fprintf(stderr, "GLFW Error %d: %s\n", error, description);
 }
@@ -44,7 +45,7 @@ void Application::OnEvent(GLCore::Event &e) {
 }
 Application::Application() {
   m_Window = &Window::GetInstance();
-  m_LayerStack = new LayerStack();
+  m_LayerStack = std::make_unique<LayerStack>();
 };
 int main(void) {
 
@@ -67,13 +68,22 @@ int main(void) {
       glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
       glClear(GL_COLOR_BUFFER_BIT);
-      app->GetLayerStack().UpdateLayers(0.0);
+      for (auto &layer : app->GetLayerStack()) {
+        layer->OnUpdate(0.0f);
+      }
+      il->Begin();
+      for (auto &layer : app->GetLayerStack()) {
+        layer->OnImGuiRender();
+      }
+      il->End();
+
       app->GetWindow().OnUpdate();
 
     } // Cleanup
     app->GetLayerStack().PopLayer(ul);
     app->GetLayerStack().PopLayer(il);
-  } // for calling window destructor
-
+    app->GetLayerStack().PopLayer(tl);
+  }
+  Window::ReleaseInstance();
   return 0;
 }

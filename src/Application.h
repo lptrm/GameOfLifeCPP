@@ -2,9 +2,10 @@
 
 #include "LayerStack.h"
 #include "Window.h"
+#include <memory>
 class Application {
   static Window *m_Window;
-  static LayerStack *m_LayerStack;
+  static std::unique_ptr<LayerStack> m_LayerStack;
 
 public:
   Application();

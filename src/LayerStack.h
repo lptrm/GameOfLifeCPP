@@ -10,6 +10,7 @@ public:
   virtual void OnAttach(){};
   virtual void OnDetach(){};
   virtual void OnUpdate(const double timeStamp){};
+  virtual void OnImGuiRender(){};
   virtual void OnEvent(GLCore::Event &event){};
 
   inline const std::string &GetName() const { return m_DebugName; };
@@ -21,9 +22,6 @@ class LayerStack {
 public:
   void PushLayer(Layer *layer);
   void PopLayer(Layer *layer);
-  void UpdateLayers(const double timeStamp);
-  void RenderLayers();
-  void HandleEvents();
   std::vector<Layer *>::iterator begin() { return layers.begin(); }
   std::vector<Layer *>::iterator end() { return layers.end(); }
 

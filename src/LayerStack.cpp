@@ -13,9 +13,3 @@ void LayerStack::PopLayer(Layer *layer) {
     layer->OnDetach();
   }
 }
-
-void LayerStack::UpdateLayers(const double timeStamp) {
-  for (auto &layer : layers) {
-    layer->OnUpdate(timeStamp);
-  }
-}

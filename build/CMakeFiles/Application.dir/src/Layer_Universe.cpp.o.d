@@ -349,6 +349,9 @@ CMakeFiles/Application.dir/src/Layer_Universe.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/gtc/../ext/matrix_clip_space.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/gtc/../ext/matrix_clip_space.inl \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/gtc/matrix_transform.inl \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h \
+ /usr/include/string.h /usr/include/strings.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Camera/OrthographicCameraController.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Camera/OrthographicCamera.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Events/ApplicationEvent.h \
@@ -372,4 +375,13 @@ CMakeFiles/Application.dir/src/Layer_Universe.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer/Renderer2D.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer/RenderCommand.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Renderer/RendererAPI.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/Window.h \
+ /usr/include/c++/13.2.1/functional \
+ /usr/include/c++/13.2.1/bits/std_function.h \
+ /usr/include/c++/13.2.1/array /usr/include/c++/13.2.1/compare \
+ /usr/include/c++/13.2.1/bits/stl_algo.h \
+ /usr/include/c++/13.2.1/bits/algorithmfwd.h \
+ /usr/include/c++/13.2.1/bits/stl_heap.h \
+ /usr/include/c++/13.2.1/bits/uniform_int_dist.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h \
  /usr/include/c++/13.2.1/iostream

@@ -3,7 +3,10 @@
 #include "GLFW/glfw3.h"
 #include "OrthographicCamera.h"
 #include "OrthographicCameraController.h"
+#include "Renderer2D.h"
+#include "Window.h"
 #include "ext/matrix_transform.hpp"
+#include "imgui_impl_opengl3.h"
 #include <cstdint>
 #include <iostream>
 #include <ostream>
@@ -18,24 +21,15 @@ UniverseLayer::UniverseLayer(float screenWidth, float screenHeight,
       m_ScreenWidth(screenWidth), m_ScreenHeight(screenHeight),
       m_VertexWidth(vertexWidth), m_VertexHeight(vertexHeight), m_Width(width),
       m_Height(height) {}
-UniverseLayer::~UniverseLayer() {
-  // Release allocated memory in the destructor
-  delete m_CameraController; // If m_CameraController was allocated with new
-  delete m_Shader;
-  delete m_Va;
-  delete m_Vb;
-  delete m_Layout;
-  delete m_Ib;
-  delete m_InstanceBuffer;
-  delete m_InstanceLayout;
-  delete m_Universe;
-}
+UniverseLayer::~UniverseLayer() {}
 void UniverseLayer::OnAttach() {
 
-  m_CameraController = new GLCore::Utils::OrthographicCameraController(
-      m_ScreenWidth / m_ScreenHeight, true);
+  m_CameraController =
+      std::make_shared<GLCore::Utils::OrthographicCameraController>(
+          m_ScreenWidth / m_ScreenHeight, true);
 
-  m_Shader = new Shader("/home/jano/dev/nvim/GameOfLifeCPP/assets/gol.shader");
+  m_Shader = std::make_shared<Shader>(
+      "/home/jano/dev/nvim/GameOfLifeCPP/assets/gol.shader");
 
   float vertices[] = {0.0f, 0.0f, 0.0f,           m_VertexWidth,
                       0.0f, 0.0f, m_VertexWidth,  m_VertexHeight,
@@ -43,20 +37,20 @@ void UniverseLayer::OnAttach() {
   m_MatModel = glm::translate(
       m_MatModel, glm::vec3(m_Width * m_VertexWidth / -2.0f,
                             m_Height * m_VertexHeight / -2.0, 0.0f));
-  m_Va = new VertexArray();
+  m_Va = std::make_shared<VertexArray>();
   m_Va->Bind();
 
-  m_Vb = new VertexBuffer(vertices, 4 * 3 * sizeof(float));
+  m_Vb = std::make_shared<VertexBuffer>(vertices, 4 * 3 * sizeof(float));
 
-  m_Layout = new VertexBufferLayout();
+  m_Layout = std::make_shared<VertexBufferLayout>();
   m_Layout->Push<float>(3);
 
   m_Va->AddBuffer(*m_Vb, *m_Layout);
 
   GLuint indices[] = {0, 1, 2, 2, 3, 0};
-  m_Ib = new IndexBuffer(indices, 6);
+  m_Ib = std::make_shared<IndexBuffer>(indices, 6);
 
-  m_Universe = new Universe(m_Width, m_Height);
+  m_Universe = std::make_shared<Universe>(m_Width, m_Height);
   for (int i = 0; i < m_Height; i++) {
     for (int j = 0; j < m_Width; j++) {
       m_Universe->getCellInstance()[i * m_Width + j].position =
@@ -65,10 +59,10 @@ void UniverseLayer::OnAttach() {
   }
   FillRandomly(0.5f);
 
-  m_InstanceBuffer = new InstanceBuffer(
+  m_InstanceBuffer = std::make_shared<InstanceBuffer>(
       m_Universe->getCellInstance().data(),
       sizeof(Universe::CellInstance) * m_Universe->getCellInstance().size());
-  m_InstanceLayout = new InstanceBufferLayout();
+  m_InstanceLayout = std::make_shared<InstanceBufferLayout>();
   m_InstanceLayout->Push<float>(3);
   m_InstanceLayout->Push<float>(3);
   m_InstanceBuffer->addAttributePointer(*m_InstanceLayout);
@@ -84,17 +78,7 @@ void UniverseLayer::ResetUniverse() { m_Universe->ResetUniverse(); }
 void UniverseLayer::FillRandomly(float density) {
   m_Universe->FillRandomly(density);
 }
-void UniverseLayer::OnDetach() {
-  Unbind();
-  delete m_Shader;
-  delete m_Va;
-  delete m_Vb;
-  delete m_Layout;
-  delete m_Ib;
-  delete m_InstanceBuffer;
-  delete m_InstanceLayout;
-  delete m_Universe;
-}
+void UniverseLayer::OnDetach() { Unbind(); }
 
 void UniverseLayer::OnUpdate(const double timeStamp) {
   double currentTime = glfwGetTime();
@@ -104,18 +88,14 @@ void UniverseLayer::OnUpdate(const double timeStamp) {
     m_LastTimeUniverse = currentTime;
   }
 
-  Bind();
   m_CameraController->OnUpdate(deltaTime);
   u_MVP =
       m_CameraController->GetCamera().GetViewProjectionMatrix() * m_MatModel;
-  m_Shader->SetUniformMat4f("u_MVP", u_MVP);
   m_InstanceBuffer->UpdateInstanceData(m_Universe->getCellInstance().data(),
                                        m_Universe->getCellInstance().size() *
                                            sizeof(Universe::CellInstance));
-  GLCALL(glDrawElementsInstanced(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0,
-                                 m_Width * m_Height));
-
-  Unbind();
+  Renderer2D::DrawInstanced(m_Va, m_Shader, m_InstanceBuffer, u_MVP,
+                            m_Universe->getCellInstance().size());
 }
 
 void UniverseLayer::OnEvent(GLCore::Event &e) {
@@ -123,15 +103,69 @@ void UniverseLayer::OnEvent(GLCore::Event &e) {
 }
 void UniverseLayer::Bind() {
   m_Va->Bind();
-  m_Vb->Bind();
-  m_Ib->Bind();
   m_Shader->Bind();
-  m_InstanceBuffer->Bind();
 }
 void UniverseLayer::Unbind() {
   m_Va->Unbind();
-  m_Vb->Unbind();
-  m_Ib->Unbind();
   m_Shader->Unbind();
-  m_InstanceBuffer->Unbind();
+}
+void UniverseLayer::OnImGuiRender() {
+  ImGuiIO &io = ImGui::GetIO();
+  // 1. Show the big demo window (Most of the sample code is in
+  // ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear
+  // ImGui!).
+  if (show_demo_window)
+    ImGui::ShowDemoWindow(&show_demo_window);
+
+  // 2. Show a simple window that we create ourselves. We use a Begin/End pair
+  // to create a named window.
+  {
+    static float f = 0.0f;
+    static int counter = 0;
+
+    ImGui::Begin("Hello, world!"); // Create a window called "Hello, world!" and
+                                   // append into it.
+
+    ImGui::Text("This is some useful text."); // Display some text (you can use
+                                              // a format strings too)
+    ImGui::Checkbox(
+        "Demo Window",
+        &show_demo_window); // Edit bools storing our window open/close state
+    ImGui::Checkbox("Another Window", &show_another_window);
+
+    ImGui::SliderFloat("float", &f, 0.0f,
+                       1.0f); // Edit 1 float using a slider from 0.0f to 1.0f
+    ImGui::ColorEdit3(
+        "clear color",
+        (float *)&clear_color); // Edit 3 floats representing a color
+
+    if (ImGui::Button("Button")) // Buttons return true when clicked (most
+                                 // widgets return true when edited/activated)
+      counter++;
+    ImGui::SameLine();
+    ImGui::Text("counter = %d", counter);
+
+    ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
+                1000.0f / io.Framerate, io.Framerate);
+    ImGui::End();
+  }
+
+  // 3. Show another simple window.
+  if (show_another_window) {
+    ImGui::Begin(
+        "Another Window",
+        &show_another_window); // Pass a pointer to our bool variable (the
+                               // window will have a closing button that will
+                               // clear the bool when clicked)
+    ImGui::Text("Hello from another window!");
+    if (ImGui::Button("Close Me"))
+      show_another_window = false;
+    ImGui::End();
+  }
+
+  /*
+  glClearColor(clear_color.x * clear_color.w, clear_color.y * clear_color.w,
+               clear_color.z * clear_color.w, clear_color.w);
+  glClear(GL_COLOR_BUFFER_BIT);
+*/
 }
