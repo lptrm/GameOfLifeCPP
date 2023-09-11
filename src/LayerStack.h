@@ -9,7 +9,7 @@ public:
 
   virtual void OnAttach(){};
   virtual void OnDetach(){};
-  virtual void OnUpdate(const double timeStamp){};
+  virtual void OnUpdate(const float timeStamp){};
   virtual void OnImGuiRender(){};
   virtual void OnEvent(GLCore::Event &event){};
 

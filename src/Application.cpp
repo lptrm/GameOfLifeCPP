@@ -61,15 +61,18 @@ int main(void) {
     TestLayer *tl = new TestLayer();
 
     app->GetLayerStack().PushLayer(ul);
-    app->GetLayerStack().PushLayer(tl);
+    // app->GetLayerStack().PushLayer(tl);
     app->GetLayerStack().PushLayer(il);
 
     while (!glfwWindowShouldClose(app->GetWindow().GetNativeWindow())) {
+      float time = (float)glfwGetTime();
+      float deltaTime = time - app->m_LastFrameTime;
+      app->m_LastFrameTime = time;
       glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
       glClear(GL_COLOR_BUFFER_BIT);
       for (auto &layer : app->GetLayerStack()) {
-        layer->OnUpdate(0.0f);
+        layer->OnUpdate(deltaTime);
       }
       il->Begin();
       for (auto &layer : app->GetLayerStack()) {

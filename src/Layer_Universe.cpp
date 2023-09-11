@@ -1,11 +1,13 @@
 #include "Layer_Universe.h"
 #include "Event.h"
 #include "GLFW/glfw3.h"
+#include "Input.h"
 #include "OrthographicCamera.h"
 #include "OrthographicCameraController.h"
 #include "Renderer2D.h"
 #include "Window.h"
 #include "ext/matrix_transform.hpp"
+#include "fwd.hpp"
 #include "imgui_impl_opengl3.h"
 #include <cstdint>
 #include <iostream>
@@ -63,13 +65,13 @@ void UniverseLayer::OnAttach() {
       m_Universe->getCellInstance().data(),
       sizeof(Universe::CellInstance) * m_Universe->getCellInstance().size());
   m_InstanceLayout = std::make_shared<InstanceBufferLayout>();
-  m_InstanceLayout->Push<float>(3);
+  m_InstanceLayout->Push<float>(4);
   m_InstanceLayout->Push<float>(3);
   m_InstanceBuffer->addAttributePointer(*m_InstanceLayout);
   u_MVP =
       m_CameraController->GetCamera().GetViewProjectionMatrix() * m_MatModel;
   m_Shader->SetUniformMat4f("u_MVP", u_MVP);
-  m_LastTimeUniverse = glfwGetTime();
+  m_LastTimeUniverse = 0.0f;
 
   m_GenerationTime = 0.5;
   Unbind();
@@ -80,15 +82,37 @@ void UniverseLayer::FillRandomly(float density) {
 }
 void UniverseLayer::OnDetach() { Unbind(); }
 
-void UniverseLayer::OnUpdate(const double timeStamp) {
-  double currentTime = glfwGetTime();
-  double deltaTime = currentTime - m_LastTimeUniverse;
-  if (deltaTime >= m_GenerationTime) {
+void UniverseLayer::OnUpdate(const float timeStamp) {
+  if (!ImGui::GetIO().WantCaptureMouse) {
+    if (Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT)) {
+      std::cout << "Left mouse button pressed" << std::endl;
+      glm::mat4 viewProjectionMatrix =
+          m_CameraController->GetCamera().GetViewProjectionMatrix();
+      glm::vec4 screenCoords =
+          glm::vec4(Input::GetMouseX(), Input::GetMouseY(), 0.0f, 1.0f);
+      glm::vec4 worldCoords = glm::inverse(viewProjectionMatrix) * screenCoords;
+      worldCoords /= worldCoords.w;
+      std::cout << "World coords: " << worldCoords.x << ", " << worldCoords.y
+                << std::endl;
+      glm::vec3 rayOrigin = m_CameraController->GetCamera().GetPosition();
+      glm::vec3 rayDirection = glm::normalize(
+          glm::vec3(worldCoords.x, worldCoords.y, 0.0f) - rayOrigin);
+      std::cout << "Ray origin: " << rayOrigin.x << ", " << rayOrigin.y << ", "
+                << rayOrigin.z << std::endl;
+      std::cout << "Ray direction: " << rayDirection.x << ", " << rayDirection.y
+                << ", " << rayDirection.z << std::endl;
+    }
+    if (Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_RIGHT)) {
+      std::cout << "Right mouse button pressed" << std::endl;
+    }
+  }
+  m_LastTimeUniverse += timeStamp;
+  if (m_LastTimeUniverse >= m_GenerationTime) {
     m_Universe->update();
-    m_LastTimeUniverse = currentTime;
+    m_LastTimeUniverse = 0.0f;
   }
 
-  m_CameraController->OnUpdate(deltaTime);
+  m_CameraController->OnUpdate(timeStamp);
   u_MVP =
       m_CameraController->GetCamera().GetViewProjectionMatrix() * m_MatModel;
   m_InstanceBuffer->UpdateInstanceData(m_Universe->getCellInstance().data(),
@@ -135,9 +159,8 @@ void UniverseLayer::OnImGuiRender() {
 
     ImGui::SliderFloat("float", &f, 0.0f,
                        1.0f); // Edit 1 float using a slider from 0.0f to 1.0f
-    ImGui::ColorEdit3(
-        "clear color",
-        (float *)&clear_color); // Edit 3 floats representing a color
+    ImGui::ColorEdit4("alive color", (float *)m_Universe->getColorAlive());
+    ImGui::ColorEdit4("dead color", (float *)m_Universe->getColorDead());
 
     if (ImGui::Button("Button")) // Buttons return true when clicked (most
                                  // widgets return true when edited/activated)

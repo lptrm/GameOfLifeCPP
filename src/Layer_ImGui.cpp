@@ -49,3 +49,28 @@ void ImGuiLayer::End() { // Rendering
   glViewport(0, 0, display_w, display_h);
   ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
+// OnEvent function to handle all incoming events.
+void ImGuiLayer::OnEvent(GLCore::Event &event) {
+  // Use the EventDispatcher to dispatch events to appropriate event handlers.
+  GLCore::EventDispatcher dispatcher(event);
+
+  dispatcher.Dispatch<GLCore::MouseButtonPressedEvent>(std::bind(
+      &ImGuiLayer::OnMouseButtonPressedEvent, this, std::placeholders::_1));
+  // Handle MouseScrolledEvent using the resolved macro
+  dispatcher.Dispatch<GLCore::MouseScrolledEvent>(std::bind(
+      &ImGuiLayer::OnMouseScrolledEvent, this, std::placeholders::_1));
+}
+bool ImGuiLayer::OnMouseScrolledEvent(GLCore::MouseScrolledEvent &e) {
+  // Get ImGui's IO structure.
+  ImGuiIO &io = ImGui::GetIO();
+  // Check if ImGui wants to capture mouse events.
+  return io.WantCaptureMouse;
+}
+// OnMouseButtonPressed function to check if ImGui should capture mouse events.
+bool ImGuiLayer::OnMouseButtonPressedEvent(GLCore::MouseButtonPressedEvent &e) {
+  // Get ImGui's IO structure.
+  ImGuiIO &io = ImGui::GetIO();
+
+  // Check if ImGui wants to capture mouse events.
+  return io.WantCaptureMouse;
+}

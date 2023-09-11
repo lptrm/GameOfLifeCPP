@@ -29,7 +29,7 @@ void TestLayer::OnAttach() { //  Implementation for OnAttach, if needed
 
 void TestLayer::OnDetach() {}
 
-void TestLayer::OnUpdate(const double timeStamp) {
+void TestLayer::OnUpdate(const float timeStamp) {
 
   Renderer2D::DrawTest(m_Va, m_Shader);
 }

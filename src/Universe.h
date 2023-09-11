@@ -7,7 +7,7 @@
 class Universe {
 public:
   struct CellInstance {
-    glm::vec3 color;
+    glm::vec4 color;
     glm::vec3 position;
   };
 
@@ -34,6 +34,10 @@ public:
   inline int getGameGrid(int index) const { return m_CurrentState[index]; }
   // now passing by reference to update the positions from tha app
   inline std::vector<CellInstance> &getCellInstance() { return m_InstanceData; }
+  inline glm::vec4 *getColorAlive() { return &m_ColorAlive; }
+  inline glm::vec4 *getColorDead() { return &m_ColorDead; }
+  inline void setColorAlive(glm::vec4 color) { m_ColorAlive = color; }
+  inline void setColorDead(glm::vec4 color) { m_ColorDead = color; }
 
 private:
   int m_Width;
@@ -44,6 +48,8 @@ private:
   int *m_CurrentState;
   int *m_OldState;
   std::vector<CellInstance> m_InstanceData;
+  glm::vec4 m_ColorAlive = glm::vec4(1.0f, 0.0f, 1.0f, 1.0f);
+  glm::vec4 m_ColorDead = glm::vec4(0.0f, 1.0f, 1.0f, 1.0f);
   int CalculatePower(int);
   bool getOldBitValue(int &index, int &intIndex, int &bitIndex);
   bool getNewBitValue(int &index, int &intIndex, int &bitIndex);

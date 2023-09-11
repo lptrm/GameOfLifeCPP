@@ -12,10 +12,6 @@ Universe::Universe(int width, int height) : m_Width(width), m_Height(height) {
   m_CurrentState = new int[size]();
   m_OldState = new int[size]();
   m_InstanceData = std::vector<CellInstance>(m_Size);
-  for (int i = 0; i < m_Size; i++) {
-    m_InstanceData[i].color =
-        i % 2 == 0 ? glm::vec3(1.0f, 0.0f, 0.0f) : glm::vec3(0.0f, 0.0f, 1.0f);
-  }
 }
 Universe::~Universe() {
   delete[] m_CurrentState;
@@ -26,7 +22,7 @@ void Universe::ResetUniverse() {
     int intIndex = i >> 5;
     int bitOffset = i & 31;
     m_CurrentState[intIndex] &= ~(1 << bitOffset);
-    m_InstanceData[i].color = glm::vec3(0.0f, 1.0f, 1.0f);
+    m_InstanceData[i].color = m_ColorDead;
   }
 }
 void Universe::FillRandomly(float density) {
@@ -38,9 +34,9 @@ void Universe::FillRandomly(float density) {
       int intIndex = i >> 5;
       int bitOffset = i & 31;
       m_CurrentState[intIndex] |= (1 << bitOffset);
-      m_InstanceData[i].color = glm::vec3(1.0f, 0.0f, 1.0f);
+      m_InstanceData[i].color = m_ColorAlive;
     } else {
-      m_InstanceData[i].color = glm::vec3(0.0f, 1.0f, 1.0f);
+      m_InstanceData[i].color = m_ColorDead;
     }
   }
 }
@@ -55,9 +51,9 @@ void Universe::update() {
     if (newState) {
       m_CurrentState[intIndex] |=
           (1 << bitOffset); // Set the corresponding bit to 1
-      m_InstanceData[i].color = glm::vec3(1.0f, 0.0f, 1.0f);
+      m_InstanceData[i].color = m_ColorAlive;
     } else {
-      m_InstanceData[i].color = glm::vec3(0.0f, 1.0f, 1.0f);
+      m_InstanceData[i].color = m_ColorDead;
     }
   }
 }

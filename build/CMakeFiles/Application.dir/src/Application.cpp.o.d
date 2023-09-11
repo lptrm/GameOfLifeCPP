@@ -181,6 +181,7 @@ CMakeFiles/Application.dir/src/Application.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Events/ApplicationEvent.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Events/KeyEvent.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/Layer_ImGui.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Events/MouseEvent.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imgui.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/imconfig.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/float.h \
@@ -381,7 +382,6 @@ CMakeFiles/Application.dir/src/Application.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/gtc/matrix_transform.inl \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Camera/OrthographicCameraController.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Camera/OrthographicCamera.h \
- /home/jano/dev/nvim/GameOfLifeCPP/src/utils/Events/MouseEvent.h \
  /usr/include/c++/13.2.1/iostream \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_glfw.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/imgui/backends/imgui_impl_opengl3.h

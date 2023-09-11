@@ -27,7 +27,7 @@ public:
   void ResetUniverse();
   virtual void OnAttach() override;
   virtual void OnDetach() override;
-  virtual void OnUpdate(const double timeStamp) override;
+  virtual void OnUpdate(const float timeStamp) override;
   virtual void OnImGuiRender() override;
   virtual void OnEvent(GLCore::Event &e) override;
 
