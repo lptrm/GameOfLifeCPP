@@ -44,8 +44,32 @@ void Window::SetVSync(bool vsync) {
 }
 
 void Window::SetFullscreen(bool fullscreen) {
-  m_Data.Height = fullscreen;
-  // Implement fullscreen/windowed mode switching logic here
+  if (fullscreen) {
+    // Get the primary monitor
+    GLFWmonitor *primaryMonitor = glfwGetPrimaryMonitor();
+
+    if (!primaryMonitor) {
+      // No monitor found
+      return;
+    }
+
+    // Get the video mode of the primary monitor
+    const GLFWvidmode *mode = glfwGetVideoMode(primaryMonitor);
+
+    if (!mode) {
+      // Video mode retrieval failed
+      return;
+    }
+
+    // Set the window size to the maximum screen size
+    glfwSetWindowSize(m_Window, mode->width, mode->height);
+    glfwSetWindowMonitor(m_Window, primaryMonitor, 0, 0, mode->width,
+                         mode->height, mode->refreshRate);
+
+    // Other code to handle fullscreen mode
+  }
+
+  m_Data.Fullscreen = fullscreen;
 }
 Window::Window() {
   m_Data.Title = "Game of Life";
@@ -102,6 +126,7 @@ Window::Window() {
         GLCore::WindowResizeEvent event(width, height);
         data.EventCallback(event);
       });
+
   glfwSetKeyCallback(m_Window, [](GLFWwindow *window, int key, int scancode,
                                   int action, int mods) {
     WindowData &data = *(WindowData *)glfwGetWindowUserPointer(window);

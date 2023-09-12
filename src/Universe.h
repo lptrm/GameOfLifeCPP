@@ -21,7 +21,7 @@ public:
   void ResetUniverse();
 
   void update();
-  void setAlive(int, int);
+  void setAlive(int column, int row);
   void setDead(int, int);
   void printGrid();
   void printPositionData() const;

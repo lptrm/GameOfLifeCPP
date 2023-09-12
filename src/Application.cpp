@@ -53,10 +53,16 @@ int main(void) {
     Application *app = new Application();
     // app->GetWindow().SetSize(1024, 1024);
     app->GetWindow().SetTitle("Game of Life");
+
     app->GetWindow().SetVSync(true);
+
     app->GetWindow().SetFullscreen(false);
+    std::cout << "Window size: " << app->GetWindow().GetWidth() << " x "
+              << app->GetWindow().GetHeight() << " y " << std::endl;
     app->GetWindow().SetEventCallback(app->OnEvent);
-    UniverseLayer *ul = new UniverseLayer(1024, 1024, 0.5, 0.5f, 128, 64);
+    UniverseLayer *ul =
+        new UniverseLayer(app->GetWindow().GetWidth(),
+                          app->GetWindow().GetHeight(), 1.0f, 1.0f, 128, 64);
     ImGuiLayer *il = new ImGuiLayer();
     TestLayer *tl = new TestLayer();
 
@@ -65,6 +71,7 @@ int main(void) {
     app->GetLayerStack().PushLayer(il);
 
     while (!glfwWindowShouldClose(app->GetWindow().GetNativeWindow())) {
+
       float time = (float)glfwGetTime();
       float deltaTime = time - app->m_LastFrameTime;
       app->m_LastFrameTime = time;

@@ -9,6 +9,7 @@
 #include "ext/matrix_transform.hpp"
 #include "fwd.hpp"
 #include "imgui_impl_opengl3.h"
+#include "matrix.hpp"
 #include <cstdint>
 #include <iostream>
 #include <ostream>
@@ -37,8 +38,8 @@ void UniverseLayer::OnAttach() {
                       0.0f, 0.0f, m_VertexWidth,  m_VertexHeight,
                       0.0f, 0.0f, m_VertexHeight, 0.0f};
   m_MatModel = glm::translate(
-      m_MatModel, glm::vec3(m_Width * m_VertexWidth / -2.0f,
-                            m_Height * m_VertexHeight / -2.0, 0.0f));
+      m_MatModel, glm::vec3(m_VertexWidth * m_Width * -0.5f,
+                            m_VertexHeight * m_Height * -0.5f, 0.0f));
   m_Va = std::make_shared<VertexArray>();
   m_Va->Bind();
 
@@ -72,8 +73,13 @@ void UniverseLayer::OnAttach() {
       m_CameraController->GetCamera().GetViewProjectionMatrix() * m_MatModel;
   m_Shader->SetUniformMat4f("u_MVP", u_MVP);
   m_LastTimeUniverse = 0.0f;
-
-  m_GenerationTime = 0.5;
+  for (int i = 0; i < 32; i++) {
+    int row = i / m_Height;
+    int col = i % m_Width;
+    m_Universe->setAlive(col, row);
+  }
+  m_Universe->printGrid();
+  m_GenerationTime = 5.0;
   Unbind();
 }
 void UniverseLayer::ResetUniverse() { m_Universe->ResetUniverse(); }
@@ -85,22 +91,19 @@ void UniverseLayer::OnDetach() { Unbind(); }
 void UniverseLayer::OnUpdate(const float timeStamp) {
   if (!ImGui::GetIO().WantCaptureMouse) {
     if (Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT)) {
-      std::cout << "Left mouse button pressed" << std::endl;
-      glm::mat4 viewProjectionMatrix =
-          m_CameraController->GetCamera().GetViewProjectionMatrix();
-      glm::vec4 screenCoords =
-          glm::vec4(Input::GetMouseX(), Input::GetMouseY(), 0.0f, 1.0f);
-      glm::vec4 worldCoords = glm::inverse(viewProjectionMatrix) * screenCoords;
-      worldCoords /= worldCoords.w;
-      std::cout << "World coords: " << worldCoords.x << ", " << worldCoords.y
-                << std::endl;
-      glm::vec3 rayOrigin = m_CameraController->GetCamera().GetPosition();
-      glm::vec3 rayDirection = glm::normalize(
-          glm::vec3(worldCoords.x, worldCoords.y, 0.0f) - rayOrigin);
-      std::cout << "Ray origin: " << rayOrigin.x << ", " << rayOrigin.y << ", "
-                << rayOrigin.z << std::endl;
-      std::cout << "Ray direction: " << rayDirection.x << ", " << rayDirection.y
-                << ", " << rayDirection.z << std::endl;
+      glm::vec2 intersectionPoint;
+      if (UniverseIntersection(intersectionPoint)) {
+        intersectionPoint = glm::inverse(
+
+                                m_MatModel) *
+                            glm::vec4(intersectionPoint, 0.0f, 1.0f);
+
+        int row = (int)(intersectionPoint.y / m_VertexHeight);
+        int col = (int)(intersectionPoint.x / m_VertexWidth);
+        m_Universe->setAlive(col, row);
+      } else {
+        std::cout << "No intersection" << std::endl;
+      }
     }
     if (Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_RIGHT)) {
       std::cout << "Right mouse button pressed" << std::endl;
@@ -120,6 +123,27 @@ void UniverseLayer::OnUpdate(const float timeStamp) {
                                            sizeof(Universe::CellInstance));
   Renderer2D::DrawInstanced(m_Va, m_Shader, m_InstanceBuffer, u_MVP,
                             m_Universe->getCellInstance().size());
+}
+bool UniverseLayer::UniverseIntersection(glm::vec2 &intersectionPoint) {
+  glm::mat4 viewProjectionMatrix =
+      m_CameraController->GetCamera().GetViewProjectionMatrix();
+  glm::vec4 screenCoords = glm::vec4(
+      (2.0f * (Input::GetMouseX() / Window::GetInstance().GetWidth())) - 1.0f,
+      1.0f - (2.0f * (Input::GetMouseY() / Window::GetInstance().GetHeight())),
+      0.0f, 1.0f);
+  glm::vec4 worldCoords = glm::inverse(viewProjectionMatrix) * screenCoords;
+  worldCoords /= worldCoords.w;
+
+  if (worldCoords.x < m_VertexWidth * m_Width * -0.5f ||
+      worldCoords.x > m_VertexWidth * m_Width * 0.5f ||
+      worldCoords.y < m_VertexHeight * m_Height * -0.5f ||
+      worldCoords.y > m_VertexHeight * m_Height * 0.5f) {
+    std::cout << "Out of bounds" << std::endl;
+    return false;
+  }
+  intersectionPoint.x = worldCoords.x;
+  intersectionPoint.y = worldCoords.y;
+  return true;
 }
 
 void UniverseLayer::OnEvent(GLCore::Event &e) {
@@ -157,8 +181,8 @@ void UniverseLayer::OnImGuiRender() {
         &show_demo_window); // Edit bools storing our window open/close state
     ImGui::Checkbox("Another Window", &show_another_window);
 
-    ImGui::SliderFloat("float", &f, 0.0f,
-                       1.0f); // Edit 1 float using a slider from 0.0f to 1.0f
+    ImGui::SliderFloat("time for generation (s)", &m_GenerationTime, 0.0f,
+                       10.0f); // Edit 1 float using a slider from 0.0f to 1.0f
     ImGui::ColorEdit4("alive color", (float *)m_Universe->getColorAlive());
     ImGui::ColorEdit4("dead color", (float *)m_Universe->getColorDead());
 

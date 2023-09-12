@@ -12,6 +12,9 @@ Universe::Universe(int width, int height) : m_Width(width), m_Height(height) {
   m_CurrentState = new int[size]();
   m_OldState = new int[size]();
   m_InstanceData = std::vector<CellInstance>(m_Size);
+  for (int i = 0; i < m_Size; i++) {
+    m_InstanceData[i].color = m_ColorDead;
+  }
 }
 Universe::~Universe() {
   delete[] m_CurrentState;
@@ -68,10 +71,11 @@ void Universe::printPositionData() const {
   }
 }
 void Universe::setAlive(int column, int row) {
-  int index = row * column + column;
+  int index = row * m_Width + column;
   int intIndex = index >> 5;
   int bitOffset = index & 31;
   m_CurrentState[intIndex] |= (1 << bitOffset);
+  m_InstanceData[index].color = m_ColorAlive;
 }
 bool Universe::getOldBitValue(int &index, int &intIndex, int &bitOffset) {
   intIndex = index >> 5;

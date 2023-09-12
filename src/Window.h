@@ -29,7 +29,8 @@ public:
 private:
   struct WindowData {
     std::string Title;
-    unsigned int Width, Height;
+    unsigned int Width;
+    unsigned int Height;
     bool VSync;
     bool Fullscreen;
     EventCallbackFn EventCallback;

@@ -32,6 +32,7 @@ public:
   virtual void OnEvent(GLCore::Event &e) override;
 
   void TestFunction();
+  bool UniverseIntersection(glm::vec2 &intersectionPoint);
 
 private:
   std::shared_ptr<GLCore::Utils::OrthographicCameraController>
@@ -46,9 +47,9 @@ private:
   std::shared_ptr<InstanceBuffer> m_InstanceBuffer;
   std::shared_ptr<InstanceBufferLayout> m_InstanceLayout;
   std::shared_ptr<Universe> m_Universe;
-  double m_LastTimeUniverse;
-  double m_GenerationTime;
-  double m_LastTimeFrame;
+  float m_LastTimeUniverse;
+  float m_GenerationTime;
+  float m_LastTimeFrame;
   unsigned int m_Width;
   unsigned int m_Height;
   float m_ScreenWidth;
