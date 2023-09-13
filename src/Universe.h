@@ -11,11 +11,7 @@ public:
     glm::vec3 position;
   };
 
-  Universe(int, int);
-  Universe(Universe &&) = default;
-  Universe(const Universe &) = default;
-  Universe &operator=(Universe &&) = default;
-  Universe &operator=(const Universe &) = default;
+  Universe(int width, int height);
   ~Universe();
   void FillRandomly(float density);
   void ResetUniverse();

@@ -1,9 +1,9 @@
-
 #pragma once
 
 #include "Event.h"
 #include <GLFW/glfw3.h>
 #include <functional>
+#include <memory>
 #include <string>
 
 class Window {
@@ -13,7 +13,7 @@ public:
   static void ReleaseInstance();
 
   void OnUpdate();
-  inline GLFWwindow *GetNativeWindow() const { return m_Window; }
+  inline GLFWwindow *GetNativeWindow() const { return m_Window.get(); }
   inline unsigned int GetWidth() const { return m_Data.Width; }
   inline unsigned int GetHeight() const { return m_Data.Height; }
   inline bool GetVSync() const { return m_Data.VSync; }
@@ -35,9 +35,15 @@ private:
     bool Fullscreen;
     EventCallbackFn EventCallback;
   };
-
+  struct DeleteGLFWwindow {
+    void operator()(GLFWwindow *ptr) const {
+      if (ptr)
+        glfwDestroyWindow(ptr);
+      glfwTerminate();
+    }
+  };
   WindowData m_Data;
-  GLFWwindow *m_Window;
+  std::unique_ptr<GLFWwindow, DeleteGLFWwindow> m_Window;
   static Window *m_Instance;
 
   Window();

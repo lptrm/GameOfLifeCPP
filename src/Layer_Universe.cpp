@@ -10,6 +10,7 @@
 #include "fwd.hpp"
 #include "imgui_impl_opengl3.h"
 #include "matrix.hpp"
+#include <chrono>
 #include <cstdint>
 #include <iostream>
 #include <ostream>
@@ -73,12 +74,6 @@ void UniverseLayer::OnAttach() {
       m_CameraController->GetCamera().GetViewProjectionMatrix() * m_MatModel;
   m_Shader->SetUniformMat4f("u_MVP", u_MVP);
   m_LastTimeUniverse = 0.0f;
-  for (int i = 0; i < 32; i++) {
-    int row = i / m_Height;
-    int col = i % m_Width;
-    m_Universe->setAlive(col, row);
-  }
-  m_Universe->printGrid();
   m_GenerationTime = 5.0;
   Unbind();
 }
@@ -89,6 +84,11 @@ void UniverseLayer::FillRandomly(float density) {
 void UniverseLayer::OnDetach() { Unbind(); }
 
 void UniverseLayer::OnUpdate(const float timeStamp) {
+  static float totalTimeUniverse = 0.0f;
+  static int frameCountUniverse = 0;
+
+  static float totalTimeDraw = 0.0f;
+  static int frameCountDraw = 0;
   if (!ImGui::GetIO().WantCaptureMouse) {
     if (Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT)) {
       glm::vec2 intersectionPoint;
@@ -109,12 +109,18 @@ void UniverseLayer::OnUpdate(const float timeStamp) {
       std::cout << "Right mouse button pressed" << std::endl;
     }
   }
+  // Measure time taken by Universe::update
+  auto startUniverse = std::chrono::high_resolution_clock::now();
   m_LastTimeUniverse += timeStamp;
   if (m_LastTimeUniverse >= m_GenerationTime) {
     m_Universe->update();
     m_LastTimeUniverse = 0.0f;
   }
+  auto endUniverse = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<float> elapsedUniverse = endUniverse - startUniverse;
 
+  // Measure time taken by Renderer2D::DrawInstanced
+  auto startDraw = std::chrono::high_resolution_clock::now();
   m_CameraController->OnUpdate(timeStamp);
   u_MVP =
       m_CameraController->GetCamera().GetViewProjectionMatrix() * m_MatModel;
@@ -123,6 +129,29 @@ void UniverseLayer::OnUpdate(const float timeStamp) {
                                            sizeof(Universe::CellInstance));
   Renderer2D::DrawInstanced(m_Va, m_Shader, m_InstanceBuffer, u_MVP,
                             m_Universe->getCellInstance().size());
+  auto endDraw = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<float> elapsedDraw = endDraw - startDraw;
+
+  // Update and print performance statistics
+  totalTimeUniverse += elapsedUniverse.count();
+  frameCountUniverse++;
+  totalTimeDraw += elapsedDraw.count();
+  frameCountDraw++;
+
+  if (frameCountUniverse >= 100) { // Print average every 100 frames
+    std::cout << "Average Universe::update time: "
+              << totalTimeUniverse / frameCountUniverse << " seconds"
+              << std::endl;
+    frameCountUniverse = 0;
+    totalTimeUniverse = 0.0f;
+  }
+
+  if (frameCountDraw >= 100) { // Print average every 100 frames
+    std::cout << "Average Renderer2D::DrawInstanced time: "
+              << totalTimeDraw / frameCountDraw << " seconds" << std::endl;
+    frameCountDraw = 0;
+    totalTimeDraw = 0.0f;
+  }
 }
 bool UniverseLayer::UniverseIntersection(glm::vec2 &intersectionPoint) {
   glm::mat4 viewProjectionMatrix =
@@ -168,21 +197,22 @@ void UniverseLayer::OnImGuiRender() {
   // 2. Show a simple window that we create ourselves. We use a Begin/End pair
   // to create a named window.
   {
-    static float f = 0.0f;
+    static float fillRandomly = 0.0f;
     static int counter = 0;
 
-    ImGui::Begin("Hello, world!"); // Create a window called "Hello, world!" and
-                                   // append into it.
+    ImGui::Begin("Game Of Life"); // Create a window called "Hello, world!" and
+                                  // append into it.
 
     ImGui::Text("This is some useful text."); // Display some text (you can use
                                               // a format strings too)
-    ImGui::Checkbox(
-        "Demo Window",
-        &show_demo_window); // Edit bools storing our window open/close state
-    ImGui::Checkbox("Another Window", &show_another_window);
-
     ImGui::SliderFloat("time for generation (s)", &m_GenerationTime, 0.0f,
                        10.0f); // Edit 1 float using a slider from 0.0f to 1.0f
+    ImGui::SliderFloat("density(alive) after reset (s)", &fillRandomly, 0.0f,
+                       1.0f); // Edit 1 float using a slider from 0.0f to 1.0f
+    if (ImGui::Button("Reset Universe")) {
+      m_Universe->ResetUniverse();
+      FillRandomly(fillRandomly);
+    } // Buttons return true when clicked
     ImGui::ColorEdit4("alive color", (float *)m_Universe->getColorAlive());
     ImGui::ColorEdit4("dead color", (float *)m_Universe->getColorDead());
 

@@ -4,8 +4,9 @@
 #include "KeyEvent.h"
 #include "MouseEvent.h"
 #include "glad/glad.h"
+#include <GLFW/glfw3.h>
 #include <iostream>
-
+#include <memory>
 Window *Window::m_Instance = nullptr;
 
 Window &Window::GetInstance() {
@@ -24,18 +25,18 @@ void Window::ReleaseInstance() {
 
 void Window::OnUpdate() {
   glfwPollEvents();
-  glfwSwapBuffers(m_Window);
+  glfwSwapBuffers(m_Window.get());
 }
 
 void Window::SetSize(unsigned int width, unsigned int height) {
   m_Data.Width = width;
   m_Data.Height = height;
-  glfwSetWindowSize(m_Window, m_Data.Width, m_Data.Height);
+  glfwSetWindowSize(m_Window.get(), m_Data.Width, m_Data.Height);
 }
 
 void Window::SetTitle(const std::string &title) {
   m_Data.Title = title;
-  glfwSetWindowTitle(m_Window, m_Data.Title.c_str());
+  glfwSetWindowTitle(m_Window.get(), m_Data.Title.c_str());
 }
 
 void Window::SetVSync(bool vsync) {
@@ -62,8 +63,8 @@ void Window::SetFullscreen(bool fullscreen) {
     }
 
     // Set the window size to the maximum screen size
-    glfwSetWindowSize(m_Window, mode->width, mode->height);
-    glfwSetWindowMonitor(m_Window, primaryMonitor, 0, 0, mode->width,
+    glfwSetWindowSize(m_Window.get(), mode->width, mode->height);
+    glfwSetWindowMonitor(m_Window.get(), primaryMonitor, 0, 0, mode->width,
                          mode->height, mode->refreshRate);
 
     // Other code to handle fullscreen mode
@@ -88,23 +89,24 @@ Window::Window() {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-  m_Window = glfwCreateWindow(m_Data.Width, m_Data.Height, m_Data.Title.c_str(),
-                              nullptr, nullptr);
-  if (!m_Window) {
+  m_Window = std::unique_ptr<GLFWwindow, DeleteGLFWwindow>(
+      glfwCreateWindow(m_Data.Width, m_Data.Height, m_Data.Title.c_str(),
+                       nullptr, nullptr),
+      DeleteGLFWwindow());
+  if (!m_Window.get()) {
     glfwTerminate();
     std::cerr << "Failed to create GLFW window" << std::endl;
     return;
   }
 
-  glfwMakeContextCurrent(m_Window);
+  glfwMakeContextCurrent(m_Window.get());
 
   if (gladLoadGL() == 0) {
     std::cerr << "Failed to initialize Glad" << std::endl;
     return;
   }
 
-  glfwMakeContextCurrent(m_Window);
+  glfwMakeContextCurrent(m_Window.get());
 
   // Enable VSync
   if (m_Data.VSync) {
@@ -116,9 +118,9 @@ Window::Window() {
   std::cout << "OpenGL Version: " << glGetString(GL_VERSION) << std::endl;
 
   // Set GLFW callbacks
-  glfwSetWindowUserPointer(m_Window, &m_Data);
+  glfwSetWindowUserPointer(m_Window.get(), &m_Data);
   glfwSetWindowSizeCallback(
-      m_Window, [](GLFWwindow *window, int width, int height) {
+      m_Window.get(), [](GLFWwindow *window, int width, int height) {
         WindowData &data = *(WindowData *)glfwGetWindowUserPointer(window);
         data.Width = width;
         data.Height = height;
@@ -127,8 +129,8 @@ Window::Window() {
         data.EventCallback(event);
       });
 
-  glfwSetKeyCallback(m_Window, [](GLFWwindow *window, int key, int scancode,
-                                  int action, int mods) {
+  glfwSetKeyCallback(m_Window.get(), [](GLFWwindow *window, int key,
+                                        int scancode, int action, int mods) {
     WindowData &data = *(WindowData *)glfwGetWindowUserPointer(window);
 
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GLFW_TRUE);
@@ -150,7 +152,7 @@ Window::Window() {
     }
     }
   });
-  glfwSetCharCallback(m_Window, [](GLFWwindow *window, uint32_t keycode) {
+  glfwSetCharCallback(m_Window.get(), [](GLFWwindow *window, uint32_t keycode) {
     WindowData &data = *(WindowData *)glfwGetWindowUserPointer(window);
 
     GLCore::KeyTypedEvent event(keycode);
@@ -158,7 +160,7 @@ Window::Window() {
   });
 
   glfwSetMouseButtonCallback(
-      m_Window, [](GLFWwindow *window, int button, int action, int mods) {
+      m_Window.get(), [](GLFWwindow *window, int button, int action, int mods) {
         WindowData &data = *(WindowData *)glfwGetWindowUserPointer(window);
 
         switch (action) {
@@ -176,7 +178,7 @@ Window::Window() {
       });
 
   glfwSetScrollCallback(
-      m_Window, [](GLFWwindow *window, double xOffset, double yOffset) {
+      m_Window.get(), [](GLFWwindow *window, double xOffset, double yOffset) {
         WindowData &data = *(WindowData *)glfwGetWindowUserPointer(window);
 
         GLCore::MouseScrolledEvent event((float)xOffset, (float)yOffset);
@@ -184,7 +186,7 @@ Window::Window() {
       });
 
   glfwSetCursorPosCallback(
-      m_Window, [](GLFWwindow *window, double xPos, double yPos) {
+      m_Window.get(), [](GLFWwindow *window, double xPos, double yPos) {
         WindowData &data = *(WindowData *)glfwGetWindowUserPointer(window);
 
         GLCore::MouseMovedEvent event((float)xPos, (float)yPos);
@@ -192,12 +194,7 @@ Window::Window() {
       });
 }
 
-Window::~Window() {
-  if (m_Window) {
-    glfwDestroyWindow(m_Window);
-    glfwTerminate();
-  }
-}
+Window::~Window() {}
 
 void Window::glfw_error_callback(int error, const char *description) {
   std::cerr << "GLFW Error " << error << ": " << description << std::endl;
