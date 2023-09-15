@@ -297,6 +297,30 @@ src/Universe.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/Universe.cpp.s
 .PHONY : src/Universe.cpp.s
 
+src/UniverseLayerInstance.o: src/UniverseLayerInstance.cpp.o
+.PHONY : src/UniverseLayerInstance.o
+
+# target to build an object file
+src/UniverseLayerInstance.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/UniverseLayerInstance.cpp.o
+.PHONY : src/UniverseLayerInstance.cpp.o
+
+src/UniverseLayerInstance.i: src/UniverseLayerInstance.cpp.i
+.PHONY : src/UniverseLayerInstance.i
+
+# target to preprocess a source file
+src/UniverseLayerInstance.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/UniverseLayerInstance.cpp.i
+.PHONY : src/UniverseLayerInstance.cpp.i
+
+src/UniverseLayerInstance.s: src/UniverseLayerInstance.cpp.s
+.PHONY : src/UniverseLayerInstance.s
+
+# target to generate assembly for a file
+src/UniverseLayerInstance.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Application.dir/build.make CMakeFiles/Application.dir/src/UniverseLayerInstance.cpp.s
+.PHONY : src/UniverseLayerInstance.cpp.s
+
 src/Window.o: src/Window.cpp.o
 .PHONY : src/Window.o
 
@@ -855,6 +879,9 @@ help:
 	@echo "... src/Universe.o"
 	@echo "... src/Universe.i"
 	@echo "... src/Universe.s"
+	@echo "... src/UniverseLayerInstance.o"
+	@echo "... src/UniverseLayerInstance.i"
+	@echo "... src/UniverseLayerInstance.s"
 	@echo "... src/Window.o"
 	@echo "... src/Window.i"
 	@echo "... src/Window.s"

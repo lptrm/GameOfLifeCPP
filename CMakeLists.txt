@@ -18,6 +18,7 @@ set(VENDOR_LINKS vendor/glad/build/bin vendor/glfw/build/src
 set(SOURCES
     src/Application.cpp
     src/Universe.cpp
+    src/UniverseLayerInstance.cpp
     src/Window.cpp
     src/LayerStack.cpp
     src/Layer_ImGui.cpp

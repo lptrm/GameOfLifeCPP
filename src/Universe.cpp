@@ -45,7 +45,7 @@ void Universe::FillRandomly(float density) {
 }
 void Universe::update() {
   std::swap(m_CurrentState, m_OldState); // Swap the current and old state
-  m_CurrentState = new int[m_Size]();
+  std::fill(m_CurrentState, m_CurrentState + (m_Size >> 5), 0);
   for (int i = 0; i < m_Size; i++) {
     int intIndex, bitOffset;
     bool oldState = getOldBitValue(i, intIndex, bitOffset);
@@ -59,6 +59,29 @@ void Universe::update() {
       m_InstanceData[i].color = m_ColorDead;
     }
   }
+}
+bool Universe::IterateThroughNeighbors(int &index, int &intIndex,
+                                       bool &oldState) {
+  int neighborCount = 0;
+  for (int dr = -1; dr <= 1 && neighborCount < 4; ++dr) {
+    for (int dc = -1; dc <= 1 && neighborCount < 4; ++dc) {
+      if (dr == 0 && dc == 0)
+        continue; // Skip the current cell
+      int newRow = (((index >> m_PowX) + dr) & (m_Height - 1));
+      int newCol = ((index & (m_Width - 1)) + dc) & (m_Width - 1);
+      int neighborIndex = newRow * m_Width + newCol;
+      int neighborIntIndex = neighborIndex >> 5;
+      int neighborBitOffset = neighborIndex & 31;
+
+      int neighborBit = (m_OldState[neighborIntIndex] >> neighborBitOffset) & 1;
+      if (neighborBit != 0) {
+        neighborCount++;
+      }
+    }
+  }
+  return (neighborCount == 3 || neighborCount == 2 && oldState);
+  // maybe use later for fine tuning
+  // neighborBits |= (neighborBit << (dr + 1) * 3 + dc + 1);
 }
 // Function to print the position data of CellInstance objects
 void Universe::printPositionData() const {
@@ -87,29 +110,7 @@ bool Universe::getNewBitValue(int &index, int &intIndex, int &bitOffset) {
   bitOffset = index & 31;
   return (m_CurrentState[intIndex] >> bitOffset) & 1;
 }
-bool Universe::IterateThroughNeighbors(int &index, int &intIndex,
-                                       bool &oldState) {
-  int neighborCount = 0;
-  for (int dr = -1; dr <= 1 && neighborCount < 4; ++dr) {
-    for (int dc = -1; dc <= 1 && neighborCount < 4; ++dc) {
-      if (dr == 0 && dc == 0)
-        continue; // Skip the current cell
-      int newRow = (((index >> m_PowX) + dr) & (m_Height - 1));
-      int newCol = ((index & (m_Width - 1)) + dc) & (m_Width - 1);
-      int neighborIndex = newRow * m_Width + newCol;
-      int neighborIntIndex = neighborIndex >> 5;
-      int neighborBitOffset = neighborIndex & 31;
 
-      int neighborBit = (m_OldState[neighborIntIndex] >> neighborBitOffset) & 1;
-      if (neighborBit != 0) {
-        neighborCount++;
-      }
-    }
-  }
-  return (neighborCount == 3 || neighborCount == 2 && oldState);
-  // maybe use later for fine tuning
-  // neighborBits |= (neighborBit << (dr + 1) * 3 + dc + 1);
-}
 int Universe::CalculatePower(int value) {
   int pow = 0;
   while (value > 1) {
@@ -129,4 +130,11 @@ void Universe::printGrid() {
     }
   }
   std::cout << std::endl;
+}
+void Universe::UpdateColors() {
+  for (int i = 0; i < m_Size; i++) {
+    int intIndex, bitOffset;
+    bool state = getOldBitValue(i, intIndex, bitOffset);
+    m_InstanceData[i].color = state ? m_ColorAlive : m_ColorDead;
+  }
 }

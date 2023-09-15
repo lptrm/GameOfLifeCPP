@@ -15,7 +15,7 @@ public:
   ~Universe();
   void FillRandomly(float density);
   void ResetUniverse();
-
+  void UpdateColors();
   void update();
   void setAlive(int column, int row);
   void setDead(int, int);
@@ -30,8 +30,8 @@ public:
   inline int getGameGrid(int index) const { return m_CurrentState[index]; }
   // now passing by reference to update the positions from tha app
   inline std::vector<CellInstance> &getCellInstance() { return m_InstanceData; }
-  inline glm::vec4 *getColorAlive() { return &m_ColorAlive; }
-  inline glm::vec4 *getColorDead() { return &m_ColorDead; }
+  inline glm::vec4 &getColorAlive() { return m_ColorAlive; }
+  inline glm::vec4 &getColorDead() { return m_ColorDead; }
   inline void setColorAlive(glm::vec4 color) { m_ColorAlive = color; }
   inline void setColorDead(glm::vec4 color) { m_ColorDead = color; }
 

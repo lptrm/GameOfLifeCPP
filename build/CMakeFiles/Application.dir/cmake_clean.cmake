@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Application.dir/src/Layer_Universe.cpp.o.d"
   "CMakeFiles/Application.dir/src/Universe.cpp.o"
   "CMakeFiles/Application.dir/src/Universe.cpp.o.d"
+  "CMakeFiles/Application.dir/src/UniverseLayerInstance.cpp.o"
+  "CMakeFiles/Application.dir/src/UniverseLayerInstance.cpp.o.d"
   "CMakeFiles/Application.dir/src/Window.cpp.o"
   "CMakeFiles/Application.dir/src/Window.cpp.o.d"
   "CMakeFiles/Application.dir/src/utils/Camera/OrthographicCamera.cpp.o"

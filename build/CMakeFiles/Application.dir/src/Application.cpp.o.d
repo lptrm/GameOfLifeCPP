@@ -366,6 +366,7 @@ CMakeFiles/Application.dir/src/Application.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/glad/glad.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/KHR/khrplatform.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/Universe.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/src/UniverseLayerInstance.h \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/VertexBufferLayout.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_transform.hpp \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/../gtc/constants.hpp \

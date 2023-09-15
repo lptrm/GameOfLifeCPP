@@ -62,7 +62,7 @@ int main(void) {
     app->GetWindow().SetEventCallback(app->OnEvent);
     UniverseLayer *ul =
         new UniverseLayer(app->GetWindow().GetWidth(),
-                          app->GetWindow().GetHeight(), 1.0f, 1.0f, 2048, 1024);
+                          app->GetWindow().GetHeight(), 1.0f, 1.0f, 64, 64);
     ImGuiLayer *il = new ImGuiLayer();
     TestLayer *tl = new TestLayer();
 
