@@ -556,6 +556,8 @@ Application: CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.o
 Application: CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o
 Application: CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o
 Application: CMakeFiles/Application.dir/build.make
+Application: /usr/lib/libgomp.so
+Application: /usr/lib/libpthread.a
 Application: CMakeFiles/Application.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/jano/dev/nvim/GameOfLifeCPP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX executable Application"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Application.dir/link.txt --verbose=$(VERBOSE)

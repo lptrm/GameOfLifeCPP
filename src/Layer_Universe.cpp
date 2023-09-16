@@ -16,6 +16,10 @@
 #include <cstdint>
 #include <iostream>
 #include <ostream>
+float UniverseLayer::totalTimeUniverse = 0.0f;
+float UniverseLayer::totalTimeDraw = 0.0f;
+int UniverseLayer::frameCountUniverse = 0;
+int UniverseLayer::frameCountDraw = 0;
 UniverseLayer::UniverseLayer(float screenWidth, float screenHeight,
                              float vertexWidth, float vertexHeight,
                              unsigned int width, unsigned int height)
@@ -27,10 +31,9 @@ UniverseLayer::UniverseLayer(float screenWidth, float screenHeight,
   glm::mat4 mat = glm::mat4(1.0f);
   // UniverseLayer ul = UniverseLayer(vertexHeight, vertexWidth, width, height,
   //  this->GetViewProjectionMatrix() );
-  m_UniverseInstances.assign(
-      1, UniverseLayerInstance(
-             vertexHeight, vertexWidth, width, height, 5.0,
-             [this]() { return this->GetViewProjectionMatrix(); }));
+  m_UniverseInstances.push_back(UniverseLayerInstance(
+      vertexHeight, vertexWidth, width, height, 1.0f,
+      [this]() { return this->GetViewProjectionMatrix(); }));
 }
 UniverseLayer::~UniverseLayer() {}
 void UniverseLayer::OnAttach() {}
@@ -39,11 +42,12 @@ void UniverseLayer::FillRandomly(float density) {}
 void UniverseLayer::OnDetach() {}
 
 void UniverseLayer::OnUpdate(const float timeStamp) {
-  static float totalTimeUniverse = 0.0f;
-  static int frameCountUniverse = 0;
-
-  static float totalTimeDraw = 0.0f;
-  static int frameCountDraw = 0;
+  m_UniverseInstances.erase(std::remove_if(m_UniverseInstances.begin(),
+                                           m_UniverseInstances.end(),
+                                           [](UniverseLayerInstance &instance) {
+                                             return instance.isGarbage;
+                                           }),
+                            m_UniverseInstances.end());
   if (!ImGui::GetIO().WantCaptureMouse) {
     if (Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT)) {
       glm::vec2 worldCoords = glm::vec2(
@@ -51,7 +55,13 @@ void UniverseLayer::OnUpdate(const float timeStamp) {
               1.0f,
           1.0f - (2.0f *
                   (Input::GetMouseY() / Window::GetInstance().GetHeight())));
-      m_UniverseInstances[0].UniverseIntersection(worldCoords);
+      for (auto it = m_UniverseInstances.rbegin();
+           it != m_UniverseInstances.rend(); ++it) {
+        UniverseLayerInstance &instance = *it;
+        if (instance.UniverseIntersection(worldCoords)) {
+          break;
+        }
+      }
     }
     if (Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_RIGHT)) {
       std::cout << "Right mouse button pressed" << std::endl;
@@ -68,10 +78,9 @@ void UniverseLayer::OnUpdate(const float timeStamp) {
   }
   auto endUniverse = std::chrono::high_resolution_clock::now();
   std::chrono::duration<float> elapsedUniverse = endUniverse - startUniverse;
-
+  m_CameraController->OnUpdate(timeStamp);
   // Measure time taken by Renderer2D::DrawInstanced
   auto startDraw = std::chrono::high_resolution_clock::now();
-  m_CameraController->OnUpdate(timeStamp);
 
   for (auto &instance : m_UniverseInstances) {
     instance.Draw();
@@ -85,21 +94,6 @@ void UniverseLayer::OnUpdate(const float timeStamp) {
   frameCountUniverse++;
   totalTimeDraw += elapsedDraw.count();
   frameCountDraw++;
-
-  if (frameCountUniverse >= 100) { // Print average every 100 frames
-    std::cout << "Average Universe::update time: "
-              << totalTimeUniverse / frameCountUniverse << " seconds"
-              << std::endl;
-    frameCountUniverse = 0;
-    totalTimeUniverse = 0.0f;
-  }
-
-  if (frameCountDraw >= 100) { // Print average every 100 frames
-    std::cout << "Average Renderer2D::DrawInstanced time: "
-              << totalTimeDraw / frameCountDraw << " seconds" << std::endl;
-    frameCountDraw = 0;
-    totalTimeDraw = 0.0f;
-  }
 }
 void UniverseLayer::OnEvent(GLCore::Event &e) {
   m_CameraController->OnEvent(e);
@@ -107,52 +101,35 @@ void UniverseLayer::OnEvent(GLCore::Event &e) {
 
 void UniverseLayer::OnImGuiRender() {
   ImGuiIO &io = ImGui::GetIO();
-  // 1. Show the big demo window (Most of the sample code is in
-  // ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear
-  // ImGui!).
-  if (show_demo_window)
-    ImGui::ShowDemoWindow(&show_demo_window);
+  static int newWidth = 0, newHeight = 0;
+  for (auto &instance : m_UniverseInstances) {
+    instance.ImGuiRender();
+  }
 
-  // 2. Show a simple window that we create ourselves. We use a Begin/End pair
-  // to create a named window.
-  {
-    static int newWidth = 0, newHeight = 0;
-
-    for (auto &instance : m_UniverseInstances) {
-      ImGui::Begin("Test");
-      instance.ImGuiRender();
-      ImGui::End();
-    }
-    ImGui::Begin("Game Of Life"); // Create a window called "Hello, world!" and
-                                  // append into it.
+  if (ImGui::Begin("Configure A New Universe")) {
     ImGui::InputInt("Width", &newWidth);
     ImGui::InputInt("Height", &newHeight);
+    float density = 0.5f;
     if (ImGui::Button("Create New Universe")) {
       m_UniverseInstances.push_back(UniverseLayerInstance(
-          1.0f, 1.0f, newWidth, newHeight, 5.0f,
+          1.0f, 1.0f, newWidth, newHeight, density,
           [this]() { return this->GetViewProjectionMatrix(); }));
     }
     ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
                 1000.0f / io.Framerate, io.Framerate);
-    ImGui::End();
-  }
+    ImGui::Text("Application average Universe::update Time %.3f ms",
+                1000.0f * totalTimeUniverse / frameCountUniverse);
+    ImGui::Text("Application average Renderer2D::DrawInstanced Time %.3f ms",
+                1000.0f * totalTimeDraw / (frameCountDraw));
+    if (frameCountUniverse >= (1 << 31)) { // Print average every 100 frames
+      frameCountUniverse = 0;
+      totalTimeUniverse = 0.0f;
+    }
 
-  // 3. Show another simple window.
-  if (show_another_window) {
-    ImGui::Begin(
-        "Another Window",
-        &show_another_window); // Pass a pointer to our bool variable (the
-                               // window will have a closing button that will
-                               // clear the bool when clicked)
-    ImGui::Text("Hello from another window!");
-    if (ImGui::Button("Close Me"))
-      show_another_window = false;
-    ImGui::End();
+    if (frameCountDraw >= (1 << 31)) { // Print average every 100 frames
+      frameCountDraw = 0;
+      totalTimeDraw = 0.0f;
+    }
   }
-
-  /*
-  glClearColor(clear_color.x * clear_color.w, clear_color.y * clear_color.w,
-               clear_color.z * clear_color.w, clear_color.w);
-  glClear(GL_COLOR_BUFFER_BIT);
-*/
+  ImGui::End();
 }

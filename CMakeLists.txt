@@ -49,6 +49,13 @@ set(VENDOR_SOURCES
     vendor/imgui/backends/imgui_impl_opengl3.cpp)
 include_directories(${VENDOR_INCLUDES} ${SOURCE_INCLUDES})
 link_directories(${VENDOR_LINKS})
+# Find the OpenMP package
+find_package(OpenMP REQUIRED)
 
 add_executable(Application ${SOURCES} ${VENDOR_SOURCES})
-target_link_libraries(Application Glad.a glfw3.a libImGui.a)
+target_link_libraries(Application Glad.a glfw3.a libImGui.a OpenMP::OpenMP_CXX)
+
+# Add OpenMP compiler flags
+if(OpenMP_CXX_FOUND)
+  target_compile_options(Application PUBLIC ${OpenMP_CXX_FLAGS})
+endif()

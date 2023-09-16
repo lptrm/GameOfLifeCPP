@@ -16,6 +16,7 @@ public:
                         unsigned int width, unsigned int height,
                         float m_GenerationTime,
                         std::function<glm::mat4()> viewProjectionCallback);
+  ~UniverseLayerInstance();
   inline float &GetVertexWidth() { return m_VertexWidth; }
   inline float &GetVertexHeight() { return m_VertexHeight; }
   inline float &GetUniverseHeight() { return UniverseHeight; }
@@ -35,7 +36,11 @@ public:
   void Bind();
   void Draw();
 
+  bool isGarbage = false;
+
 private:
+  std::string m_UniverseString;
+  static unsigned int instanceCount;
   float m_LastTimeUniverse;
   float m_GenerationTime;
   float m_VertexWidth;

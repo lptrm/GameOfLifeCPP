@@ -5,6 +5,8 @@
 #include "glm/gtc/type_ptr.hpp"
 #include "imgui.h"
 #include <iostream>
+#include <string>
+unsigned int UniverseLayerInstance::instanceCount = 0;
 UniverseLayerInstance::UniverseLayerInstance(
     float vertexWidth, float vertexHeight, unsigned int width,
     unsigned int height, float generationTime,
@@ -58,10 +60,14 @@ UniverseLayerInstance::UniverseLayerInstance(
   u_MVP = m_ViewProjectionCallback() * m_MatModel;
   std::cout << "UniverseLayerInstance::UniverseLayerInstance()" << std::endl;
   m_Shader->SetUniformMat4f("u_MVP", u_MVP);
-  m_LastTimeUniverse = 0.0f;
-  m_GenerationTime = 5.0;
   Unbind();
+  instanceCount++;
+  m_UniverseString = "Universe " + std::to_string(instanceCount);
 };
+UniverseLayerInstance::~UniverseLayerInstance() {
+  std::cout << "UniverseLayerInstance::~UniverseLayerInstance()" << std::endl;
+  instanceCount++;
+}
 void UniverseLayerInstance::Bind() {
   m_Va->Bind();
   m_Shader->Bind();
@@ -104,27 +110,32 @@ bool UniverseLayerInstance::UniverseIntersection(glm::vec2 &screenCoords) {
   return true;
 }
 void UniverseLayerInstance::ImGuiRender() {
+  if (ImGui::Begin(m_UniverseString.c_str())) {
+    ImGui::Text("This is some useful text."); // Display some text (you can
+                                              // use a format strings too)
+    ImGui::SliderFloat("time for generation (s)", &m_GenerationTime, 0.0f,
+                       10.0f); // Edit 1 float using a slider from 0.0f to 1.0f
+    ImGui::SliderFloat("density(alive) after reset (s)", &fillRandomly, 0.0f,
+                       1.0f); // Edit 1 float using a slider from 0.0f to 1.0f
+    if (ImGui::SliderFloat2("translation of the universe",
+                            glm::value_ptr(m_Translation), -1000.0f, 1000.0f)) {
 
-  ImGui::Text("This is some useful text."); // Display some text (you can use
-                                            // a format strings too)
-  ImGui::SliderFloat("time for generation (s)", &m_GenerationTime, 0.0f,
-                     10.0f); // Edit 1 float using a slider from 0.0f to 1.0f
-  ImGui::SliderFloat("density(alive) after reset (s)", &fillRandomly, 0.0f,
-                     1.0f); // Edit 1 float using a slider from 0.0f to 1.0f
-  if (ImGui::SliderFloat2("translation of the universe",
-                          glm::value_ptr(m_Translation), -1000.0f, 1000.0f)) {
+    }; // Edit 1 float using a slider from 0.0f to 1.0f
+       // &m_UniverseInstances[0].m_MatModel)
 
-  }; // Edit 1 float using a slider from 0.0f to 1.0f
-     // &m_UniverseInstances[0].m_MatModel)
-
-  if (ImGui::Button("Reset Universe")) {
-    m_Universe->ResetUniverse();
-    m_Universe->FillRandomly(fillRandomly);
-  } // Buttons return true when clicked
-  if (ImGui::ColorEdit4("alive color",
-                        glm::value_ptr(m_Universe->getColorAlive())) ||
-      ImGui::ColorEdit4("dead color",
-                        glm::value_ptr(m_Universe->getColorDead()))) {
-    m_Universe->UpdateColors();
-  };
+    if (ImGui::Button("Reset Universe")) {
+      m_Universe->ResetUniverse();
+      m_Universe->FillRandomly(fillRandomly);
+    } // Buttons return true when clicked
+    if (ImGui::ColorEdit4("alive color",
+                          glm::value_ptr(m_Universe->getColorAlive())) ||
+        ImGui::ColorEdit4("dead color",
+                          glm::value_ptr(m_Universe->getColorDead()))) {
+      m_Universe->UpdateColors();
+    };
+    if (ImGui::Button("Destroy Universe")) {
+      isGarbage = true;
+    }
+  }
+  ImGui::End();
 }

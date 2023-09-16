@@ -54,7 +54,7 @@ int main(void) {
     // app->GetWindow().SetSize(1024, 1024);
     app->GetWindow().SetTitle("Game of Life");
 
-    app->GetWindow().SetVSync(true);
+    app->GetWindow().SetVSync(false);
 
     app->GetWindow().SetFullscreen(false);
     std::cout << "Window size: " << app->GetWindow().GetWidth() << " x "
@@ -62,7 +62,7 @@ int main(void) {
     app->GetWindow().SetEventCallback(app->OnEvent);
     UniverseLayer *ul =
         new UniverseLayer(app->GetWindow().GetWidth(),
-                          app->GetWindow().GetHeight(), 1.0f, 1.0f, 64, 64);
+                          app->GetWindow().GetHeight(), 1.0f, 1.0f, 2048, 2048);
     ImGuiLayer *il = new ImGuiLayer();
     TestLayer *tl = new TestLayer();
 
