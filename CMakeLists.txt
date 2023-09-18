@@ -7,14 +7,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_definitions(-DGLFW_INCLUDE_NONE)
+# add_definitions(-DGLFW_INCLUDE_NONE) subdirectory
 
+# Include the CMakeLists.txt from the subdirectory with the custom build
+# directory
+add_subdirectory(${CMAKE_SOURCE_DIR}/vendor/glad)
+add_subdirectory(${CMAKE_SOURCE_DIR}/vendor/glfw)
+add_subdirectory(${CMAKE_SOURCE_DIR}/vendor/imgui)
 set(VENDOR_INCLUDES vendor/glad/include vendor/glfw/include vendor/imgui
                     vendor/imgui/backends vendor/glm vendor)
 set(SOURCE_INCLUDES src src/utils/OpenGL_Abstractions src/utils/Events
                     src/utils/Camera src/utils/Renderer)
-set(VENDOR_LINKS vendor/glad/build/bin vendor/glfw/build/src
-                 vendor/imgui/bin/ImGui)
+set(VENDOR_LINKS vendor/glfw/build/src vendor/imgui/bin/ImGui)
 set(SOURCES
     src/Application.cpp
     src/Universe.cpp
@@ -49,13 +53,15 @@ set(VENDOR_SOURCES
     vendor/imgui/backends/imgui_impl_opengl3.cpp)
 include_directories(${VENDOR_INCLUDES} ${SOURCE_INCLUDES})
 link_directories(${VENDOR_LINKS})
+
 # Find the OpenMP package
 find_package(OpenMP REQUIRED)
 
 add_executable(Application ${SOURCES} ${VENDOR_SOURCES})
-target_link_libraries(Application Glad.a glfw3.a libImGui.a OpenMP::OpenMP_CXX)
-
+add_dependencies(Application Glad glfw ImGui)
+target_link_libraries(Application Glad glfw ImGui OpenMP::OpenMP_CXX)
 # Add OpenMP compiler flags
 if(OpenMP_CXX_FOUND)
-  target_compile_options(Application PUBLIC ${OpenMP_CXX_FLAGS})
+  target_compile_options(Application PUBLIC ${OpenMP_CXX_FLAGS}
+                                            -DGLFW_INCLUDE_NONE)
 endif()

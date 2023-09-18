@@ -54,4 +54,7 @@ private:
 
   static float totalTimeDraw;
   static int frameCountDraw;
+bool isPaused = false;
+  bool errorPopup = false;
+  const char *errorMessage;
 };

@@ -111,24 +111,46 @@ void UniverseLayer::OnImGuiRender() {
     ImGui::InputInt("Height", &newHeight);
     float density = 0.5f;
     if (ImGui::Button("Create New Universe")) {
-      m_UniverseInstances.push_back(UniverseLayerInstance(
-          1.0f, 1.0f, newWidth, newHeight, density,
-          [this]() { return this->GetViewProjectionMatrix(); }));
+      try {
+        m_UniverseInstances.push_back(UniverseLayerInstance(
+            1.0f, 1.0f, newWidth, newHeight, density,
+            [this]() { return this->GetViewProjectionMatrix(); }));
+      } catch (std::exception &e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        errorMessage = e.what();
+        errorPopup = true;
+      }
     }
-    ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
-                1000.0f / io.Framerate, io.Framerate);
-    ImGui::Text("Application average Universe::update Time %.3f ms",
-                1000.0f * totalTimeUniverse / frameCountUniverse);
-    ImGui::Text("Application average Renderer2D::DrawInstanced Time %.3f ms",
-                1000.0f * totalTimeDraw / (frameCountDraw));
-    if (frameCountUniverse >= (1 << 31)) { // Print average every 100 frames
-      frameCountUniverse = 0;
-      totalTimeUniverse = 0.0f;
-    }
+  }
+  ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
+              1000.0f / io.Framerate, io.Framerate);
+  ImGui::Text("Application average Universe::update Time %.3f ms",
+              1000.0f * totalTimeUniverse / frameCountUniverse);
+  ImGui::Text("Application average Renderer2D::DrawInstanced Time %.3f ms",
+              1000.0f * totalTimeDraw / (frameCountDraw));
+  if (frameCountUniverse >= (1 << 31)) { // Print average every 100 frames
+    frameCountUniverse = 0;
+    totalTimeUniverse = 0.0f;
+  }
 
-    if (frameCountDraw >= (1 << 31)) { // Print average every 100 frames
-      frameCountDraw = 0;
-      totalTimeDraw = 0.0f;
+  if (frameCountDraw >= (1 << 31)) { // Print average every 100 frames
+    frameCountDraw = 0;
+    totalTimeDraw = 0.0f;
+  }
+  if (errorMessage) {
+    ImGui::OpenPopup("ErrorPopup");
+
+    // Create the modal popup window.
+    if (ImGui::BeginPopupModal("ErrorPopup", NULL,
+                               ImGuiWindowFlags_AlwaysAutoResize)) {
+      ImGui::Text("%s", errorMessage);
+      if (ImGui::Button("OK", ImVec2(120, 0))) {
+        ImGui::CloseCurrentPopup();
+        errorMessage = nullptr;
+        errorPopup = false;
+      }
+
+      ImGui::EndPopup();
     }
   }
   ImGui::End();

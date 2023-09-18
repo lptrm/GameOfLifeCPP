@@ -556,6 +556,11 @@ Application: CMakeFiles/Application.dir/vendor/imgui/imgui_widgets.cpp.o
 Application: CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_glfw.cpp.o
 Application: CMakeFiles/Application.dir/vendor/imgui/backends/imgui_impl_opengl3.cpp.o
 Application: CMakeFiles/Application.dir/build.make
+Application: bin/libGlad.a
+Application: vendor/glfw/src/libglfw3.a
+Application: bin/libImGui.a
+Application: /usr/lib/librt.a
+Application: /usr/lib/libm.so
 Application: /usr/lib/libgomp.so
 Application: /usr/lib/libpthread.a
 Application: CMakeFiles/Application.dir/link.txt

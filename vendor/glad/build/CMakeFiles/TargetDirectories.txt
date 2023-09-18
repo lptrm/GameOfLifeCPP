@@ -1,3 +1,0 @@
-/home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/build/CMakeFiles/Glad.dir
-/home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/build/CMakeFiles/edit_cache.dir
-/home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/build/CMakeFiles/rebuild_cache.dir

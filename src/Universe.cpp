@@ -1,11 +1,15 @@
 #include "Universe.h"
+#include <algorithm>
+#include <cstdint>
+#include <execution>
 #include <iostream>
 #include <omp.h>
 #include <random>
+#include <stdexcept>
 
 Universe::Universe(int width, int height) : m_Width(width), m_Height(height) {
   if ((m_Width & (m_Width - 1)) != 0 || (m_Height & (m_Height - 1)) != 0) {
-    return; // TODO: Throw exception
+    throw std::invalid_argument("Width and height must be powers of 2.");
   }
   m_PowX = CalculatePower(m_Width);
   m_PowY = CalculatePower(m_Height);
@@ -45,6 +49,7 @@ void Universe::FillRandomly(float density) {
     }
   }
 }
+
 void Universe::update() {
   std::swap(m_CurrentState, m_OldState); // Swap the current and old state
   std::fill(m_CurrentState, m_CurrentState + (m_Size >> 5), 0);
@@ -54,14 +59,20 @@ void Universe::update() {
     bool oldState = getOldBitValue(i, intIndex, bitOffset);
     bool newState =
         IterateThroughNeighbors(i, intIndex, oldState); // Determine new state
+
+    // Create a private copy of the current state
+    uint32_t privateCurrentState = m_CurrentState[intIndex];
+
     if (newState) {
-#pragma omp critical
-      m_CurrentState[intIndex] |=
-          (1 << bitOffset); // Set the corresponding bit to 1
+      privateCurrentState |= (1 << bitOffset); // Set the corresponding bit to 1
       m_InstanceData[i].color = m_ColorAlive;
     } else {
       m_InstanceData[i].color = m_ColorDead;
     }
+
+    // Store the private copy back to the current state without a critical
+    // section
+    m_CurrentState[intIndex] = privateCurrentState;
   }
 }
 bool Universe::IterateThroughNeighbors(int &index, int &intIndex,
