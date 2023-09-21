@@ -10,7 +10,11 @@ public:
   }
 
   inline static void Clear() { s_RendererAPI->Clear(); }
-
+  inline static void DrawQuad(const std::shared_ptr<VertexArray> &vertexArray,
+                              const std::shared_ptr<Shader> &shader,
+                              glm::mat4 &u_MVP, const unsigned int count) {
+    s_RendererAPI->DrawQuad(vertexArray, shader, u_MVP, count);
+  }
   inline static void
   DrawIndexed(const std::shared_ptr<VertexArray> &vertexArray,
               const std::shared_ptr<Shader> &shader) {

@@ -10,7 +10,8 @@ public:
   static void BeginScene();
   static void EndScene();
   static void DrawTest(const std::shared_ptr<VertexArray> &vertexArray,
-                       const std::shared_ptr<Shader> &shader);
+                       const std::shared_ptr<Shader> &shader, glm::mat4 &u_MVP,
+                       const unsigned int count);
   static void
   DrawInstanced(const std::shared_ptr<VertexArray> &vertexArray,
                 const std::shared_ptr<Shader> &shader,

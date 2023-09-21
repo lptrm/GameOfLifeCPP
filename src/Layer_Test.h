@@ -11,9 +11,9 @@
 class TestLayer : public Layer {
   std::shared_ptr<VertexArray> m_Va;
   std::shared_ptr<VertexBuffer> m_Vb;
-  std::shared_ptr<IndexBuffer> m_Ib;
   std::shared_ptr<VertexBufferLayout> m_Layout;
   std::shared_ptr<Shader> m_Shader;
+  glm::mat4 m_Proj, m_View, m_Model, u_MVP;
   void Bind();
   void Unbind();
 

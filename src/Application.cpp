@@ -60,14 +60,15 @@ int main(void) {
     std::cout << "Window size: " << app->GetWindow().GetWidth() << " x "
               << app->GetWindow().GetHeight() << " y " << std::endl;
     app->GetWindow().SetEventCallback(app->OnEvent);
-    UniverseLayer *ul =
-        new UniverseLayer(app->GetWindow().GetWidth(),
-                          app->GetWindow().GetHeight(), 1.0f, 1.0f, 1024, 1024);
+    //   UniverseLayer *ul =
+    //       new UniverseLayer(app->GetWindow().GetWidth(),
+    //                         app->GetWindow().GetHeight(), 1.0f, 1.0f, 1024,
+    //                         1024);
     ImGuiLayer *il = new ImGuiLayer();
     TestLayer *tl = new TestLayer();
 
-    app->GetLayerStack().PushLayer(ul);
-    // app->GetLayerStack().PushLayer(tl);
+    // app->GetLayerStack().PushLayer(ul);
+    app->GetLayerStack().PushLayer(tl);
     app->GetLayerStack().PushLayer(il);
 
     while (!glfwWindowShouldClose(app->GetWindow().GetNativeWindow())) {
@@ -90,7 +91,7 @@ int main(void) {
       app->GetWindow().OnUpdate();
 
     } // Cleanup
-    app->GetLayerStack().PopLayer(ul);
+      //  app->GetLayerStack().PopLayer(ul);
     app->GetLayerStack().PopLayer(il);
     app->GetLayerStack().PopLayer(tl);
   }

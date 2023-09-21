@@ -357,4 +357,13 @@ CMakeFiles/Application.dir/src/Layer_Test.cpp.o: \
  /home/jano/dev/nvim/GameOfLifeCPP/src/utils/OpenGL_Abstractions/Renderer.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/glad/glad.h \
  /home/jano/dev/nvim/GameOfLifeCPP/vendor/glad/include/KHR/khrplatform.h \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_clip_space.hpp \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/../ext/scalar_constants.hpp \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/../ext/../detail/setup.hpp \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/../ext/scalar_constants.inl \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_clip_space.inl \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_transform.hpp \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/../gtc/constants.hpp \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/../gtc/constants.inl \
+ /home/jano/dev/nvim/GameOfLifeCPP/vendor/glm/ext/matrix_transform.inl \
  /usr/include/c++/13.2.1/iostream

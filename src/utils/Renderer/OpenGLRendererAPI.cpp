@@ -29,3 +29,14 @@ void OpenGLRendererAPI::DrawInstanced(
   vertexArray->Unbind();
   shader->Unbind();
 }
+void OpenGLRendererAPI::DrawQuad(
+    const std::shared_ptr<VertexArray> &vertexArray,
+    const std::shared_ptr<Shader> &shader, glm::mat4 &u_MVP,
+    const unsigned int count) {
+  vertexArray->Bind();
+  shader->Bind();
+  shader->SetUniformMat4f("u_MVP", u_MVP);
+  GLCALL(glDrawArrays(GL_TRIANGLES, 0, count));
+  vertexArray->Unbind();
+  shader->Unbind();
+}

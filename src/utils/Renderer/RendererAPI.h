@@ -14,6 +14,9 @@ public:
   virtual void Clear() = 0;
   virtual void DrawIndexed(const std::shared_ptr<VertexArray> &vertexArray,
                            const std::shared_ptr<Shader> &shader) = 0;
+  virtual void DrawQuad(const std::shared_ptr<VertexArray> &vertexArray,
+                        const std::shared_ptr<Shader> &shader, glm::mat4 &u_MVP,
+                        const unsigned int count) = 0;
   virtual void
   DrawInstanced(const std::shared_ptr<VertexArray> &vertexArray,
                 const std::shared_ptr<Shader> &shader,

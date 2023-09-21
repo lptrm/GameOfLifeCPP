@@ -9,6 +9,9 @@ public:
   virtual void Clear() override;
   virtual void DrawIndexed(const std::shared_ptr<VertexArray> &vertexArray,
                            const std::shared_ptr<Shader> &shader) override;
+  virtual void DrawQuad(const std::shared_ptr<VertexArray> &vertexArray,
+                        const std::shared_ptr<Shader> &shader, glm::mat4 &u_MVP,
+                        const unsigned int count) override;
   virtual void
   DrawInstanced(const std::shared_ptr<VertexArray> &vertexArray,
                 const std::shared_ptr<Shader> &shader,
