@@ -1,23 +1,63 @@
 #include "Layer_Test.h"
 #include "OpenGLRendererAPI.h"
+#include "Renderer.h"
 #include "Renderer2D.h"
+#include "VertexArray.h"
 #include "VertexBufferLayout.h"
 #include "ext/matrix_clip_space.hpp"
 #include "ext/matrix_transform.hpp"
+#include "fwd.hpp"
+#include "imgui.h"
 #include "utils/Renderer/RenderCommand.h"
 #include <iostream>
 #include <memory>
 
 void TestLayer::OnAttach() { //  Implementation for OnAttach, if needed
-  m_Proj = glm::perspective(glm::radians(45.0f), 16.0f / 9.0f, 0.1f, 100.0f);
-  m_View =
-      glm::lookAt(glm::vec3(4, 3, 3), // Camera is at (4,3,3), in World Space
-                  glm::vec3(0, 0, 0), // and looks at the origin
-                  glm::vec3(0, 1, 0)  // Head is up (set to 0,-1,0 to look
-                                      // upside-down)
-      );
+
+  m_CameraPitch = 0.0f;
+  m_CameraYaw = 0.0f;
+
+  m_AspectRatio = 16.0f / 9.0f;
+
+  m_OrthographicSize = 1.0f;
+  m_OrthographicNear = -1.0f;
+  m_OrthographicFar = 1.0f;
+  m_OrthographicLeft = -m_AspectRatio * m_OrthographicSize;
+  m_OrthographicRight = m_AspectRatio * m_OrthographicSize;
+  m_OrthographicBottom = -m_OrthographicSize;
+  m_OrthographicTop = m_OrthographicSize;
+
+  m_PerspectiveFOV = 45.0f;
+  m_PerspectiveNear = 0.1f;
+  m_PerspectiveFar = 100.0f;
+  m_Eye = glm::vec3(4, 3, 3);
+  m_Center = glm::vec3(0, 0, 0);
+  m_Up = glm::vec3(0, 1, 0);
+  if (m_CameraType) {
+    m_Proj = glm::ortho(m_OrthographicLeft, m_OrthographicRight,
+                        m_OrthographicBottom, m_OrthographicTop,
+                        m_OrthographicNear, m_OrthographicFar);
+    m_View = glm::mat4(1.0f);
+  } else {
+    m_Proj = glm::perspective(glm::radians(m_PerspectiveFOV), m_AspectRatio,
+                              m_PerspectiveNear, m_PerspectiveFar);
+    m_View = glm::lookAt(m_Eye, m_Center, m_Up);
+  }
   m_Model = glm::mat4(1.0f);
   u_MVP = m_Proj * m_View * m_Model;
+
+  float axisVertices[] = {
+      -10.0f, 0.0f,   0.0f,   10.0f, 0.0f,  0.0, // x axis
+      0.0f,   -10.0f, 0.0f,   0.0f,  10.0f, 0.0, // y axis
+      0.0f,   0.0f,   -10.0f, 0.0f,  0.0f,  10.0 // z axis
+  };
+  a_Va = std::make_shared<VertexArray>();
+  a_Vb = std::make_shared<VertexBuffer>(axisVertices, 3 * 6 * sizeof(float));
+  a_Layout = std::make_shared<VertexBufferLayout>();
+  a_Layout->Push<float>(3);
+  a_Va->AddBuffer(*a_Vb, *a_Layout);
+  a_Shader = std::make_shared<Shader>(
+      "/home/jano/dev/nvim/GameOfLifeCPP/assets/axis.shader");
   float positions[] = {
       -1.0f, -1.0f, -1.0f,                      // triangle 1 : begin
       -1.0f, -1.0f, 1.0f,  -1.0f, 1.0f,  1.0f,  // triangle 1 : end
@@ -68,6 +108,7 @@ void TestLayer::OnAttach() { //  Implementation for OnAttach, if needed
 
   m_Shader = std::make_shared<Shader>(
       "/home/jano/dev/nvim/GameOfLifeCPP/assets/cube.shader");
+  a_Shader->SetUniformMat4f("u_MVP", u_MVP);
   m_Shader->SetUniformMat4f("u_MVP", u_MVP);
   Unbind();
 }
@@ -75,8 +116,28 @@ void TestLayer::OnAttach() { //  Implementation for OnAttach, if needed
 void TestLayer::OnDetach() {}
 
 void TestLayer::OnUpdate(const float timeStamp) {
+  if (m_CameraType) {
+    m_Proj = glm::ortho(m_OrthographicLeft, m_OrthographicRight,
+                        m_OrthographicBottom, m_OrthographicTop,
+                        m_OrthographicNear, m_OrthographicFar);
+    m_View = glm::mat4(1.0f);
+  } else {
+    m_Proj = glm::perspective(glm::radians(m_PerspectiveFOV), m_AspectRatio,
+                              m_PerspectiveNear, m_PerspectiveFar);
+    m_View = glm::lookAt(m_Eye, m_Center, m_Up);
+  }
+  m_Model = glm::mat4(1.0f);
+  u_MVP = m_Proj * m_View * m_Model;
 
   Renderer2D::DrawTest(m_Va, m_Shader, u_MVP, 12 * 3);
+  a_Shader->Bind();
+  a_Shader->SetUniformMat4f("u_MVP", u_MVP);
+  a_Shader->SetUniform3f("u_Color", 0.0f, 0.0f, 0.0f);
+  a_Va->Bind();
+  GLCALL(glPointSize(10.0f));
+  GLCALL(glDrawArrays(GL_LINES, 0, 6));
+  a_Shader->Unbind();
+  a_Va->Unbind();
 }
 
 void TestLayer::OnEvent(GLCore::Event &e) {
@@ -86,4 +147,25 @@ void TestLayer::Bind() { m_Shader->Bind(); }
 void TestLayer::Unbind() {
   m_Va->Unbind();
   m_Shader->Unbind();
+}
+void TestLayer::OnImGuiRender() {
+  ImGuiIO &io = ImGui::GetIO();
+  static int newWidth = 0, newHeight = 0;
+  ImGui::Begin("Configure the Matrices");
+  ImGui::SliderFloat("FOV", &m_PerspectiveFOV, 0.0f, 180.0f);
+  ImGui::SliderFloat("Near", &m_PerspectiveNear, 0.0f, 100.0f);
+  ImGui::SliderFloat("Far", &m_PerspectiveFar, 0.0f, 100.0f);
+  ImGui::SliderFloat("Aspect Ratio", &m_AspectRatio, 0.0f, 10.0f);
+  ImGui::SliderFloat3("Eye", &m_Eye.x, -10.0f, 10.0f);
+  ImGui::SliderFloat3("Center", &m_Center.x, -10.0f, 10.0f);
+  ImGui::SliderFloat3("Up", &m_Up.x, -10.0f, 10.0f);
+  if (ImGui::SliderFloat("Yaw", &m_CameraYaw, -180.0f, 180.0f) ||
+      ImGui::SliderFloat("Pitch", &m_CameraPitch, -180.0f, 180.0f)) {
+  }
+  if (ImGui::Button("Orthographic")) {
+    m_CameraType = !m_CameraType;
+  }
+  ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
+              1000.0f / io.Framerate, io.Framerate);
+  ImGui::End();
 }

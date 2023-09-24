@@ -54,7 +54,7 @@ int main(void) {
     // app->GetWindow().SetSize(1024, 1024);
     app->GetWindow().SetTitle("Game of Life");
 
-    app->GetWindow().SetVSync(false);
+    app->GetWindow().SetVSync(true);
 
     app->GetWindow().SetFullscreen(false);
     std::cout << "Window size: " << app->GetWindow().GetWidth() << " x "
@@ -70,15 +70,16 @@ int main(void) {
     // app->GetLayerStack().PushLayer(ul);
     app->GetLayerStack().PushLayer(tl);
     app->GetLayerStack().PushLayer(il);
-
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
     while (!glfwWindowShouldClose(app->GetWindow().GetNativeWindow())) {
 
       float time = (float)glfwGetTime();
       float deltaTime = time - app->m_LastFrameTime;
       app->m_LastFrameTime = time;
-      glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+      glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-      glClear(GL_COLOR_BUFFER_BIT);
+      glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
       for (auto &layer : app->GetLayerStack()) {
         layer->OnUpdate(deltaTime);
       }
